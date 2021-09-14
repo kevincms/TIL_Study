@@ -26,11 +26,24 @@ print("%d."%count,test_dict,type(test_dict)) # 6. dictionary는 key와 value로 
 count+=1
 
 test_tuple=(0,1)
-print("%d."%count,test_tuple,type(test_tuple)) # 7. tuple은 수정할 수 없음.
+print("%d."%count,test_tuple,type(test_tuple)) # 7. tuple은 수정할 수 없음. (대신 계산속도가 빠름)
 count+=1
 
 test_set={1,2,3,4,5,4,2,3,}
 print("%d."%count,test_set,type(test_set)) # 8. set(집합)은 중복이 안되고, 순서가 없음.
+count+=1
+
+# type을 다른 type으로 변경 가능
+test_type=test_list
+print("%d"%count,test_type,type(test_type)) # 9.
+count+=1
+
+test_type=tuple(test_type)
+print("%d"%count,test_type,type(test_type)) # 10.
+count+=1
+
+test_type=set(test_type)
+print("%d"%count,test_type,type(test_type)) # 11.
 count+=1
 
 # 줄바꿈의 영향을 받지 않는 문자열
