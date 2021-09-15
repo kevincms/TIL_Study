@@ -15,7 +15,7 @@ print(language[language_number-1])
 language_number+=1
 
 # 다음과 같이 변수를 출력할 수 있다.
-print("%d. Hello %s" % (language_number, language[language_number-1])) # 4.
+print("%d. Hello %s" % (language_number, language[language_number-1])) # 4. %d int | %f, %lf float | %s str
 language_number+=1
 
 print("{}. Hello {}".format(language_number,language[language_number-1])) # 5.
