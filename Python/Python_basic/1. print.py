@@ -5,12 +5,12 @@ language_number=1
 print(str(language_number)+". "+"Hello "+language[language_number-1]) # 1.
 language_number+=1
 
-# +가 아닌 ,로 구분가능 (단 띄어쓰기가 됨) (혼용 가능)
-print(language_number,".","Hello ",language[language_number-1]) # 2.
+# +가 아닌 ,로 구분가능 (단 띄어쓰기가 됨, sep으로 수정가능) (혼용 가능)
+print(language_number,".","Hello ",language[language_number-1]) # 2. 
 language_number+=1
 
 # 파이썬은 자동적으로 줄바꿈이 된다. (end를 이용하면 뒤의 출력을 바꿀 수 있다.)
-print(str(language_number)+". "+"Hello ",end="") # 3.
+print(str(language_number),". ","Hello ",end="",sep="") # 3.
 print(language[language_number-1])
 language_number+=1
 
@@ -29,3 +29,7 @@ language_number+=1
 
 print(f"{language_number}. Hello {language[language_number-1]}") # 8. ver 3.6 이상만 된다.
 language_number+=1
+
+very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_long_variable="PYTHON"
+print("{}. very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_very_long_variable"\
+    .format(language_number)) # 9. \(역슬래쉬)로 줄을 바꿔도 한줄로 인식할수 있다.
