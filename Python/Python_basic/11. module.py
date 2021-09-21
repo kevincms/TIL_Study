@@ -1,4 +1,4 @@
-# test_module 에 있는 함수들을 다양한 방법으로 사용할 수 있다.
+# test_module 에 있는 module들을 다양한 방법으로 사용할 수 있다.
 import test_module
 language=["Python","C","Java","C++","Go","JavaScript","Swift","C#"]
 count=1
