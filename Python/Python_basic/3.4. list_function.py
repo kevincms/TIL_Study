@@ -31,11 +31,11 @@ count+=1
 print("%d."%count,test_list) # 8.
 count+=1
 
-# str애서 사용한 index와 같음. 하지만 find는 사용할 수 없음.
+# str애서 사용한 index와 같음. 하지만 find는 사용할 수 없음
 print("%d."%count,test_list.index("2")) # 9.
 count+=1
 
-# str애서 사용한 count와 같음. 
+# str애서 사용한 count와 같음
 print("%d."%count,test_list.count("2")) # 10.
 count+=1
 

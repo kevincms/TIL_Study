@@ -17,20 +17,20 @@ test_bool=1<2 # 4, 참과 거짓
 print("%d."%count,test_bool,type(test_bool))
 count+=1
 
-test_list=[1,1.1,"Hello World"] # 5. list 안에는 무엇이든 넣을 수 있음. list 안에 list를 넣는 것도 가능함.
+test_list=[1,1.1,"Hello World"] # 5. list 안에는 무엇이든 넣을 수 있음. list 안에 list를 넣는 것도 가능함
 print("%d."%count,test_list,type(test_list)) 
 count+=1
 
-test_dict={0:"영",1:"일",2:"이"} # key 값은 int, float, str, bool 모두 가능함. (list는 안됨)
-print("%d."%count,test_dict,type(test_dict)) # 6. dictionary는 key와 value로 이루어져 있음.
+test_dict={0:"영",1:"일",2:"이"} # key 값은 int, float, str, bool 모두 가능함 (list는 안됨)
+print("%d."%count,test_dict,type(test_dict)) # 6. dictionary는 key와 value로 이루어져 있음
 count+=1
 
 test_tuple=(0,1)
-print("%d."%count,test_tuple,type(test_tuple)) # 7. tuple은 수정할 수 없음. (대신 계산속도가 빠름)
+print("%d."%count,test_tuple,type(test_tuple)) # 7. tuple은 수정할 수 없음 (대신 계산속도가 빠름)
 count+=1
 
 test_set={1,2,3,4,5,4,2,3,}
-print("%d."%count,test_set,type(test_set)) # 8. set(집합)은 중복이 안되고, 순서가 없음.
+print("%d."%count,test_set,type(test_set)) # 8. set(집합)은 중복이 안되고, 순서가 없음
 count+=1
 
 # type을 다른 type으로 변경 가능

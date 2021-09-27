@@ -13,18 +13,18 @@ count+=1
 def variable_args_func(test_num,*test_language): # (args=arguments 약자)
     print("{}. {}".format(test_num,test_language))
 
-variable_args_func(count,"Python","C","Java","C++") # 3. 위치가변인자 (tuple의 형태로 전달됨.)
+variable_args_func(count,"Python","C","Java","C++") # 3. 위치가변인자 (tuple의 형태로 전달됨)
 count+=1
 
 def variable_kwargs_func(test_num,**test_language): # (kwargs=keyword arguments 약자)
     print("{}. {}".format(test_num,test_language))
 
-variable_kwargs_func(count,one="Python",two="Java") # 4. 키워드가변인자 (dictionary의 형태로 전달됨.)
+variable_kwargs_func(count,one="Python",two="Java") # 4. 키워드가변인자 (dictionary의 형태로 전달됨)
 count+=1
 
 def local_variable_func():
     count=100
-    print("%d. 지역변수"%count) # 100. 지역변수 (전역변수 count에 영향이 없음.)
+    print("%d. 지역변수"%count) # 100. 지역변수 (전역변수 count에 영향이 없음)
 
 def global_variable_func():
     global count
@@ -37,5 +37,5 @@ def return_func(count):
     return count+1
 
 count=return_func(count)
-print("%d. return"%count) # 6. return 을 이용해 지역변수의 값을 꺼내올 수 있음.
+print("%d. return"%count) # 6. return 을 이용해 지역변수의 값을 꺼내올 수 있음
 count+=1

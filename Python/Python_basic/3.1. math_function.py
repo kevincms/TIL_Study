@@ -7,10 +7,10 @@ count+=1
 print("%d."%count,pow(2,3)) # 2. pow 제곱
 count+=1
 
-print("%d."%count,max(3, 12, 24)) # 3. max 최대값 (max의 파라미터 숫자를 변경할 수 있음, list를 넣어도 됨.)
+print("%d."%count,max(3, 12, 24)) # 3. max 최대값 (max의 파라미터 숫자를 변경할 수 있음, list를 넣어도 됨)
 count+=1
 
-print("%d."%count,min([3, 12, 24])) # 4. min 최소값 (min의 파라미터 숫자를 변경할 수 있음, list를 넣어도 됨.)
+print("%d."%count,min([3, 12, 24])) # 4. min 최소값 (min의 파라미터 숫자를 변경할 수 있음, list를 넣어도 됨)
 count+=1
 
 print("%d."%count,round(3.14))  # 5. round 반올림

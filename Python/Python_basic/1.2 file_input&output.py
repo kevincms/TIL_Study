@@ -21,6 +21,6 @@ test_file=open("test_file.txt","r",encoding="utf8")
 print(test_file.readline(),end="") # 한줄씩 읽어오기
 test_file.close()
 
-with open("test_file.txt","r",encoding="utf8") as test_file: # with을 사용하면 close를 하지 않아도 됨.
+with open("test_file.txt","r",encoding="utf8") as test_file: # with을 사용하면 close를 하지 않아도 됨
     print(test_file.readlines()) # 리스트로 모두 읽어오기
 

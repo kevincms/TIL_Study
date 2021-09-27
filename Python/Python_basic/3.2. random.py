@@ -18,7 +18,7 @@ print("%d."%count,test_list) # 5. 임의의 데이터 list
 count+=1
 
 random.shuffle(test_list)
-print("%d."%count,test_list) # 6. list를 무작위로 섞음.
+print("%d."%count,test_list) # 6. list를 무작위로 섞음
 count+=1
 
 print("%d."%count,random.choice(test_list)) # 7. 리스트 내의 값을 랜덤하게 1개 추출
