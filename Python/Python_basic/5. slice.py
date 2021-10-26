@@ -16,3 +16,6 @@ count+=1
 
 print("%d."%count,test_list[::2],test_str[::3]) # 5.
 count+=1
+
+print("%d."%count,test_list[1:5:2],test_str[1:5:3]) # 6.
+count+=1
