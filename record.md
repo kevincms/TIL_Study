@@ -5,6 +5,6 @@
 
 Jupyter Notebook Basic Proceed Day 5
 Java Basic Proceed Day 2
-Python Crawling&Scraping Proceed Day 4
+Python Crawling&Scraping Proceed Day 5
 CLI Start Day 1
 Python Basic complete
