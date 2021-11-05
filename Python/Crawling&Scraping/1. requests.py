@@ -1,9 +1,7 @@
 import os
 import requests
 
-foler_path=os.path.dirname(__file__)
-file_name="/test.html"
-create_file=foler_path+file_name
+folder_path=os.path.dirname(__file__)
 url="https://www.google.co.kr/"
 count=1
 
@@ -21,11 +19,20 @@ else:
     print("{}. 접근불가능 [에러코드 {}]".format(count,response.status_code))
 count+=1
 
-# User-Agent String 
+# User-Agent String User-Agent가 존재하지 않을 때 연결이 되지 않는 경우가 다수 존재)
 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.54 Safari/537.36 Edg/95.0.1020.40"
 headers={"User-Agent":user_agent}
-response=requests.get(url,headers=headers)
-response.raise_for_status()
+test_logo_url="https://www.google.co.kr/images/branding/googlelogo/1x/googlelogo_light_color_272x92dp.png"
+test_logo_response=requests.get(test_logo_url,headers=headers)
+test_logo_response.raise_for_status()
 
-with open(create_file,"w",encoding="utf8") as test_html:
-    test_html.write(response.text)
+file_name="/test.html"
+create_file=folder_path+file_name
+with open(create_file,"w") as test_html:
+    test_html.write(response.text) #  html 코드를 가져옴
+
+file_name="/test_logo.png"
+create_file=folder_path+file_name
+
+with open(create_file,"wb") as test_picture:
+    test_picture.write(test_logo_response.content) #  사진을 가져옴
