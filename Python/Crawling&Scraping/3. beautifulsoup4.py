@@ -7,7 +7,7 @@ response.raise_for_status()
 soup=bs4.BeautifulSoup(response.text,"lxml")
 count=1
 
-print("%d. %s"%(count,soup.title)) # 1. html 태그 추출
+print("%d. %s"%(count,soup.title)) # 1. 처음의 html 태그 추출
 count+=1
 
 print("%d. %s"%(count,soup.title.get_text())) # 2. 텍스트 추출
@@ -19,16 +19,16 @@ count+=1
 print("%d. %s %s"%(count,soup.a["href"],soup.a.attrs["href"])) # 4. 특정 속성 추출
 count+=1
 
-webtoon_rank_1=soup.find("li",attrs={"class":"rank01"}) # 태그의 속성 이용
+webtoon_rank_1=soup.find("li",attrs={"class":"rank01"}) # 속성을 이용한 태그추출
 title=webtoon_rank_1.a["title"]
 rank1_text=soup.find("a",text=title).get_text() # 태그의 텍스트 이용
-print("%d. (rank1) %s %s"%(count,title,webtoon_rank_1.a["title"])) # 5. html 특정 태그 추출
+print("%d. (rank1) %s %s"%(count,title,webtoon_rank_1.a["title"])) # 5. 처음의 특정 html 태그 추출
 count+=1
 
 webtoon_title=soup.find_all("a",attrs={"class":"title"}) # 모든 태그를 리스트의 형태로 반환
 print("%d. "%count,end="")
 for title in webtoon_title[:3]:
-    print(title.get_text(),end=" ") # 6. html 특정 모든 태그 추출
+    print(title.get_text(),end=" ") # 6. 모든 특정 html 태그 추출
 count+=1
 
 webtoon_rank=webtoon_rank_1.parent
