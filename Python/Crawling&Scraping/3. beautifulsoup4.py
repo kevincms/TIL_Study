@@ -1,5 +1,5 @@
 import requests
-import bs4
+import bs4 # beautifulsoup4와 lxml을 모두 설치
 
 url="https://comic.naver.com/webtoon/weekday"
 response=requests.get(url)
