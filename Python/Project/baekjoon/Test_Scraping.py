@@ -31,7 +31,7 @@ problem_tr_list=soup.find("tbody").find_all("tr")
 problem_num=problem_tr_list[0].find("td").get_text()
 problem_title=problem_tr_list[0].find("td").find_next_sibling("td").find_next_sibling("td").get_text()
 problem_file_name=problem_num+". "+problem_title
-print(problem_file_name)
+# print(problem_file_name)
 
 down_url=baekjoon_url+problem_tr_list[0].find("a")["href"]
 response=requests.get(down_url)
@@ -39,5 +39,23 @@ response.raise_for_status()
 # with open(create_file,"w",encoding="utf-8") as down_html:
 #     down_html.write(response.text)
 
-# # for i in range(12):
-    
+soup=bs4.BeautifulSoup(response.text,"lxml")
+problem_body_list=soup.find("div",attrs={"id":"problem-body"}).find_all("div",attrs={"class":"col-md-12"})
+problem_body_text="\'\'\'\n"
+for i in range(3):
+    problem_body_text=problem_body_text+problem_body_list[i].find("h2").get_text()+"\n -"
+    problem_body_text=problem_body_text+problem_body_list[i].find("p").get_text().strip()+"\n"
+for i in range(4,len(problem_body_list)-1):
+    temp_list=problem_body_list[i].find_all("div",attrs={"class":"col-md-6"})
+    for j in range(len(temp_list)):
+        problem_body_text=problem_body_text+temp_list[j].find("h2").get_text().replace("복사","").strip()+"\n -"
+        if not temp_list[j].find("pre").get_text():
+            problem_body_text=problem_body_text+"없음\n"
+        else:
+            problem_body_text=problem_body_text+temp_list[j].find("pre").get_text()+"\n"
+
+problem_body_text=problem_body_text+"\'\'\'"
+file_name="\\test.py"
+create_file=folder_path+file_name
+with open(create_file,"w",encoding="utf-8") as problem_python:
+    problem_python.write(problem_body_text)
