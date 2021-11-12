@@ -5,9 +5,7 @@
 
 Jupyter Notebook Basic Proceed Day 5
 Java Basic Proceed Day 2
-Python Crawling&Scraping Proceed Day 12
+Python Crawling&Scraping Proceed Day 13
 Baekjoon Start Day 1
 CLI Start Day 1
 Python Basic Complete
-
-날짜 잘못 입력함.
