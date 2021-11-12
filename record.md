@@ -9,3 +9,5 @@ Python Crawling&Scraping Proceed Day 12
 Baekjoon Start Day 1
 CLI Start Day 1
 Python Basic Complete
+
+날짜 잘못 입력함.
