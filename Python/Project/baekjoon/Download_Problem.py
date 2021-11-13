@@ -75,5 +75,23 @@ for i in range(len(tr_list)):
         down_url=baekjoon_url+problem_tr_list[j].find("a")["href"]
         response=requests.get(down_url)
         response.raise_for_status()
-        with open(create_file,"w",encoding="utf-8") as down_html:
-            down_html.write(response.text)
+        # with open(create_file,"w",encoding="utf-8") as down_html:
+        #     down_html.write(response.text)
+        soup=bs4.BeautifulSoup(response.text,"lxml")
+        problem_body_list=soup.find("div",attrs={"id":"problem-body"}).find_all("div",attrs={"class":"col-md-12"})
+        problem_body_text="\'\'\'\n"
+        for k in range(3):
+            problem_body_text=problem_body_text+problem_body_list[k].find("h2").get_text()+"\n -"
+            problem_body_text=problem_body_text+problem_body_list[k].find("p").get_text().strip()+"\n"
+        for k in range(4,len(problem_body_list)-1):
+            temp_list=problem_body_list[k].find_all("div",attrs={"class":"col-md-6"})
+            for l in range(len(temp_list)):
+                problem_body_text=problem_body_text+temp_list[l].find("h2").get_text().replace("복사","").strip()+"\n -"
+                if not temp_list[l].find("pre").get_text():
+                    problem_body_text=problem_body_text+"없음\n"
+                else:
+                    problem_body_text=problem_body_text+temp_list[l].find("pre").get_text()+"\n"
+        problem_body_text=problem_body_text+"\'\'\'"
+        create_file=create_dir+"\\"+problem_file_name+".py"
+        with open(create_file,"w",encoding="utf-8") as problem_python:
+            problem_python.write(problem_body_text)
