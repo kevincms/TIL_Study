@@ -80,6 +80,14 @@ for i in range(len(tr_list)):
         soup=bs4.BeautifulSoup(response.text,"lxml")
         problem_body_list=soup.find("div",attrs={"id":"problem-body"}).find_all("div",attrs={"class":"col-md-12"})
         problem_body_text="\'\'\'\n"
+        if problem_body_list[1].find("h2").get_text()=="제한": # 예외처리
+            problem_body_text=problem_body_text+problem_body_list[0].find("h2").get_text()+"\n -"
+            problem_body_text=problem_body_text+problem_body_list[0].find("p").get_text().strip()+"\n"
+            problem_body_text=problem_body_text+"\'\'\'"
+            create_file=create_dir+"\\"+problem_file_name+".py"
+            with open(create_file,"w",encoding="utf-8") as problem_python:
+                problem_python.write(problem_body_text)
+            continue
         for k in range(3):
             problem_body_text=problem_body_text+problem_body_list[k].find("h2").get_text()+"\n -"
             problem_body_text=problem_body_text+problem_body_list[k].find("p").get_text().strip()+"\n"

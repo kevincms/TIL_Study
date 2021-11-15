@@ -31,3 +31,9 @@ while index>0:
 
 print("\n"+"%d."%count,test_str.count("l")) # 9. 해당 문자열의 개수를 count해서 반환
 count+=1
+
+print("{}. {}".format(count,test_str.split())) # 10. 공백을 기준으로 분리해 반환
+count+=1
+
+test_str=" "+test_str+" "
+print("%d. %s|%s|%s"%(count,test_str.lstrip(),test_str.rstrip(),test_str.strip())) # 11. 공백제거
