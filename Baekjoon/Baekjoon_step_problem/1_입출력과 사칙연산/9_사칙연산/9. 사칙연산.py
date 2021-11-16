@@ -6,13 +6,21 @@
 출력
  -첫째 줄에 A+B, 둘째 줄에 A-B, 셋째 줄에 A*B, 넷째 줄에 A/B, 다섯째 줄에 A%B를 출력한다.
 예제 입력 1
- -7 3
-
+ -7 3
 예제 출력 1
- -10
-4
-21
-2
-1
-
+ -
+10
+4
+21
+2
+1
 '''
+
+a, b=input().split()
+a=int(a)
+b=int(b)
+print(a+b)
+print(a-b)
+print(a*b)
+print(int(a/b))
+print(a%b)
