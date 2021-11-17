@@ -34,4 +34,5 @@ NO
 YES
 NO
 
+https://www.acmicpc.net//problem/9345
 '''

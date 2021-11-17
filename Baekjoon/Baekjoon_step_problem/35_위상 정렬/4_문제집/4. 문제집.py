@@ -13,4 +13,5 @@
 예제 출력 1
  -3 1 4 2
 
+https://www.acmicpc.net//problem/1766
 '''

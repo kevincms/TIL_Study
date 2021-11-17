@@ -23,4 +23,5 @@
 예제 출력 2
  -Y Y N
 
+https://www.acmicpc.net//problem/2629
 '''

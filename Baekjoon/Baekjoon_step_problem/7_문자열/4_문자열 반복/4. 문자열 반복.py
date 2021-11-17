@@ -14,4 +14,5 @@
  -AAABBBCCC
 /////HHHHHTTTTTPPPPP
 
+https://www.acmicpc.net//problem/2675
 '''

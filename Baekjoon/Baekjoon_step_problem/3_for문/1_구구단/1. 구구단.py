@@ -19,4 +19,5 @@
 2 * 8 = 16
 2 * 9 = 18
 
+https://www.acmicpc.net//problem/2739
 '''

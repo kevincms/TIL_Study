@@ -13,6 +13,7 @@
  -4 5
 예제 출력 2
  -0.8
+https://www.acmicpc.net//problem/1008
 '''
 
 a, b=input().split()

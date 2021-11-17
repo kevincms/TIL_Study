@@ -15,6 +15,7 @@
 3776
 1416
 181720
+https://www.acmicpc.net//problem/2588
 '''
 
 a=input()

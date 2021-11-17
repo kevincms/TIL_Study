@@ -21,4 +21,5 @@
  -2
 Poor KCM
 
+https://www.acmicpc.net//problem/10217
 '''

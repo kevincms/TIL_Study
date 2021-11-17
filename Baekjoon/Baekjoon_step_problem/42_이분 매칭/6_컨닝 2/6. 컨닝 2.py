@@ -34,4 +34,5 @@ x...x.x...
 2
 46
 
+https://www.acmicpc.net//problem/11014
 '''

@@ -20,4 +20,5 @@
 예제 출력 1
  -1628
 
+https://www.acmicpc.net//problem/7420
 '''

@@ -14,4 +14,5 @@
  -402
 1203
 
+https://www.acmicpc.net//problem/10250
 '''

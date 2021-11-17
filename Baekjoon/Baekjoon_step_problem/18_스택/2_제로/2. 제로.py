@@ -31,4 +31,5 @@
 예제 출력 2
  -7
 
+https://www.acmicpc.net//problem/10773
 '''

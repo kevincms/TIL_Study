@@ -29,4 +29,5 @@ ridiculous
 1.67
 2.71
 
+https://www.acmicpc.net//problem/5670
 '''

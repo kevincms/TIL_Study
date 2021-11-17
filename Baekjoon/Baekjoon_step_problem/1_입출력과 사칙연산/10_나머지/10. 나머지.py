@@ -13,6 +13,7 @@
 1
 0
 0
+https://www.acmicpc.net//problem/10430
 '''
 
 input_num_list=input().split()

@@ -16,4 +16,5 @@
 예제 출력 1
  -YES
 
+https://www.acmicpc.net//problem/1976
 '''

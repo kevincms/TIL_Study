@@ -29,4 +29,5 @@
 예제 출력 4
  -965310000
 
+https://www.acmicpc.net//problem/1427
 '''

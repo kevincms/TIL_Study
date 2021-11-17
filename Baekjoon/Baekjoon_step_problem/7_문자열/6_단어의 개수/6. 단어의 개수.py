@@ -23,4 +23,5 @@
 예제 출력 3
  -6
 
+https://www.acmicpc.net//problem/1152
 '''

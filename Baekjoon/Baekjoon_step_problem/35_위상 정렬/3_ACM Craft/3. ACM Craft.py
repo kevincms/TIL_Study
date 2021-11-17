@@ -81,4 +81,5 @@
 2
 0
 
+https://www.acmicpc.net//problem/1005
 '''

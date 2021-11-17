@@ -13,4 +13,5 @@ ABCDABD
  -1
 16
 
+https://www.acmicpc.net//problem/1786
 '''

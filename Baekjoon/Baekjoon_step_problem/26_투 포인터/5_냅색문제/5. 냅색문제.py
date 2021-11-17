@@ -47,4 +47,5 @@
 예제 출력 6
  -1073741824
 
+https://www.acmicpc.net//problem/1450
 '''

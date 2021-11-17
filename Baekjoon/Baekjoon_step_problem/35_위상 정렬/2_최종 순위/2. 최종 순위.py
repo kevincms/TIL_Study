@@ -27,4 +27,5 @@
 2 3 1
 IMPOSSIBLE
 
+https://www.acmicpc.net//problem/3665
 '''

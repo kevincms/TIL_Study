@@ -12,4 +12,5 @@
 예제 출력 1
  --99 98
 
+https://www.acmicpc.net//problem/2470
 '''

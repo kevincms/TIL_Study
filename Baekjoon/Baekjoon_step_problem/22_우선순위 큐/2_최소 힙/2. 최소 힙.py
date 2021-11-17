@@ -24,4 +24,5 @@
 12345678
 0
 
+https://www.acmicpc.net//problem/1927
 '''

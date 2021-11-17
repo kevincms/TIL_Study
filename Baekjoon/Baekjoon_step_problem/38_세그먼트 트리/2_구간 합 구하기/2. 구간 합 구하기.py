@@ -21,4 +21,5 @@
  -17
 12
 
+https://www.acmicpc.net//problem/2042
 '''

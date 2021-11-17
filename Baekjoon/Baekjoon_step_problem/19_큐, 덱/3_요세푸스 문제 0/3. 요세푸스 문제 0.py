@@ -11,4 +11,5 @@
 예제 출력 1
  -<3, 6, 2, 7, 5, 1, 4>
 
+https://www.acmicpc.net//problem/11866
 '''

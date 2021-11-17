@@ -29,4 +29,5 @@
 예제 출력 3
  -impossible
 
+https://www.acmicpc.net//problem/10266
 '''

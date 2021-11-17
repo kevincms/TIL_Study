@@ -38,4 +38,5 @@
 2
 0
 
+https://www.acmicpc.net//problem/11286
 '''

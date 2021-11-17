@@ -111,4 +111,5 @@ WBWWBWBBWWBW
 예제 출력 7
  -15
 
+https://www.acmicpc.net//problem/1018
 '''

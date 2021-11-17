@@ -11,4 +11,5 @@
 
 예제 출력 1
  -1 1 1 2 2 2 2 2 3 3 2 2
+https://www.acmicpc.net//problem/11003
 '''

@@ -16,4 +16,5 @@
 5
 67863915
 
+https://www.acmicpc.net//problem/1010
 '''

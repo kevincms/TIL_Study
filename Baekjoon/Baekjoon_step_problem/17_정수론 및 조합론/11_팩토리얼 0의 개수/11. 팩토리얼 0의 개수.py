@@ -17,4 +17,5 @@
 예제 출력 2
  -0
 
+https://www.acmicpc.net//problem/1676
 '''
