@@ -14,4 +14,5 @@
 예제 출력 1
  -10
 
+https://www.acmicpc.net//problem/2293
 '''

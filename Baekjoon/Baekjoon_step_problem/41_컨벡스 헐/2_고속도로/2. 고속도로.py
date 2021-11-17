@@ -27,4 +27,5 @@
  --100 -50 100 50
 -6 3 12 0
 
+https://www.acmicpc.net//problem/10254
 '''

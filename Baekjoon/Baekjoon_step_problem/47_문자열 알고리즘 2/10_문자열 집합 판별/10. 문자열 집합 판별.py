@@ -20,4 +20,5 @@ dooho
 YES
 NO
 
+https://www.acmicpc.net//problem/9250
 '''

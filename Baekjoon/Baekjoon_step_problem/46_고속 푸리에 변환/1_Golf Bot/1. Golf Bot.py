@@ -21,4 +21,5 @@
 예제 출력 1
  -4
 
+https://www.acmicpc.net//problem/10531
 '''

@@ -13,4 +13,5 @@
  -4
 10 20 30 50
 
+https://www.acmicpc.net//problem/14003
 '''

@@ -14,6 +14,7 @@
 ( 0 )"""\
 |"^"`    |
 ||_/=\\__|
+https://www.acmicpc.net//problem/10172
 '''
 
 print("\

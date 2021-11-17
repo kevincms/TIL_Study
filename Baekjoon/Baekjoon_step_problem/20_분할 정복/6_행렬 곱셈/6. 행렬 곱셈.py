@@ -19,4 +19,5 @@
 -3 -6 12
 -5 -10 18
 
+https://www.acmicpc.net//problem/2740
 '''

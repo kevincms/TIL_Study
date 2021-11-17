@@ -16,4 +16,5 @@
 2 1
 3 -2
 
+https://www.acmicpc.net//problem/2494
 '''

@@ -41,4 +41,5 @@
 예제 출력 2
  -Impossible
 
+https://www.acmicpc.net//problem/14750
 '''

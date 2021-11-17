@@ -9,6 +9,7 @@
  -1 2
 예제 출력 1
  -3
+https://www.acmicpc.net//problem/1000
 '''
 
 a, b=input().split()

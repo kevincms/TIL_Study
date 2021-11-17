@@ -45,4 +45,5 @@
 예제 출력 2
  -2
 
+https://www.acmicpc.net//problem/1012
 '''

@@ -61,4 +61,5 @@
 예제 출력 8
  -55.55555555555556
 
+https://www.acmicpc.net//problem/1546
 '''

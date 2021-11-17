@@ -6,21 +6,25 @@
 출력
  -첫째 줄에 다음 세 가지 중 하나를 출력한다.
 예제 입력 1
- -1 2
-
+ -1 2
 예제 출력 1
- -<
-
+ -<
 예제 입력 2
- -10 2
-
+ -10 2
 예제 출력 2
- ->
-
+ ->
 예제 입력 3
- -5 5
-
+ -5 5
 예제 출력 3
- -==
-
+ -==
+https://www.acmicpc.net//problem/1330
 '''
+num_list=input().split()
+for i in range(len(num_list)):
+    num_list[i]=int(num_list[i])
+if num_list[0]>num_list[1]:
+    print(">")
+elif num_list[0]<num_list[1]:
+    print("<")
+else :
+    print("==")

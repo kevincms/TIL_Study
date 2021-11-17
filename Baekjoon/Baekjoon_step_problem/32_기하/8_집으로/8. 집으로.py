@@ -41,4 +41,5 @@
 예제 출력 6
  -10.0
 
+https://www.acmicpc.net//problem/1069
 '''

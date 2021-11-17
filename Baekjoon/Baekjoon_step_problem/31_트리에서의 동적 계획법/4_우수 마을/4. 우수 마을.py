@@ -18,4 +18,5 @@
 예제 출력 1
  -14000
 
+https://www.acmicpc.net//problem/1949
 '''

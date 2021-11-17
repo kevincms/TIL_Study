@@ -40,4 +40,5 @@
 512 0 0 0 512
 512 0 0 0 512
 
+https://www.acmicpc.net//problem/10830
 '''

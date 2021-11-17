@@ -11,4 +11,5 @@
 예제 출력 1
  -608.366
 
+https://www.acmicpc.net//problem/7869
 '''

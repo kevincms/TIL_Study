@@ -27,4 +27,5 @@
 6 4 3 7 8 1 9 5 2
 2 5 8 3 9 4 7 6 1
 
+https://www.acmicpc.net//problem/2580
 '''

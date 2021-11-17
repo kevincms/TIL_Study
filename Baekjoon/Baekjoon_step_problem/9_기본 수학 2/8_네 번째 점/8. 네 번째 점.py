@@ -21,4 +21,5 @@
 예제 출력 2
  -30 10
 
+https://www.acmicpc.net//problem/3009
 '''

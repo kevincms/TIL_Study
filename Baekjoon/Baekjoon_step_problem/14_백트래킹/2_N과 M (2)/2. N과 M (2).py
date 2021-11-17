@@ -30,4 +30,5 @@
 예제 출력 3
  -1 2 3 4
 
+https://www.acmicpc.net//problem/15650
 '''
