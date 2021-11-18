@@ -7,15 +7,20 @@
  -첫째 줄에 윤년이면 1, 아니면 0을 출력한다.
 예제 입력 1
  -2000
-
 예제 출력 1
  -1
-
 예제 입력 2
  -1999
-
 예제 출력 2
  -0
-
 https://www.acmicpc.net//problem/2753
 '''
+
+year=int(input())
+if year%4==0:
+    if year%400!=0 and year%100==0:
+        print(0)
+    else:
+        print(1)
+else:
+    print(0)
