@@ -9,7 +9,8 @@
  -2
 
 예제 출력 1
- -2 * 1 = 2
+ -
+2 * 1 = 2
 2 * 2 = 4
 2 * 3 = 6
 2 * 4 = 8
@@ -18,6 +19,9 @@
 2 * 7 = 14
 2 * 8 = 16
 2 * 9 = 18
-
 https://www.acmicpc.net//problem/2739
 '''
+
+num=int(input())
+for i in range(9):
+    print("%d * %d = %d"%(num,i+1,num*(i+1)))

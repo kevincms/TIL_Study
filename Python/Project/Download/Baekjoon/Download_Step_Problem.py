@@ -38,7 +38,7 @@ def not_avaible_str_in_file(file_string):
             
             
     
-folder_path="D:\\baekjoon_down"
+folder_path="D:\\Baekjoon_step_problem"
 url="https://www.acmicpc.net/step"
 baekjoon_url="https://www.acmicpc.net/"
 
@@ -82,7 +82,8 @@ for i in range(len(tr_list)):
         problem_body_text="\'\'\'\n"
         if problem_body_list[1].find("h2").get_text()=="제한": # 예외처리
             problem_body_text=problem_body_text+problem_body_list[0].find("h2").get_text()+"\n -"
-            problem_body_text=problem_body_text+problem_body_list[0].find("p").get_text().strip()+"\n"
+            problem_body_text=problem_body_text+problem_body_list[0].find("div",attrs={"class":"problem-text"}).get_text().strip()+"\n"
+            problem_body_text=problem_body_text+down_url+"\n"
             problem_body_text=problem_body_text+"\'\'\'"
             create_file=create_dir+"\\"+problem_file_name+".py"
             with open(create_file,"w",encoding="utf-8") as problem_python:
@@ -90,7 +91,7 @@ for i in range(len(tr_list)):
             continue
         for k in range(3):
             problem_body_text=problem_body_text+problem_body_list[k].find("h2").get_text()+"\n -"
-            problem_body_text=problem_body_text+problem_body_list[k].find("p").get_text().strip()+"\n"
+            problem_body_text=problem_body_text+problem_body_list[k].find("div",attrs={"class":"problem-text"}).get_text().strip()+"\n"
         for k in range(4,len(problem_body_list)-1):
             temp_list=problem_body_list[k].find_all("div",attrs={"class":"col-md-6"})
             for l in range(len(temp_list)):
@@ -99,6 +100,7 @@ for i in range(len(tr_list)):
                     problem_body_text=problem_body_text+"없음\n"
                 else:
                     problem_body_text=problem_body_text+temp_list[l].find("pre").get_text()+"\n"
+        problem_body_text=problem_body_text+down_url+"\n"
         problem_body_text=problem_body_text+"\'\'\'"
         create_file=create_dir+"\\"+problem_file_name+".py"
         with open(create_file,"w",encoding="utf-8") as problem_python:
