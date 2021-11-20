@@ -7,19 +7,27 @@
 출력
  -각 테스트 케이스마다 A+B를 출력한다.
 예제 입력 1
- -5
-1 1
-2 3
-3 4
-9 8
-5 2
-
+ -5
+1 1
+2 3
+3 4
+9 8
+5 2
 예제 출력 1
- -2
-5
-7
-17
-7
-
+ -
+2
+5
+7
+17
+7
 https://www.acmicpc.net//problem/10950
 '''
+
+input_num_count=int(input())
+for i in range(input_num_count):
+    num_list=input().split()
+    output_num=0
+    for j in range(len(num_list)):
+        num_list[j]=int(num_list[j])
+        output_num+=num_list[j]
+    print(output_num)
