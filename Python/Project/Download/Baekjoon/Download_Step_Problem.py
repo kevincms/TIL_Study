@@ -70,14 +70,36 @@ for i in range(len(tr_list)):
         problem_file_name=problem_num+". "+problem_title
         create_dir=dir_name+"\\"+problem_num+"_"+problem_title
         createFolder(create_dir)
-        create_file=create_dir+"\\"+problem_file_name+".html"
         # print(create_file)
         down_url=baekjoon_url+problem_tr_list[j].find("a")["href"]
         response=requests.get(down_url)
         response.raise_for_status()
-        # with open(create_file,"w",encoding="utf-8") as down_html:
-        #     down_html.write(response.text)
         soup=bs4.BeautifulSoup(response.text,"lxml")
+
+        image=soup.find("div",attrs={"id":"problem-body"}).find_all("img")
+        if image:
+            # pass
+            for k in range(len(image)):
+                file_name="\\image{}.png".format(k+1)
+                image[k]=image[k]["src"]
+                if not ("https" in image[k]):
+                    image[k]=baekjoon_url+image[k]
+                image_response=requests.get(image[k])
+                image_response.raise_for_status()
+                create_file=create_dir+file_name
+                with open(create_file,"wb") as test_picture:
+                    test_picture.write(image_response.content) #  사진을 가져옴 
+                image_modify_url=create_dir+file_name
+                create_file=create_dir+"\\"+problem_file_name+".html"
+                soup.find("div",attrs={"id":"problem-body"}).find_all("img")[k]["src"]=image_modify_url
+                with open(create_file,"w",encoding="utf-8") as down_html:
+                    down_html.write(str(soup)) # 사진 url 수정 html
+        else:
+            # pass
+            create_file=create_dir+"\\"+problem_file_name+".html"
+            with open(create_file,"w",encoding="utf-8") as down_html:
+                down_html.write(response.text) # html
+
         problem_body_list=soup.find("div",attrs={"id":"problem-body"}).find_all("div",attrs={"class":"col-md-12"})
         problem_body_text="\'\'\'\n"
         if problem_body_list[1].find("h2").get_text()=="제한": # 예외처리
@@ -103,5 +125,5 @@ for i in range(len(tr_list)):
         problem_body_text=problem_body_text+down_url+"\n"
         problem_body_text=problem_body_text+"\'\'\'"
         create_file=create_dir+"\\"+problem_file_name+".py"
-        with open(create_file,"w",encoding="utf-8") as problem_python:
-            problem_python.write(problem_body_text)
+        # with open(create_file,"w",encoding="utf-8") as problem_python:
+        #     problem_python.write(problem_body_text)
