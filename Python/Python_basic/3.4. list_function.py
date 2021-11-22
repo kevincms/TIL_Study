@@ -44,17 +44,22 @@ test_list=["%d"%(i) for i in range(4,0,-1)]
 print("%d."%count,test_list) # 11.
 count+=1
 
+# list 요소 type 변경
+test_list=list(map(int,test_list))
+print("%d."%count,test_list) # 12.
+count+=1
+
 # list 정렬
 test_list.sort()
-print("%d."%count,test_list) # 12.
+print("%d."%count,test_list) # 13.
 count+=1
 
 # list 역정렬
 test_list.reverse()
-print("%d."%count,test_list) # 13.
+print("%d."%count,test_list) # 14.
 count+=1
 
 # list 정리
 test_list.clear()
-print("%d."%count,test_list) # 14.
+print("%d."%count,test_list) # 15.
 count+=1

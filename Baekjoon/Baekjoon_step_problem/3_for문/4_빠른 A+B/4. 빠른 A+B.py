@@ -12,19 +12,24 @@ Python을 사용하고 있다면, input 대신 sys.stdin.readline을 사용할 
 출력
  -각 테스트케이스마다 A+B를 한 줄에 하나씩 순서대로 출력한다.
 예제 입력 1
- -5
-1 1
-12 34
-5 500
-40 60
-1000 1000
-
-예제 출력 1
- -2
-46
-505
-100
-2000
-
-https://www.acmicpc.net//problem/15552
+ -5
+ 1 1
+ 12 34
+ 5 500
+ 40 60
+ 1000 1000
+ 예제 출력 1
+ -2
+ 46
+ 505
+ 100
+ 2000
+ https://www.acmicpc.net//problem/15552
 '''
+
+import sys
+input=sys.stdin.readline
+input_num=int(input())
+for i in range(input_num):
+    num1, num2=map(int,input().split())
+    print(num1+num2)
