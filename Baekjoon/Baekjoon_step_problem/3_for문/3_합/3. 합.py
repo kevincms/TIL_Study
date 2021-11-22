@@ -12,3 +12,5 @@
 https://www.acmicpc.net//problem/8393
 '''
 
+num=int(input())
+print(int(num*(num+1)/2))
