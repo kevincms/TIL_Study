@@ -7,19 +7,24 @@
 출력
  -각 테스트 케이스마다 "Case #x: A + B = C" 형식으로 출력한다. x는 테스트 케이스 번호이고 1부터 시작하며, C는 A+B이다.
 예제 입력 1
- -5
-1 1
-2 3
-3 4
-9 8
-5 2
-
+ -5
+1 1
+2 3
+3 4
+9 8
+5 2
 예제 출력 1
- -Case #1: 1 + 1 = 2
-Case #2: 2 + 3 = 5
-Case #3: 3 + 4 = 7
-Case #4: 9 + 8 = 17
-Case #5: 5 + 2 = 7
-
+ -Case #1: 1 + 1 = 2
+ Case #2: 2 + 3 = 5
+ Case #3: 3 + 4 = 7
+ Case #4: 9 + 8 = 17
+ Case #5: 5 + 2 = 7
 https://www.acmicpc.net//problem/11022
 '''
+
+import sys
+input=sys.stdin.readline
+num=int(input())
+for i in range(num):
+    num1, num2=map(int,input().split())
+    print("Case #%d: %d + %d = %d"%(i+1,num1,num2,num1+num2))
