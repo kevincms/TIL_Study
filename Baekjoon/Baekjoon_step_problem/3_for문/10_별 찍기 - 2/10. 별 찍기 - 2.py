@@ -7,14 +7,21 @@
 출력
  -첫째 줄부터 N번째 줄까지 차례대로 별을 출력한다.
 예제 입력 1
- -5
-
-예제 출력 1
- -    *
-   **
-  ***
- ****
-*****
-
+ -5
+ 예제 출력 1
+  -
+     *
+    **
+   ***
+  ****
+ *****
 https://www.acmicpc.net//problem/2439
 '''
+
+num=int(input())
+for i in range(num):
+  for j in range(num-i-1):
+    print(" ",end="")
+  for j in range(i+1):
+    print("*",end="")
+  print("")
