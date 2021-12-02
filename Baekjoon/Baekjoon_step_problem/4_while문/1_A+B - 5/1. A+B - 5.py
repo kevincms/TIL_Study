@@ -8,19 +8,24 @@
 출력
  -각 테스트 케이스마다 A+B를 출력한다.
 예제 입력 1
- -1 1
-2 3
-3 4
-9 8
-5 2
-0 0
-
-예제 출력 1
- -2
-5
-7
-17
-7
-
+ -
+1 1
+2 3
+3 4
+9 8
+5 2
+0 0
+ 예제 출력 1
+ -2
+ 5
+ 7
+ 17
+ 7
 https://www.acmicpc.net//problem/10952
 '''
+
+import sys
+while 1:
+    num1, num2=map(int,sys.stdin.readline().split())
+    if num1==0 and num2==0: break
+    print(num1+num2)
