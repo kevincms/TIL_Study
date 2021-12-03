@@ -14,10 +14,19 @@
 9 8
 5 2
 예제 출력 1
- -2
+ -
+2
 5
 7
 17
 7
 https://www.acmicpc.net//problem/10951
 '''
+
+import sys
+while 1:
+    try:
+        num1, num2=map(int,sys.stdin.readline().split())
+        print(num1+num2)
+    except:
+        break
