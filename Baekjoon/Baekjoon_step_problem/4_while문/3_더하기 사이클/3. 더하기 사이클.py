@@ -30,3 +30,18 @@ N이 주어졌을 때, N의 사이클의 길이를 구하는 프로그램을 작
  -12
 https://www.acmicpc.net//problem/1110
 '''
+
+num=int(input())
+original_num=num
+count=1
+while 1:
+    tens_place=int(num/10)
+    ones_place=int(num%10)
+    if tens_place==0:
+        num=ones_place*10+int((ones_place)%10)
+    else:
+        num=ones_place*10+int((tens_place+ones_place)%10)
+    if num==original_num:
+        break
+    else: count+=1
+print(count)
