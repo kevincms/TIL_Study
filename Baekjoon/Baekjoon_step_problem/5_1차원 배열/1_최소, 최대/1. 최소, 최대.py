@@ -6,11 +6,15 @@
 출력
  -첫째 줄에 주어진 정수 N개의 최솟값과 최댓값을 공백으로 구분해 출력한다.
 예제 입력 1
- -5
-20 10 35 30 7
-
+ -5
+20 10 35 30 7
 예제 출력 1
- -7 35
-
+ -7 35
 https://www.acmicpc.net//problem/10818
 '''
+
+import sys
+input=sys.stdin.readline
+num=int(input())
+num_list=list(map(int,input().split()))
+print(min(num_list), max(num_list))
