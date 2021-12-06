@@ -9,7 +9,8 @@
 출력
  -첫째 줄에 최댓값을 출력하고, 둘째 줄에 최댓값이 몇 번째 수인지를 출력한다.
 예제 입력 1
- -3
+ -
+3
 29
 38
 12
@@ -18,10 +19,19 @@
 40
 85
 61
-
 예제 출력 1
- -85
+ -
+85
 8
-
 https://www.acmicpc.net//problem/2562
 '''
+
+import sys
+input=sys.stdin.readline
+input_num=9
+num_list=[0 for i in range(input_num)]
+for i in range(input_num):
+    num_list[i]=int(input())
+max_value=max(num_list)
+print(max_value)
+print(num_list.index(max_value)+1)
