@@ -7,12 +7,13 @@
 출력
  -첫째 줄에는 A × B × C의 결과에 0 이 몇 번 쓰였는지 출력한다. 마찬가지로 둘째 줄부터 열 번째 줄까지 A × B × C의 결과에 1부터 9까지의 숫자가 각각 몇 번 쓰였는지 차례로 한 줄에 하나씩 출력한다.
 예제 입력 1
- -150
+ -
+150
 266
 427
-
 예제 출력 1
- -3
+ -
+3
 1
 0
 2
@@ -22,6 +23,21 @@
 2
 0
 0
-
 https://www.acmicpc.net//problem/2577
 '''
+
+import sys
+input=sys.stdin.readline
+input_num=3
+goal_num=1
+for i in range(input_num):
+    goal_num*=int(input())
+digit=[]
+while 1:
+    count=0
+    digit.append(goal_num%10)
+    count+=1
+    goal_num=int(goal_num/10)
+    if goal_num==0: break
+for i in range(10):
+    print(digit.count(i))
