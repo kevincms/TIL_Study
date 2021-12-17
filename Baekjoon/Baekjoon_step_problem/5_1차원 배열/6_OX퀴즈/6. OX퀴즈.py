@@ -8,19 +8,20 @@ OX퀴즈의 결과가 주어졌을 때, 점수를 구하는 프로그램을 작�
 출력
  -각 테스트 케이스마다 점수를 출력한다.
 예제 입력 1
- -5
-OOXXOXXOOO
-OOXXOOXXOO
-OXOXOXOXOXOXOX
-OOOOOOOOOO
-OOOOXOOOOXOOOOX
+ -5
+OOXXOXXOOO
+OOXXOOXXOO
+OXOXOXOXOXOXOX
+OOOOOOOOOO
+OOOOXOOOOXOOOOX
 
 예제 출력 1
- -10
-9
-7
-55
-30
+ -
+10
+9
+7
+55
+30
 
 https://www.acmicpc.net//problem/8958
 '''
