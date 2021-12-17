@@ -65,3 +65,14 @@
 
 https://www.acmicpc.net//problem/1546
 '''
+
+import sys
+input=sys.stdin.readline
+input_num=int(input())
+input_num_list=list(map(int,input().split()))
+max_value=max(input_num_list)
+sum_value=0
+for i in range(input_num):
+    input_num_list[i]=input_num_list[i]/max_value*100
+    sum_value+=input_num_list[i]
+print(sum_value/input_num)
