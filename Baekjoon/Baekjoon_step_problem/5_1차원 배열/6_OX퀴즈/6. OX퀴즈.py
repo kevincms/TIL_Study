@@ -25,3 +25,21 @@ OOOOXOOOOXOOOOX
 
 https://www.acmicpc.net//problem/8958
 '''
+
+import sys
+input=sys.stdin.readline
+input_num=int(input())
+for i in range(input_num):
+    answer_list=list(input())
+    answer_list=[j for j,k in enumerate(answer_list) if k=="O"]
+    score=0
+    for j in range(len(answer_list)):
+        score+=1
+        score_temp_cal=1
+        while 1:
+            if j>0 and answer_list[j]-score_temp_cal==answer_list[j-score_temp_cal]:
+                score_temp_cal+=1
+                score+=1
+            else :
+                break
+    print(score)
