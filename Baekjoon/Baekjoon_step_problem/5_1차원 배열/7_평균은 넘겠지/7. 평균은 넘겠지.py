@@ -24,3 +24,15 @@
 
 https://www.acmicpc.net//problem/4344
 '''
+
+import sys
+input=sys.stdin.readline
+input_num=int(input())
+for i in range(input_num):
+    score=list(map(int, input().split()))
+    average=sum(score[1:])/score[0]
+    count=0
+    for j in score[1:]:
+        if j>average: count+=1
+    average_rate=round((count/score[0])*100,3)
+    print("%.3f%%"%average_rate)
