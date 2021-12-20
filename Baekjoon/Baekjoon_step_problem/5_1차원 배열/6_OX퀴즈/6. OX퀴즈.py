@@ -25,7 +25,20 @@ OOOOXOOOOXOOOOX
 
 https://www.acmicpc.net//problem/8958
 '''
-
+import sys
+input=sys.stdin.readline
+input_num=int(input())
+for i in range(input_num):
+    answer_list=list(input())
+    score=0
+    score_count=1
+    for j in answer_list:
+        if j=="O":
+            score+=score_count
+            score_count+=1
+        else: score_count=1
+    print(score)
+'''
 import sys
 input=sys.stdin.readline
 input_num=int(input())
@@ -43,3 +56,4 @@ for i in range(input_num):
             else :
                 break
     print(score)
+'''
