@@ -56,14 +56,6 @@ for i in range(10000):
 for i in num_list:
     print(i)
 '''
-def digit_sum(num):
-    sum=0
-    while 1:
-        if num==0: break
-        sum+=(num%10)
-        num=int(num/10)
-    return sum
-
 for i in range(10000):
     for j in range(i+1):
         constructor=j+digit_sum(j)
