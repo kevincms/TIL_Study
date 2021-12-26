@@ -7,13 +7,21 @@ QR Code "alphanumeric" 문자는 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ\$%*+-./: �
 출력
  -각 테스트 케이스에 대해 P를 출력한다.
 예제 입력 1
- -2
-3 ABC
-5 /HTP
-
+ -2
+3 ABC
+5 /HTP
 예제 출력 1
- -AAABBBCCC
-/////HHHHHTTTTTPPPPP
-
+ -AAABBBCCC
+/////HHHHHTTTTTPPPPP
 https://www.acmicpc.net//problem/2675
 '''
+
+import sys
+input=sys.stdin.readline
+input_str=int(input())
+for i in range(input_str):
+    num, string=input().split()
+    num=int(num)
+    for j in string:
+        print(j*num,end="")
+    print("")
