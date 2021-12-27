@@ -6,28 +6,35 @@
 출력
  -첫째 줄에 이 단어에서 가장 많이 사용된 알파벳을 대문자로 출력한다. 단, 가장 많이 사용된 알파벳이 여러 개 존재하는 경우에는 ?를 출력한다.
 예제 입력 1
- -Mississipi
-
+ -Mississipi
 예제 출력 1
- -?
-
+ -?
 예제 입력 2
- -zZa
-
+ -zZa
 예제 출력 2
- -Z
-
+ -Z
 예제 입력 3
- -z
-
+ -z
 예제 출력 3
- -Z
-
+ -Z
 예제 입력 4
- -baaa
-
+ -baaa
 예제 출력 4
- -A
-
+ -A
 https://www.acmicpc.net//problem/1157
 '''
+
+input_word=input()
+input_word=input_word.lower()
+ascii_a=ord("a")
+ascii_z=ord("z")
+alpha_num=ascii_z-ascii_a+1
+alpha_count_list=[0 for i in range(alpha_num)]
+for i in input_word:
+    alpha_index=ord(i)-ascii_a
+    alpha_count_list[alpha_index]+=1
+max_value=max(alpha_count_list)
+max_list=list(filter(lambda x:alpha_count_list[x]==max_value, range(len(alpha_count_list))))
+if len(max_list)==1:
+    print(chr(max_list[0]+ascii_a).upper())
+else: print("?")
