@@ -9,21 +9,22 @@
  -첫째 줄에 상수의 대답을 출력한다.
 예제 입력 1
  -734 893
-
 예제 출력 1
  -437
-
 예제 입력 2
  -221 231
-
 예제 출력 2
  -132
-
 예제 입력 3
  -839 237
-
 예제 출력 3
  -938
-
 https://www.acmicpc.net//problem/2908
 '''
+
+input_num_list=list(map(int,input().split()))
+for i in range(len(input_num_list)):
+    input_num_list[i]=list(str(input_num_list[i]))
+    input_num_list[i].reverse()
+    input_num_list[i]=int("".join(input_num_list[i]))
+print(max(input_num_list))
