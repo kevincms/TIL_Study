@@ -40,3 +40,12 @@ dž는 무조건 하나의 알파벳으로 쓰이고, d와 ž가 분리된 것�
  -3
 https://www.acmicpc.net//problem/2941
 '''
+
+input_str=input()
+count=0
+for i, j in enumerate(input_str):
+    if j=="=" or j=="-":
+        count+=1
+        if input_str[i-2]=="d" and input_str[i-1]=="z": count+=1
+    elif j=="j" and (input_str[i-1]=="l" or input_str[i-1]=="n"): count+=1
+print(len(input_str)-count)
