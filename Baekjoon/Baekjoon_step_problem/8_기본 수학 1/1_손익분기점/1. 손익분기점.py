@@ -10,20 +10,22 @@ A, B, C가 주어졌을 때, 손익분기점을 구하는 프로그램을 작성
  -첫 번째 줄에 손익분기점 즉 최초로 이익이 발생하는 판매량을 출력한다. 손익분기점이 존재하지 않으면 -1을 출력한다.
 예제 입력 1
  -1000 70 170
-
 예제 출력 1
  -11
 예제 입력 2
  -3 2 1
-
 예제 출력 2
  --1
-
 예제 입력 3
  -2100000000 9 10
-
 예제 출력 3
  -2100000001
-
 https://www.acmicpc.net//problem/1712
 '''
+
+constant, variable, sales=map(int,input().split())
+if variable>=sales: print("-1")
+else:
+    benefit=sales-variable
+    output_num=int(constant/benefit)+1
+    print(output_num)
