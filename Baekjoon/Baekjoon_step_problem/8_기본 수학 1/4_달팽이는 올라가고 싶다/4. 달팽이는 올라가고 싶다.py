@@ -6,24 +6,26 @@
 입력
  -첫째 줄에 세 정수 A, B, V가 공백으로 구분되어서 주어진다. (1 ≤ B < A ≤ V ≤ 1,000,000,000)
 출력
- -첫째 줄에 달팽이가 나무 막대를 모두 올라가는데 며칠이 걸리는지 출력한다.
+ -첫째 줄에 달팽이가 나무 막대를 모두 올라가는데 며칠이 걸리는지 출력한다.
 예제 입력 1
  -2 1 5
-
 예제 출력 1
  -4
-
 예제 입력 2
  -5 1 6
-
 예제 출력 2
  -2
-
 예제 입력 3
  -100 99 1000000000
-
 예제 출력 3
  -999999901
-
 https://www.acmicpc.net//problem/2869
 '''
+
+up, down, goal=map(int,input().split())
+step=up-down
+temp_float=(goal-up)/step
+temp_int=int(temp_float)
+if temp_int==temp_float: output_time=temp_int+1
+else: output_time=temp_int+2
+print(output_time)
