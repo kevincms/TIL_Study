@@ -8,34 +8,36 @@
 출력
  -상근이가 배달하는 봉지의 최소 개수를 출력한다. 만약, 정확하게 N킬로그램을 만들 수 없다면 -1을 출력한다.
 예제 입력 1
- -18
-
+ -18
 예제 출력 1
- -4
-
+ -4
 예제 입력 2
- -4
-
+ -4
 예제 출력 2
- --1
-
+ --1
 예제 입력 3
- -6
-
+ -6
 예제 출력 3
- -2
-
+ -2
 예제 입력 4
- -9
-
+ -9
 예제 출력 4
- -3
-
+ -3
 예제 입력 5
- -11
-
+ -11
 예제 출력 5
- -3
-
+ -3
 https://www.acmicpc.net//problem/2839
 '''
+
+input_num=int(input())
+for i in range(5000):
+    if input_num<0:
+        print(-1)
+        break
+    temp_float=input_num/5
+    temp_int=int(temp_float)
+    if temp_int==temp_float:
+        print(temp_int+i)
+        break
+    input_num-=3
