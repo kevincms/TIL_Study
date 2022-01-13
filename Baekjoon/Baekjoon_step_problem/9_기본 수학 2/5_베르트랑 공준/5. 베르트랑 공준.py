@@ -18,8 +18,7 @@
 10000
 100000
 0
-
-예제 출력 1
+예제 출력 1%
  -1
 4
 3
@@ -27,6 +26,24 @@
 135
 1033
 8392
-
 https://www.acmicpc.net//problem/4948
 '''
+
+import sys
+input=sys.stdin.readline
+while 1:
+    input_num=int(input())
+    if input_num==0: break
+    start_num=input_num
+    end_num=input_num*2
+    prime_list=[True for i in range(end_num+1)]
+    prime_list[:2]=[False,False]
+    for i in range(end_num+1):
+        if prime_list[i]==True:
+            for j in range(2*i,end_num+1,i):
+                prime_list[j]=False
+    count=0
+    for i in range(end_num,start_num,-1):
+        if prime_list[i]==True:
+            count+=1
+    print(count)
