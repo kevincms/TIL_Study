@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 '''
 문제
  -1보다 큰 자연수 중에서 1과 자기 자신을 제외한 약수가 없는 자연수를 소수라고 한다. 예를 들어, 5는 1과 5를 제외한 약수가 없기 때문에 소수이다. 하지만, 6은 6 = 2 * 3 이기 때문에 소수가 아니다.
@@ -18,3 +19,20 @@
 5 11
 https://www.acmicpc.net//problem/9020
 '''
+
+import sys
+input=sys.stdin.readline
+input_num=int(input())
+prime_list=[True for i in range(10000)]
+prime_list[:2]=[False,False]
+for i in range(10000):
+    if prime_list[i]==True:
+        for j in range(2*i,10000,i):
+            prime_list[j]=False
+for _ in range(input_num):
+    goldbach_num=int(input())
+    for i in range(int(goldbach_num/2),goldbach_num):
+        if prime_list[i]==True:
+            if prime_list[goldbach_num-i]==True:
+                print(goldbach_num-i,i)
+                break
