@@ -9,17 +9,25 @@
  -5 5
 5 7
 7 5
-
 예제 출력 1
  -7 7
-
 예제 입력 2
  -30 20
 10 10
 10 20
-
 예제 출력 2
  -30 10
-
 https://www.acmicpc.net//problem/3009
 '''
+
+import sys
+input=sys.stdin.readline
+location=[[]for _ in range(3)]
+answeer=[0 for _ in range(2)]
+for i in range(3):
+    location[i]=list(map(int,input().split()))
+location.sort()
+for i in range(2):
+    for j in range(3):
+        answeer[i]=answeer[i]^location[j][i]
+print(answeer[0],answeer[1])
