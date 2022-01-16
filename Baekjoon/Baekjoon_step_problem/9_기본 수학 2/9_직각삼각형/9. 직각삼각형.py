@@ -6,15 +6,23 @@
 출력
  -각 입력에 대해 직각 삼각형이 맞다면 "right", 아니라면 "wrong"을 출력한다.
 예제 입력 1
- -6 8 10
-25 52 60
-5 12 13
-0 0 0
-
+ -6 8 10
+25 52 60
+5 12 13
+0 0 0
 예제 출력 1
- -right
-wrong
-right
-
+ -right
+wrong
+right
 https://www.acmicpc.net//problem/4153
 '''
+
+import sys
+input=sys.stdin.readline
+loop_out=[0 for i in range(3)]
+while 1:
+    input_num_list=list(map(int,input().split()))
+    if input_num_list==loop_out: break
+    input_num_list.sort()
+    if input_num_list[2]**2==input_num_list[1]**2+input_num_list[0]**2 : print("right")
+    else: print("wrong")
