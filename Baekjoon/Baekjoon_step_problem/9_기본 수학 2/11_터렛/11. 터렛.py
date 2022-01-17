@@ -25,4 +25,16 @@ input=sys.stdin.readline
 input_data_num=int(input())
 for _ in range(input_data_num):
     input_num_list=list(map(int,input().split()))
-    
+    radius_distance=input_num_list[2]+input_num_list[5]
+    location_distance=((input_num_list[3]-input_num_list[0])**2+(input_num_list[4]-input_num_list[1])**2)**0.5
+    down_radius_distance=min(input_num_list[2],input_num_list[5])
+    up_radius_distance=max(input_num_list[2],input_num_list[5])
+    if location_distance==0:
+        if input_num_list[2]==input_num_list[5]: print(-1)
+        else: print(0)
+    elif location_distance==radius_distance: print(1)
+    elif location_distance+down_radius_distance==up_radius_distance: print(1)
+    elif location_distance>=radius_distance: print(0)
+    elif location_distance<=radius_distance:
+        if location_distance+down_radius_distance<up_radius_distance: print(0)
+        else: print(2)
