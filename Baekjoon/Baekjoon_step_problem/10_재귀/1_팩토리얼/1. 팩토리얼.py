@@ -15,3 +15,10 @@
  -1
 https://www.acmicpc.net//problem/10872
 '''
+
+def factorial(input_num):
+    if input_num==1 or input_num==0: return 1
+    else: return input_num*factorial(input_num-1)
+
+input_num=int(input())
+print(factorial(input_num))
