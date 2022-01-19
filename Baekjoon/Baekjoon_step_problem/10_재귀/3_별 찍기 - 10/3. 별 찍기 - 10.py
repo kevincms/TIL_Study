@@ -45,4 +45,19 @@ N이 3보다 클 경우, 크기 N의 패턴은 공백으로 채워진 가운데�
 https://www.acmicpc.net//problem/2447
 '''
 
-input_num=int(input())
+def star_square(input_num): 
+    if input_num == 1: 
+        return ['*'] 
+    star_list=star_square(input_num//3)
+    return_star=[]
+    for S in star_list: 
+        return_star.append(S*3) 
+    for S in star_list: 
+        return_star.append(S+' '*(input_num//3)+S) 
+    for S in star_list: 
+        return_star.append(S*3) 
+    return return_star
+    
+input_num=int(input()) 
+star_square_list=star_square(input_num)
+print('\n'.join(star_square_list))
