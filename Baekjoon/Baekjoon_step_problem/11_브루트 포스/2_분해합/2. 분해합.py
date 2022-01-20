@@ -7,10 +7,23 @@
 출력
  -첫째 줄에 답을 출력한다. 생성자가 없는 경우에는 0을 출력한다.
 예제 입력 1
- -216
-
+ -216
 예제 출력 1
- -198
-
+ -198
 https://www.acmicpc.net//problem/2231
 '''
+
+def digit_sum(input_num):
+    sum=0
+    while 1:
+        if input_num==0: break
+        sum+=input_num%10
+        input_num//=10
+    return sum
+
+input_num=int(input())
+for i in range(input_num):
+    if i+1+digit_sum(i+1)==input_num:
+        print(i+1)
+        break
+    elif i==input_num-1: print(0)

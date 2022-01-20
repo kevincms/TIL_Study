@@ -24,13 +24,7 @@
 https://www.acmicpc.net//problem/11729
 '''
 
-def Hanoi_Tower(input_num):
-    if input_num==1: return 1
-    else:
-        return Hanoi_Tower(input_num-1)*2+1
-
 def Show_Hanoi_Tower(input_num,start_point=1,end_point=3,temp_point=2):
-
     if input_num==1:
         print("%d %d"%(start_point,end_point))
     else:
@@ -39,5 +33,16 @@ def Show_Hanoi_Tower(input_num,start_point=1,end_point=3,temp_point=2):
         Show_Hanoi_Tower(input_num-1,temp_point,end_point,start_point)
                         
 input_num=int(input())
-print(Hanoi_Tower(input_num))
+print(2**input_num-1)
 Show_Hanoi_Tower(input_num)
+
+'''
+
+하노이탑의 경우의 수 : 2**input_num-1
+
+def Hanoi_Tower(input_num):
+    if input_num==1: return 1
+    else:
+        return Hanoi_Tower(input_num-1)*2+1
+
+'''

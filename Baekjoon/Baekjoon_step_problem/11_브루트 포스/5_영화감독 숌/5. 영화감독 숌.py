@@ -11,33 +11,41 @@
  -첫째 줄에 N번째 영화의 제목에 들어간 수를 출력한다.
 예제 입력 1
  -2
-
 예제 출력 1
  -1666
-
 예제 입력 2
  -3
-
 예제 출력 2
  -2666
-
 예제 입력 3
  -6
-
 예제 출력 3
  -5666
-
 예제 입력 4
  -187
-
 예제 출력 4
  -66666
-
 예제 입력 5
  -500
-
 예제 출력 5
  -166699
-
 https://www.acmicpc.net//problem/1436
 '''
+
+def check_in_a_row_3(input_num):
+    row_3_count=0
+    while 1:
+        if row_3_count>=3: return True
+        elif input_num==0: return False
+        elif input_num%10==6: row_3_count+=1
+        else: row_3_count=0
+        input_num//=10
+
+input_num=int(input())
+count=0
+goal_num=665
+while 1:
+    goal_num+=1
+    if check_in_a_row_3(goal_num): count+=1
+    if count==input_num: break
+print(goal_num)
