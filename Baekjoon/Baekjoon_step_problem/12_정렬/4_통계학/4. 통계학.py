@@ -51,13 +51,50 @@ https://www.acmicpc.net//problem/2108
 '''
 
 import sys
-input-sys.stdin.readline
+input=sys.stdin.readline
 input_num_count=int(input())
+num_list=[0 for _ in range(8001)]
+
+count=0
+middle_count=input_num_count//2+1
+middle_check=False
+frequency_count=0
+frequency_check=False
+range_list=[0, 0]
+range_check=False
+
 average_num=0
 middle_num=0
+frequency_num=0
+range_num=0
+
 for i in range(input_num_count):
     input_num=int(input())
     average_num+=input_num
-    
+    num_list[4000+input_num]+=1
+for i, j in enumerate(num_list):
+    count+=j
+    if count>=middle_count and middle_check==False:
+        middle_num=i-4000
+        middle_check=True
+    if j>frequency_count:
+        frequency_count=j
+        frequency_num=i-4000
+        frequency_check=False
+    elif j==frequency_count and frequency_check==False:
+        frequency_count=j
+        frequency_num=i-4000
+        frequency_check=True
+    if j!=0:
+        if range_check==False:
+            range_list[0]=i
+            range_check=True
+        else: range_list[1]=i
 average_num=round(average_num/input_num_count)
+if input_num_count==1: range_num=0
+else :range_num=range_list[1]-range_list[0]
+
 print(average_num)
+print(middle_num)
+print(frequency_num)
+print(range_num)

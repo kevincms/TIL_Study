@@ -1,7 +1,6 @@
 '''
 문제
  -알파벳 소문자로 이루어진 N개의 단어가 들어오면 아래와 같은 조건에 따라 정렬하는 프로그램을 작성하시오.
-
 길이가 짧은 것부터
 길이가 같으면 사전 순으로
 입력
@@ -23,7 +22,6 @@ cannot
 wait
 im
 yours
-
 예제 출력 1
  -i
 im
@@ -36,6 +34,18 @@ wont
 yours
 cannot
 hesitate
-
 https://www.acmicpc.net//problem/1181
 '''
+
+import sys
+input=sys.stdin.readline
+input_num=int(input())
+location_list=[""for _ in range(input_num)]
+for i in range(input_num):
+    location_list[i]=input()
+    location_list[i]=location_list[i].replace("\n","")
+location_list=list(set(location_list))
+location_list.sort()
+location_list.sort(key=len)
+for i in location_list:
+    print(i)
