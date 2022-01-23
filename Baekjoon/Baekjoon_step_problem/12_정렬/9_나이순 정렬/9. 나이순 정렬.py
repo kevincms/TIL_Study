@@ -7,15 +7,21 @@
 출력
  -첫째 줄부터 총 N개의 줄에 걸쳐 온라인 저지 회원을 나이 순, 나이가 같으면 가입한 순으로 한 줄에 한 명씩 나이와 이름을 공백으로 구분해 출력한다.
 예제 입력 1
- -3
-21 Junkyu
-21 Dohyun
-20 Sunyoung
-
+ -3
+21 Junkyu
+21 Dohyun
+20 Sunyoung
 예제 출력 1
- -20 Sunyoung
-21 Junkyu
-21 Dohyun
-
+ -20 Sunyoung
+21 Junkyu
+21 Dohyun
 https://www.acmicpc.net//problem/10814
 '''
+
+import sys
+input=sys.stdin.readline
+input_num=int(input())
+age_name_list=[[]for _ in range(input_num)]
+for i in range(input_num): age_name_list[i]=list(input().split())+[i]
+age_name_list.sort(key=lambda x:(int(x[0]),int(x[2])))
+for i, j, k in age_name_list: print(i,j)

@@ -11,16 +11,26 @@ X1, X2, ..., XN에 좌표 압축을 적용한 결과 X'1, X'2, ..., X'N를 출�
 예제 입력 1
  -5
 2 4 -10 4 -9
-
 예제 출력 1
  -2 3 0 3 1
-
 예제 입력 2
  -6
 1000 999 1000 999 1000 999
-
 예제 출력 2
  -1 0 1 0 1 0
-
 https://www.acmicpc.net//problem/18870
+'''
+
+'''
+import sys
+input=sys.stdin.readline
+input_num=int(input())
+location_list=list(map(int,input().split()))
+location_set=set(location_list)
+location_pressure_list=[0 for _ in range(input_num)]
+for i in range(input_num):
+    for j in location_set:
+        if location_list[i]>j: location_pressure_list[i]+=1
+for i in location_pressure_list:
+    print(i,end=" ")
 '''
