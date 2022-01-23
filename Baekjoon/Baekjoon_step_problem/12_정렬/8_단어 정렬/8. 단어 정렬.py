@@ -45,7 +45,6 @@ for i in range(input_num):
     location_list[i]=input()
     location_list[i]=location_list[i].replace("\n","")
 location_list=list(set(location_list))
-location_list.sort()
-location_list.sort(key=len)
+location_list.sort(key=lambda x:(len(x),x))
 for i in location_list:
     print(i)
