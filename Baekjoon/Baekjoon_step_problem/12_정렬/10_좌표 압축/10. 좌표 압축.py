@@ -21,16 +21,10 @@ X1, X2, ..., XN에 좌표 압축을 적용한 결과 X'1, X'2, ..., X'N를 출�
 https://www.acmicpc.net//problem/18870
 '''
 
-'''
 import sys
 input=sys.stdin.readline
 input_num=int(input())
 location_list=list(map(int,input().split()))
-location_set=set(location_list)
-location_pressure_list=[0 for _ in range(input_num)]
-for i in range(input_num):
-    for j in location_set:
-        if location_list[i]>j: location_pressure_list[i]+=1
-for i in location_pressure_list:
-    print(i,end=" ")
-'''
+location_sort_list=sorted(list(set(location_list)))
+location_dict={location_sort_list[i]:i for i in range(len(location_sort_list))}
+for i in location_list: print(location_dict[i], end=" ")
