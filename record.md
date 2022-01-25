@@ -1,4 +1,4 @@
-2022-01-24
+2022-01-26
 () Start Day 1
 () Proceed Day 2~
 () Complete
@@ -7,7 +7,7 @@
 Jupyter Notebook Basic Proceed Day 5
 Java Basic Proceed Day 2
 Python Crawling&Scraping Proceed Day 17
-Baekjoon Proceed Day 59
+Baekjoon Proceed Day 60
 CLI Start Day 1
 MATLAB Proceed Day 2
 Python Basic Complete
