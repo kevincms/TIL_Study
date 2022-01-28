@@ -8,10 +8,28 @@
 예제 입력 1
  -없음
 예제 출력 1
- -\    /\
- )  ( ')
-(  /  )
- \(__)|
+ -
+\    /\
+ )  ( ')
+(  /  )
+ \(__)|
 
 https://www.acmicpc.net//problem/10171
+*/
+
+#include <stdio.h>
+int main(){
+printf("\
+\\    /\\\n\
+ )  ( \')\n\
+(  /  )\n\
+ \\(__)|\n\
+");
+}
+
+/*
+#include <stdio.h>
+int main(){
+    printf("\\    /\\\n )  ( \')\n(  /  )\n \\(__)|");
+}
 */
