@@ -1,4 +1,6 @@
-### python 버전확인
+# python & pip
+
+### python 버전 확인
 - python --version
 
 ### pip 버전 확인
@@ -25,7 +27,26 @@
 - pip freeze | %{$_.split('==')[0]} | %{pip install --upgrade $_}
 
 ### package 세부사항
-pip show (package)
+- pip show (package)
 
 ### package 검색
-pip search (package)
+- pip search (package)
+
+==================================================
+
+# conda
+
+### conda 버전 확인
+- conda --version
+
+### conda 업데이트
+- conda update conda
+
+### conda 가상환경
+### 가상환경 리스트
+- conda env list
+- conda info --envs
+### 가상환경 생성
+- conda create --name (name)
+- conda create --name (name) python-(version)
+- conda create --n (name) python-(version)
