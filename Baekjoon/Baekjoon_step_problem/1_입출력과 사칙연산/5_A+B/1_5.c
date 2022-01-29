@@ -11,3 +11,10 @@
  -3
 https://www.acmicpc.net//problem/1000
 */
+
+#include <stdio.h>
+int main(){
+    int input_num[2];
+    scanf("%d %d",&input_num[0],&input_num[1]);
+    printf("%d",input_num[0]+input_num[1]);
+}

@@ -6,16 +6,19 @@
 출력
  -첫째 줄에 A×B를 출력한다.
 예제 입력 1
- -1 2
-
+ -1 2
 예제 출력 1
- -2
-
+ -2
 예제 입력 2
- -3 4
-
+ -3 4
 예제 출력 2
- -12
-
+ -12
 https://www.acmicpc.net//problem/10998
 */
+
+#include <stdio.h>
+int main(){
+    int input_num[2];
+    scanf("%d %d",&input_num[0],&input_num[1]);
+    printf("%d",input_num[0]*input_num[1]);
+}

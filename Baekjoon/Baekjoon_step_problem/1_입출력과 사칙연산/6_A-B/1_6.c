@@ -7,8 +7,14 @@
  -첫째 줄에 A-B를 출력한다.
 예제 입력 1
  -3 2
-
 예제 출력 1
  -1
 https://www.acmicpc.net//problem/1001
 */
+
+#include <stdio.h>
+int main(){
+    int input_num[2];
+    scanf("%d %d",&input_num[0],&input_num[1]);
+    printf("%d",input_num[0]-input_num[1]);
+}
