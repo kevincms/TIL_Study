@@ -6,10 +6,11 @@
 출력
  -첫째 줄에 준하의 놀람을 출력한다. 놀람은 아이디 뒤에 ??!를 붙여서 나타낸다.
 예제 입력 1
- -joonas
-
+ -joonas
 예제 출력 1
- -joonas??!
-
+ -joonas??!
 https://www.acmicpc.net//problem/10926
 '''
+
+input_string=input()
+print(input_string+"??!")
