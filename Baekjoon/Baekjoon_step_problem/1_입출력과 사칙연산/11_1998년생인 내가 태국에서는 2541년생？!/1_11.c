@@ -8,9 +8,14 @@
  -불기 연도를 서기 연도로 변환한 결과를 출력한다.
 예제 입력 1
  -2541
-
 예제 출력 1
  -1998
-
 https://www.acmicpc.net//problem/18108
 */
+
+#include <stdio.h>
+int main(){
+    int input_num;
+    scanf("%d",&input_num);
+    printf("%d",input_num-543);
+}
