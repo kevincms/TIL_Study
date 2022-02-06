@@ -6,10 +6,22 @@
 출력
  -시험 성적을 출력한다.
 예제 입력 1
- -100
-
+ -100
 예제 출력 1
- -A
-
+ -A
 https://www.acmicpc.net//problem/9498
 */
+
+#include <stdio.h>
+int main(){
+    int input_num, ascii_A;
+    ascii_A='A';
+    scanf("%d",&input_num);
+    for(int i=0; i<4; i++){
+        if(input_num>=90-(10*i)){
+            printf("%c",ascii_A+i);
+            return 0;
+        }
+    }
+    printf("F");
+}

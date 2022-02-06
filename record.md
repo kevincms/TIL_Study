@@ -1,12 +1,12 @@
-2022-02-05
+2022-02-06
 () Start Day 1
 () Proceed Day 2~
 () Complete
 () Modify & Add
 
-Baekjoon Proceed Day 65
-CLI Proceed Day 2
-C Basic Start Day 1
+Baekjoon Proceed Day 66
+CLI Proceed Day 3
+C Basic Start Day 2
 
 Jupyter Notebook Basic Proceed Day 5
 Java Basic Proceed Day 2

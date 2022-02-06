@@ -9,15 +9,19 @@
  -첫째 줄에 윤년이면 1, 아니면 0을 출력한다.
 예제 입력 1
  -2000
-
 예제 출력 1
  -1
-
 예제 입력 2
  -1999
-
 예제 출력 2
  -0
-
 https://www.acmicpc.net//problem/2753
 */
+
+#include <stdio.h>
+int main(){
+    int input_num;
+    scanf("%d",&input_num);
+    if((input_num%4==0 && input_num%100!=0) || input_num%400==0) printf("1");
+    else printf("0");
+}
