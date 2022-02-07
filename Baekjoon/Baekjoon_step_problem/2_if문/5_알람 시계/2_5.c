@@ -13,21 +13,28 @@
  -첫째 줄에 상근이가 창영이의 방법을 사용할 때, 설정해야 하는 알람 시간을 출력한다. (입력과 같은 형태로 출력하면 된다.)
 예제 입력 1
  -10 10
-
 예제 출력 1
  -9 25
-
 예제 입력 2
  -0 30
-
 예제 출력 2
  -23 45
-
 예제 입력 3
  -23 40
-
 예제 출력 3
  -22 55
-
 https://www.acmicpc.net//problem/2884
 */
+
+#include <stdio.h>
+int main(){
+    int input_num[2];
+    for(int i=0; i<2; i++) scanf("%d",&input_num[i]);
+    input_num[1]-=45;
+    if(input_num[1]<0){
+        input_num[1]+=60;
+        input_num[0]-=1;
+        if(input_num[0]<0) input_num[0]+=24;
+    }
+    for(int i=0; i<2; i++) printf("%d ",input_num[i]);
+}
