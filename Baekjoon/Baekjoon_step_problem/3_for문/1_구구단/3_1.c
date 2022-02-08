@@ -7,7 +7,6 @@
  -출력형식과 같게 N*1부터 N*9까지 출력한다.
 예제 입력 1
  -2
-
 예제 출력 1
  -2 * 1 = 2
 2 * 2 = 4
@@ -18,6 +17,12 @@
 2 * 7 = 14
 2 * 8 = 16
 2 * 9 = 18
-
 https://www.acmicpc.net//problem/2739
 */
+
+#include <stdio.h>
+int main(){
+    int input_num;
+    scanf("%d",&input_num);
+    for(int i=1; i<=9; i++) printf("%d * %d = %d\n",input_num,i,input_num*i);
+}

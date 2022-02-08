@@ -12,19 +12,27 @@ Python을 사용하고 있다면, input 대신 sys.stdin.readline을 사용할 
 출력
  -각 테스트케이스마다 A+B를 한 줄에 하나씩 순서대로 출력한다.
 예제 입력 1
- -5
-1 1
-12 34
-5 500
-40 60
-1000 1000
-
+ -5
+1 1
+12 34
+5 500
+40 60
+1000 1000
 예제 출력 1
- -2
-46
-505
-100
-2000
-
+ -2
+46
+505
+100
+2000
 https://www.acmicpc.net//problem/15552
 */
+
+#include <stdio.h>
+int main(){
+    int input_num, add_num[2];
+    scanf("%d",&input_num);
+    for(int i=0; i<input_num; i++){
+        scanf("%d %d",&add_num[0],&add_num[1]);
+        printf("%d\n",add_num[0]+add_num[1]);
+    }
+}
