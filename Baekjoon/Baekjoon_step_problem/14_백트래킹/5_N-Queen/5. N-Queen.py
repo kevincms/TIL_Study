@@ -13,22 +13,21 @@ N이 주어졌을 때, 퀸을 놓는 방법의 수를 구하는 프로그램을 
 https://www.acmicpc.net//problem/9663
 '''
 
-def N_Queen(count,case,check=0):
+def N_Queen(count,case,check_list):
     if count==input_num: case+=1
     else:
         for i in range(input_num):
-            location_list[count]=[count,i]
-            for j in range(count):
-                if location_list[j][1]==i or abs(count-location_list[j][0])==abs(i-location_list[j][1]): 
-                    check=1
-                    break
-            if check==1: 
-                check=0
-                continue
-            else:
-                case=N_Queen(count+1,case)
+            diagonal_index=[i+count,input_num+i-count-1]
+            if check_list[0][i] and check_list[1][diagonal_index[0]] and check_list[2][diagonal_index[1]]: 
+                check_list[0][i]=False
+                check_list[1][diagonal_index[0]]=False
+                check_list[2][diagonal_index[1]]=False
+                case=N_Queen(count+1,case,check_list)
+                check_list[0][i]=True
+                check_list[1][diagonal_index[0]]=True
+                check_list[2][diagonal_index[1]]=True
     return case
 
 input_num=int(input())
-location_list=[[0, 0] for i in range(input_num)]
-print(N_Queen(0,0))
+check_list=[[True for _ in range(input_num)],[True for _ in range(2*input_num-1)],[True for _ in range(2*input_num-1)]]
+print(N_Queen(0,0,check_list))

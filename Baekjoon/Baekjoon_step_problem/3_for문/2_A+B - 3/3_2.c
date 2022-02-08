@@ -7,19 +7,27 @@
 출력
  -각 테스트 케이스마다 A+B를 출력한다.
 예제 입력 1
- -5
-1 1
-2 3
-3 4
-9 8
-5 2
-
+ -5
+1 1
+2 3
+3 4
+9 8
+5 2
 예제 출력 1
- -2
-5
-7
-17
-7
-
+ -2
+5
+7
+17
+7
 https://www.acmicpc.net//problem/10950
 */
+
+#include <stdio.h>
+int main(){
+    int input_num, add_num[2];
+    scanf("%d",&input_num);
+    for(int i=0; i<input_num; i++){
+        scanf("%d %d",&add_num[0],&add_num[1]);
+        printf("%d\n",add_num[0]+add_num[1]);
+    }
+}

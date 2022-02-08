@@ -6,10 +6,15 @@
 출력
  -1부터 n까지 합을 출력한다.
 예제 입력 1
- -3
-
+ -3
 예제 출력 1
- -6
-
+ -6
 https://www.acmicpc.net//problem/8393
 */
+
+#include <stdio.h>
+int main(){
+    int input_num;
+    scanf("%d",&input_num);
+    printf("%d",input_num*(input_num+1)/2);
+}
