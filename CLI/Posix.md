@@ -9,6 +9,7 @@ Unix Linux Mac
 > - /   : Root Directory
 > - ~   : Home Directory
 > - ./  : Current Directory
+> - ../ : Parent Directory
 ### Option & Explanation
 - (Command) --help
 - man (Command)
@@ -25,13 +26,12 @@ Unix Linux Mac
 ### Delete
 - rm
 
-
 # Directory
 ### Create
-- mkdir
+- mkdir (Directory) 
 ### Read
-- ls
+- ls (option)
 ### Update
-- mv
+- mv (Current Directory) (Modified Directory)
 ### Delete
-- rm
+- rm -r (Directory)

@@ -40,53 +40,65 @@
 https://www.acmicpc.net//problem/2580
 '''
 
+'''
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+'''
+
+def check_Sudoku(Sudoku,column,row):
+    check_column_list=[0 for _ in range(10)]
+    check_row_list=[0 for _ in range(10)]
+    check_square_list=[0 for _ in range(10)]
+    square_index=(column//3)*3+(row//3)
+    for i in range(9):
+        column_num=Sudoku[column][i]
+        row_num=Sudoku[i][row]
+        square_column=(square_index//3)*3+(i//3)
+        square_row=(square_index%3)*3+(i%3)
+        square_num=Sudoku[square_column][square_row]
+        if check_column_list[column_num]==1 or check_row_list[row_num]==1 or check_square_list[square_num]==1: return False
+        if column_num!=0: check_column_list[column_num]=1
+        if row_num!=0: check_row_list[row_num]=1
+        if square_num!=0: check_square_list[square_num]=1
+    return True
+
+def fill_Sudoku(sudoku,sudoku_index):
+    if sudoku_index==81:
+        print("")
+        for i in range(9): print(" ".join(list(map(str,sudoku[i]))))
+        exit()
+    column=sudoku_index//9
+    row=sudoku_index%9
+    if sudoku[column][row]==0:
+        for i in range(1,10):
+            sudoku[column][row]=i
+            if check_Sudoku(sudoku,column,row):
+                fill_Sudoku(sudoku,sudoku_index+1)
+        sudoku[column][row]=0
+        return
+    else: fill_Sudoku(sudoku,sudoku_index+1)
+
 import sys
-graph = []
-blank = []
+input=sys.stdin.readline
+sudoku=[[]for _ in range(9)]
+for i in range(9): sudoku[i]=list(map(int,input().split()))
+fill_Sudoku(sudoku,0)
 
-for i in range(9):
-    graph.append(list(map(int, sys.stdin.readline().rstrip().split())))
-
-for i in range(9):
-    for j in range(9):
-        if graph[i][j] == 0:
-            blank.append((i, j))
-
-def checkRow(x, a):
-    for i in range(9):
-        if a == graph[x][i]:
-            return False
-    return True
-
-def checkCol(y, a):
-    for i in range(9):
-        if a == graph[i][y]:
-            return False
-    return True
-
-def checkRect(x, y, a):
-    nx = x // 3 * 3
-    ny = y // 3 * 3
-    for i in range(3):
-        for j in range(3):
-            if a == graph[nx+i][ny+j]:
-                return False
-    return True
-
-
-def dfs(idx):
-    if idx == len(blank):
-        for i in range(9):
-            print(*graph[i])
-        exit(0)
-
-    for i in range(1, 10):
-        x = blank[idx][0]
-        y = blank[idx][1]
-
-        if checkRow(x, i) and checkCol(y, i) and checkRect(x, y, i):
-            graph[x][y] = i
-            dfs(idx+1)
-            graph[x][y] = 0
-
-dfs(0)
+'''
+1 2 3 4 5 6 7 8 9
+4 5 6 1 2 3 8 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+'''
