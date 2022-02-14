@@ -7,11 +7,19 @@
 출력
  -X보다 작은 수를 입력받은 순서대로 공백으로 구분해 출력한다. X보다 작은 수는 적어도 하나 존재한다.
 예제 입력 1
- -10 5
-1 10 4 9 2 3 8 5 7 6
-
+ -10 5
+1 10 4 9 2 3 8 5 7 6
 예제 출력 1
- -1 4 2 3
-
+ -1 4 2 3
 https://www.acmicpc.net//problem/10871
 */
+
+#include <stdio.h>
+int main(){
+    int input_count, goal_num, input_num;
+    scanf("%d %d",&input_count,&goal_num);
+    for(int i=0; i<input_count; i++){
+        scanf("%d",&input_num);
+        if(input_num<goal_num) printf("%d ",input_num);
+    }
+}
