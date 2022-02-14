@@ -21,3 +21,13 @@ Case #4: 9 + 8 = 17
 Case #5: 5 + 2 = 7
 https://www.acmicpc.net//problem/11022
 */
+
+#include <stdio.h>
+int main(){
+    int input_num, add_num[2];
+    scanf("%d",&input_num);
+    for(int i=0; i<input_num; i++){
+        scanf("%d %d",&add_num[0],&add_num[1]);
+        printf("Case #%d: %d + %d = %d\n",i+1,add_num[0],add_num[1],add_num[0]+add_num[1]);
+    }
+}

@@ -52,53 +52,52 @@ https://www.acmicpc.net//problem/2580
 0 0 0 0 0 0 0 0 0
 '''
 
-def check_Sudoku(Sudoku,column,row):
-    check_column_list=[0 for _ in range(10)]
-    check_row_list=[0 for _ in range(10)]
-    check_square_list=[0 for _ in range(10)]
-    square_index=(column//3)*3+(row//3)
-    for i in range(9):
-        column_num=Sudoku[column][i]
-        row_num=Sudoku[i][row]
-        square_column=(square_index//3)*3+(i//3)
-        square_row=(square_index%3)*3+(i%3)
-        square_num=Sudoku[square_column][square_row]
-        if check_column_list[column_num]==1 or check_row_list[row_num]==1 or check_square_list[square_num]==1: return False
-        if column_num!=0: check_column_list[column_num]=1
-        if row_num!=0: check_row_list[row_num]=1
-        if square_num!=0: check_square_list[square_num]=1
-    return True
-
 def fill_Sudoku(sudoku,sudoku_index):
     if sudoku_index==81:
         print("")
         for i in range(9): print(" ".join(list(map(str,sudoku[i]))))
         exit()
-    column=sudoku_index//9
-    row=sudoku_index%9
-    if sudoku[column][row]==0:
+    column_index=sudoku_index//9
+    row_index=sudoku_index%9
+    square_index=(column_index//3)*3+row_index//3
+    sudoku_num=sudoku[column_index][row_index]
+    if sudoku_num==0:
         for i in range(1,10):
-            sudoku[column][row]=i
-            if check_Sudoku(sudoku,column,row):
+            if column_check[column_index][i]==0 and row_check[row_index][i]==0 and square_check[square_index][i]==0: 
+                sudoku[column_index][row_index]=i
+                column_check[column_index][i]=1
+                row_check[row_index][i]=1
+                square_check[square_index][i]=1
                 fill_Sudoku(sudoku,sudoku_index+1)
-        sudoku[column][row]=0
-        return
+                sudoku[column_index][row_index]=0
+                column_check[column_index][i]=0
+                row_check[row_index][i]=0
+                square_check[square_index][i]=0
     else: fill_Sudoku(sudoku,sudoku_index+1)
-
+        
 import sys
 input=sys.stdin.readline
 sudoku=[[]for _ in range(9)]
+column_check=[[0 for _ in range(10)]for _ in range(9)]
+row_check=[[0 for _ in range(10)]for _ in range(9)]
+square_check=[[0 for _ in range(10)]for _ in range(9)]
 for i in range(9): sudoku[i]=list(map(int,input().split()))
+for i in range(9):
+    for j in range(9):
+        column_check[i][sudoku[i][j]]=1
+        row_check[j][sudoku[i][j]]=1
+        square_index=(i//3)*3+j//3
+        square_check[square_index][sudoku[i][j]]=1
 fill_Sudoku(sudoku,0)
 
 '''
-1 2 3 4 5 6 7 8 9
-4 5 6 1 2 3 8 0 0
-0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0
+0 2 0 9 0 5 0 0 0
+5 9 0 0 3 0 2 0 0
+7 0 0 6 0 2 0 0 5
+0 0 9 3 5 0 4 6 0
+0 5 4 0 0 0 7 8 0
+0 8 3 0 2 7 5 0 0
+8 0 0 2 0 9 0 0 4
+0 0 5 0 4 0 0 2 6
+0 0 0 5 0 3 0 7 0
 '''
