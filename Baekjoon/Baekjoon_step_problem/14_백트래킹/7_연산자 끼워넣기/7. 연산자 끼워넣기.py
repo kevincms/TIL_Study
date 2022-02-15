@@ -48,6 +48,7 @@ def cal(num_list,cal_list):
         elif cal_list[i]==1: output_num-=i
         elif cal_list[i]==2: output_num*=i
         elif cal_list[i]==3: output_num//=i
+    return output_num
 
 import sys
 input=sys.stdin.readline

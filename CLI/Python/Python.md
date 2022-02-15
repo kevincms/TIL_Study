@@ -19,6 +19,8 @@
 - pip install (package)
 #### 제거
 - pip uninstall (package)
+#### 모든 package 제거
+- 
 #### 업데이트
 - pip install --upgrade (package)
 #### 다운그래이드
@@ -31,22 +33,3 @@
 
 ### package 검색
 - pip search (package)
-
-==================================================
-
-# conda
-
-### conda 버전 확인
-- conda --version
-
-### conda 업데이트
-- conda update conda
-
-### conda 가상환경
-### 가상환경 리스트
-- conda env list
-- conda info --envs
-### 가상환경 생성
-- conda create --name (name)
-- conda create --name (name) python-(version)
-- conda create --n (name) python-(version)

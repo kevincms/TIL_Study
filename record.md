@@ -1,11 +1,11 @@
-2022-02-14
+2022-02-15
 () Start Day 1
 () Proceed Day 2~
 () Complete
 () Modify & Add
 
-Baekjoon Proceed Day 70
-CLI Proceed Day 5
+Baekjoon Proceed Day 71
+CLI Proceed Day 6
 C Basic Start Day 2
 
 Python Torch Proceed Day 3
