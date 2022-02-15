@@ -30,7 +30,6 @@
 https://www.acmicpc.net//problem/15650
 '''
 
-'''
 def combination(count,present_num):
     if count==input_num_count:
         print(" ".join(list(map(str,num_list))))
@@ -44,4 +43,3 @@ def combination(count,present_num):
 input_num, input_num_count=map(int,input().split())
 num_list=[0 for _ in range(input_num_count)]
 combination(0,1)
-'''
