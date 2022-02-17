@@ -1,24 +1,23 @@
-package Java_Basic;
-
 public class J1_print {
     public static void main(String[] args) {
         String[] language={"Python","Java","C","C++","Go","JavaScript","Swift","C#"};
         int count=1;
 
-        System.out.print(count+++". "+language[count-1]+"\n"); // 1. pythonì²˜ëŸ¼ +ë¡œ êµ¬ë¶„í•  ìˆ˜ ìžˆë‹¤.
+        System.out.print(count+++". "+language[count-1]+"\n"); // 1. pythonÃ³·³ +·Î ±¸ºÐÇÒ ¼ö ÀÖ´Ù.
 
-        System.out.println(count+++". "+language[count-1]); // 2. printlnì€ ìžë™ì ìœ¼ë¡œ ì¤„ ë°”ê¿ˆì´ ëœë‹¤.
+        System.out.println(count+++". "+language[count-1]); // 2. printlnÀº ÀÚµ¿ÀûÀ¸·Î ÁÙ ¹Ù²ÞÀÌ µÈ´Ù.
 
-        System.out.printf("%d. %s",count++,language[count-1]); // 3. Cì™€ ê°™ì´ printfë¥¼ ì‚¬ìš©í•  ìˆ˜ ìžˆë‹¤.
+        System.out.printf("%d. %s",count++,language[count-1]); // 3. C¿Í °°ÀÌ printf¸¦ »ç¿ëÇÒ ¼ö ÀÖ´Ù.
     }
     /*
-    vscode ìžë™ì™„ì„±
+    vscode ÀÚµ¿¿Ï¼º
     - main
     public static void main(String[] args) {
     }
     - sysout
     System.out.println();
-    - print (ì»¤ìŠ¤í…€)
+    - print (Ä¿½ºÅÒ) 
+    Ctrl+5hift+P -> User Snippets
     System.out.printf();
         "System.out.printf": {
             "prefix": "print",

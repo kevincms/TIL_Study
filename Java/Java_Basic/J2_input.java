@@ -1,5 +1,3 @@
-package Java_Basic;
-
 import java.util.Scanner;
 
 public class J2_input {
