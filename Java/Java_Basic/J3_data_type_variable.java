@@ -1,5 +1,3 @@
-package Java_Basic;
-
 public class J3_data_type_variable {
     public static void main(String[] args) {
         int count=1;
