@@ -16,3 +16,12 @@ except Exception as err: # 앞의 모든 except error를 제외한 모든 에러
     print(err)
 finally: # 오류와 관계없이 마지막에 실행된다.
     print("프로그램이 종료되었습니다.")
+
+
+# ValueError와 같은 Error는 프로그램을 실행후 터미널 창을 통해 확인할 수 있다.
+'''
+num=int(input("숫자를 입력해 주세요\n"))
+if num==0:
+    raise zeor_error # raise를 이용해 오류를 일으킬 수 있다.
+print("입력한 숫자는 %d입니다"%num)
+'''

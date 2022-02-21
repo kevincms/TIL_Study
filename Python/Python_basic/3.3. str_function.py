@@ -19,7 +19,7 @@ count+=1
 print("%d."%count,test_str.replace("World","Python")) # 6. 문자열 변경
 count+=1
 
-print("%d."%count,test_str.index("l")) # 7. index 반환
+print("%d."%count,test_str.index("e")) # 7. index 반환
 count+=1
 
 index=test_str.find("l") # 8. 문자뿐만 아니라 문자열도 찾아서 index 반환 (index와 동일)

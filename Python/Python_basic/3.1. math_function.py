@@ -13,7 +13,7 @@ count+=1
 print("%d."%count,min([3, 12, 24])) # 4. min 최소값 (min의 파라미터 숫자를 변경할 수 있음, list를 넣어도 됨)
 count+=1
 
-print("%d."%count,round(3.14))  # 5. round 반올림
+print("%d."%count,round(3.14), round(3.14,1))  # 5. round 반올림
 count+=1
 
 
