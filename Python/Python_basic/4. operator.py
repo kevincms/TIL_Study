@@ -36,3 +36,19 @@ count+=1
 
 print("%d."%count,True or False,1 | 0) # 11. or
 count+=1
+
+# 비트연산
+print("%d."%count,7 & 4) # 12. and gate
+count+=1
+
+print("%d."%count,7 | 4) # 13. or gate
+count+=1
+
+print("%d."%count,7 ^ 4) # 14. xor gate
+count+=1
+
+print("%d."%count,~3) # 15. not gate (보수)
+count+=1
+
+print("%d."%count,4<<1,4>>1) # 16. shift
+count+=1
