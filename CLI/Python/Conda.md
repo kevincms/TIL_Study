@@ -18,9 +18,9 @@
 ### 가상환경 생성
 - conda create --name (name)
 - conda create --name (name) python=(version)
-- conda create --n (name) python=(version)
+- conda create -n (name) python=(version)
 ### 가상환경 삭제
-- conda env remove --n (name)
+- conda env remove -n (name)
 ### 가상환경 활성화
 - conda activate (name)
 
@@ -31,3 +31,9 @@
 - conda search python
 ### Python 원하는 버전 설치
 - conda install python=(version)
+### conda 버전 확인
+- conda --version
+
+# Jupyter Notebook
+### .ipynbb
+- conda install ipykernel
