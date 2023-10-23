@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS_MediaQuery</title>
+        <style>
+            div{
+                border: 10px solid black;
+                font-size: 60px;
+            }
+            @media(max-width:800px){
+                div{
+                    display: none;
+                }
+            }
+            /* @media를 이용해 가로의 길이에 따라 달라지도록 할 수 있음 */
+            /* max : 이하 min : 이상 */
+
+            /* 같은 표현 */
+            /* @media screen and (max-width:800px){
+                div{
+                    display: none;
+                }
+            } */
+        </style>
+    </head>
+    <body>
+        <div>
+            Responsive
+        </div>
+    </body>
+</html>

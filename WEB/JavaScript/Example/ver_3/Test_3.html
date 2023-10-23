@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WEB1 - JavaScript</title>
+        <meta charset="utf-8">
+    </head>
+    
+    <body>
+        <h1><a href="index.html">WEB</a></h1>
+        <input type="button" value="야간 모드 켜기" onclick="
+        if(this.value==='야간 모드 켜기'){
+            document.querySelector('body').style.backgroundColor='black';
+            document.querySelector('body').style.color='white';
+            this.value='야간 모드 끄기'
+            var hyperlink = document.querySelectorAll('a')
+            for(var i=0; i<hyperlink.length; i++){
+                hyperlink[i].style.color='powderblue';
+            }
+            // 반복문을 사용해 하이퍼 링크의 색깔을 바꿈
+        }
+        else if(this.value==='야간 모드 끄기'){
+            document.querySelector('body').style.backgroundColor='white';
+            document.querySelector('body').style.color='black';
+            this.value='야간 모드 켜기'
+            var hyperlink = document.querySelectorAll('a')
+            for(var i=0; i<hyperlink.length; i++){
+                hyperlink[i].style.color='blue';
+            }
+            // 반복문을 사용해 하이퍼 링크의 색깔을 바꿈
+        }
+        ">
+        <ol>
+            <li><a href="Test_1.html">HTML</a></li>
+            <li><a href="Test_2.html">CSS</a></li>
+            <li><a href="Test_3.html">JavaScript</a></li>
+        </ol>
+        <h2>JavaScript</h2>
+        <p><a href="https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8" target="_blank">JavaScript</a>은 
+        <strong>객체 기반의 스크립트 프로그래밍 </strong>언어이다</p>
+        JavaScript이란 ~으로
+        <br>JavaScript은 어쩌고 저쩌고 
+    </body>
+</html>

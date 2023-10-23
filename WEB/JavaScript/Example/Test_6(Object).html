@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript_Object</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <script>
+            var McDonald = {
+                burger:["치즈버거","1955","불고기버거"],
+                // , 주의 (객체 구별에 사용)
+                drink:["콜라","사이다"]
+            }
+            document.write("햄버거 : ",McDonald.burger+"<br>");
+            document.write("음료 : ",McDonald.drink+"<br>");
+
+            McDonald.side=[,"감자튀김","지킨너켓"]
+            document.write("사이드 : ",McDonald.side+"<br>");
+
+            McDonald["cold dessert"]=["초코 아이스크림","딸기 아이스크림"]
+            document.write("차가운 디저트 : ",McDonald["cold dessert"]+"<br><br>");
+            
+            for(var menu in McDonald){
+                document.write(menu+" : ",McDonald[menu]+"<br>")
+            }
+
+            document.write("<br>");
+
+            McDonald.menu=function(){
+                for(var menu in this){
+                document.write(menu+" : ",this[menu]+"<br>")
+                }
+            }
+            McDonald.menu();       
+        </script>
+
+    </body>
+</html>

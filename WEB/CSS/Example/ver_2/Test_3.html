@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WEB1 - JavaScript</title>
+        <meta charset="utf-8">
+        <style>
+            h1{
+                font-size: 45px;
+                text-align: center;
+                border-bottom: 1px solid black;
+                margin: 0;
+                padding: 20px;
+            }
+            body{
+                margin: 0px;
+            }
+            #grid ol{
+                border-right: 1px solid black;
+                width: 100px;
+                margin: 0px;
+                padding: 20px;
+                padding-left: 33px;
+            }
+            /* 띄어쓰기를 통해 부모자식관계의 태그를 정의 */
+            #grid{
+                display: grid;
+                grid-template-columns: 200px 1fr;
+            }
+            #Contents{
+                padding-left: 25px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1><a href="index.html">WEB</a></h1>
+        <div id="grid">
+            <ol>
+                <li><a href="Test_1.html">HTML</a></li>
+                <li><a href="Test_2.html">CSS</a></li>
+                <li><a href="Test_3.html">JavaScript</a></li>
+                
+            </ol>
+            <div id="Contents">
+                <h2>JavaScript</h2>
+                <p><a href="https://ko.wikipedia.org/wiki/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8" target="_blank">JavaScript</a>은 
+                <strong>객체 기반의 스크립트 프로그래밍 </strong>언어이다</p>
+                JavaScript이란 ~으로
+                <br>JavaScript은 어쩌고 저쩌고 
+            </div>
+        </div>
+    </body>
+</html>
