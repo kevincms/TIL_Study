@@ -6,8 +6,6 @@ https://midnightcow.tistory.com/entry/Git-Command-%EC%82%AC%EC%9A%A9%EB%B2%95-%E
 - git remote add  <u>name</u> <u>path</u> :
 - git remote remove 
 
-
-
 ### git 설정 확인
 git config —-list  
 
