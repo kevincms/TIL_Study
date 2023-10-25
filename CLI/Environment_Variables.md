@@ -6,13 +6,12 @@
 >> ### 시스템 변수  
 >> 현재 사용자뿐만 아니라 모든 사용자에게 적용
 
-환경변수의 Path값을 수정하면 재부팅 해야 적용된다.  [이거 불확실함]
-cmd에 path라고 입력하면 시스템 변수의 path 출력 후 사용자 변수의 path가 출력된다.  
+- 환경변수의 Path값을 수정하면 cmd를 새로 켜야함.
+- 가끔 재부팅 해야 적용되는 경우도 있음
+- cmd에 path라고 입력하면 시스템 변수의 path 출력 후 사용자 변수의 path가 출력된다.  
 - 재부팅을 하지 않고 적용하는 방법  
-taskkill /f /im explorer.exe  
-explorer.exe  
-- 환경변수 특이점
-
+> taskkill /f /im explorer.exe  
+> explorer.exe  
 
 각 프로그램 별 환경변수 [컴파일러 어셈블리어 같은 경우 기본 설치경로가 아님]
 BASIC="C:\Users\cho_min_seok\Melon_Reeve_Musk\"

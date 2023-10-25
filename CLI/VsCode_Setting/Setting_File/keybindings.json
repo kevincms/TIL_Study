@@ -1,0 +1,33 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+shift+l",
+        "command": "selectAllSearchEditorMatches",
+        "when": "inSearchEditor"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "-selectAllSearchEditorMatches",
+        "when": "inSearchEditor"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "editor.action.selectHighlights",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "-editor.action.selectHighlights",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+oem_plus",
+        "command": "workbench.action.files.showOpenedFileInNewWindow",
+        "when": "emptyWorkspaceSupport"
+    },
+    {
+        "key": "ctrl+k o",
+        "command": "-workbench.action.files.showOpenedFileInNewWindow",
+        "when": "emptyWorkspaceSupport"
+    }
+]

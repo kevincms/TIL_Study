@@ -1,0 +1,4 @@
+{
+    "git.autofetch": true,
+    "security.workspace.trust.untrustedFiles": "open"
+}
