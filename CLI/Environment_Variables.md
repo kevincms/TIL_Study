@@ -21,8 +21,9 @@ BASIC="C:\Users\cho_min_seok\Melon_Reeve_Musk\"
 >> C:\Users\cho_min_seok\Melon_Reeve_Musk\Anaconda3\Scripts  
 >> <u>%BASIC%Anaconda3</u> 은 anaconda Python, <u>%BASIC%Anaconda3\Scripts</u> 는 conda 실행
 > ### Python
+>> C:\Users\cho_min_seok\Melon_Reeve_Musk\Python 3.12.0\Scripts
 >> C:\Users\cho_min_seok\Melon_Reeve_Musk\Python 3.12.0  
->> C:\Users\cho_min_seok\Melon_Reeve_Musk\Python 3.12.0\Scripts  
 >> <u>%BASIC%Python 3.12.0</u> 은 anaconda Python, <u>%BASIC%Python 3.12.0\Scripts</u> 는 pip 실행
+>> Scripts를 path 경로 위에 추가해야 함. pip과 python의 명령어가 충돌되는 문제가 일어나는 것 같음
 > ### Nodejs
 >> C:\Users\cho_min_seok\Melon_Reeve_Musk\nodejs 18.18.2
