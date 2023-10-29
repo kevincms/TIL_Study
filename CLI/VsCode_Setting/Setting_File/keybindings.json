@@ -29,5 +29,18 @@
         "key": "ctrl+k o",
         "command": "-workbench.action.files.showOpenedFileInNewWindow",
         "when": "emptyWorkspaceSupport"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "markdown.preview.refresh"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "workbench.action.openRecent",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
     }
 ]
