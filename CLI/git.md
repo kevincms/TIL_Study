@@ -20,6 +20,12 @@ git config —global user.mail <u>github Email</u>
 2. git add <u>파일 이름</u>
 3. git commit 후 vim 실행 **or** git commit -m "message"
 
+## git commit 날짜 수정
+> 1. commit 날짜 지정
+>> - git commit --date "1 day ago" -m "message"
+>> - git commit --date "$(date)" -m "message"
+>> - git commit --date "Thu 30 Mar 2023 10:00:00 KST" -m "message"
+
 ## mac git 설정
 > ### 개행문자 설정
 >> git config --global core.autocrlf input 
