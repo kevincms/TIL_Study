@@ -26,6 +26,10 @@ git config —global user.mail <u>github Email</u>
 >> - git commit --date "$(date)" -m "message"
 >> - git commit --date "Thu 30 Mar 2023 10:00:00 KST" -m "message"
 
+> 2. 마지막 commit 날짜 수정
+>> - git commit --amend --no-edit --date "$(date)"
+>> - git commit --amend --no-edit --date "Thu 30 Mar 2023 10:00:00 KST"
+
 ## mac git 설정
 > ### 개행문자 설정
 >> git config --global core.autocrlf input 
