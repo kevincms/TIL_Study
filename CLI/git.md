@@ -30,6 +30,14 @@ git config —global user.mail <u>github Email</u>
 >> - git commit --amend --no-edit --date "$(date)"
 >> - git commit --amend --no-edit --date "Thu 30 Mar 2023 10:00:00 KST"
 
+> 3. 특정 commit 날짜 수정 [https://blacklobster.tistory.com/17]
+>> - rebose
+
+> date 옵션
+>> - 형식 : "Thu 30 Mar 2023 10:00:00 KST"
+>> - 월 : Mon, 화 : Tue, 수 : Wed, 목 : Thu, 금 : Fri, 토 : Sat, 일 : Sun
+>> - 1월 : Jan, 2월 : Feb, 3월 : Mar, 4월 : Apr, 5월 : May, 6월 : Jun, 7월 : Jul, 8월 : Aug, 9월 : Sep, 10월 : Oct, 11월 : Nov, 12월 : Dec
+
 ## mac git 설정
 > ### 개행문자 설정
 >> git config --global core.autocrlf input 
