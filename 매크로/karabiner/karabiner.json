@@ -227,10 +227,10 @@
                                 "manipulators": [
                                     {
                                         "from": {
-                                            "key_code": "h",
+                                            "key_code": "n",
                                             "modifiers": {
                                                 "mandatory": [
-                                                    "left_command"
+                                                    "left_command","left_option"
                                                 ],
                                                 "optional": [
                                                     "any"
@@ -246,7 +246,7 @@
                                     },
                                     {
                                         "from": {
-                                            "key_code": "n",
+                                            "key_code": "h",
                                             "modifiers": {
                                                 "mandatory": [
                                                     "left_command","left_option"
