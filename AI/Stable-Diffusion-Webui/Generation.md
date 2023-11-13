@@ -8,4 +8,11 @@
 > 4. Sampling method, steps [<span style="color:red">**4**</span>]  
 >> - method 방식은 큰 차이가 없는 것 같음.
 >> - steps 가 높을수록 더 선명해짐7
-> 5. 사진 크기 조정 [<span style="color:red">**4**</span>]  
+> 5. 사진 크기 조정 [<span style="color:red">**5**</span>]  
+> 6. 한번에 생성되는 사진 개수 [<span style="color:red">**6**</span>] 
+>> Batch count * Batch size = 한번에 생성되는 사진 개수
+> 7. 입력한 Prompt를 적용하는 정도 [<span style="color:red">**7**</span>] 
+> 8. 생성된 이미지의 특정[<span style="color:red">**8**</span>] 
+>> 생성된 이미지의 seed를 넣고 다시 생성할 경우 생성된 이미지와 유사한 이미지를 생성
+> 9. Prompt Script 비교[<span style="color:red">**9**</span>] 
+>> 추가 예정
