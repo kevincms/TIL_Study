@@ -1,4 +1,17 @@
 {
     "git.autofetch": true,
-    "security.workspace.trust.untrustedFiles": "open"
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.defaultProfile.windows": "Git Bash", // 기본 터미널 git으로 변경
+    "markdownlint.config": { // 마크다운 확장 옵션 
+        "MD032": false, // markdown 편집 시, 경고 옵션 무시
+        "MD022": false,
+        "MD029": false,
+        "MD028": false,
+        "MD033": false,
+        "MD009": false,
+        "MD047": false,
+        "MD012": false,
+        "MD034": false,
+        "MD041": false
+    }
 }

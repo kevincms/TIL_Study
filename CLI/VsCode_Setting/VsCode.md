@@ -6,8 +6,10 @@
 > 단축키 설정
 >> keybindings : C:\Users\cho_min_seok\AppData\Roaming\Code\User\keybindings.json  
 
-> setting (아직 먼 세팅인지 몰루?)  
+> setting (기본 유저 설정 + 확장설정)
 >> setting : C:\Users\cho_min_seok\AppData\Roaming\Code\User\settings.json  
+
+
 
 ## 단축키
 - 바로가기 키 : ctrl+k -> ctrl+s
