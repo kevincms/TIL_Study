@@ -4,6 +4,8 @@ Unix Linux Mac
 # How to use Posix 
 ### 현재 Directory 위치
 - pwd
+### Directory 목록
+- ls
 ### Directory 이동
 - cd (Directory_Location)
 > - /   : Root Directory
@@ -13,18 +15,22 @@ Unix Linux Mac
 ### Option & Explanation
 - (Command) --help
 - man (Command)
+> - h : 도움말
 > - e : 한줄 내리기
+> - y : 한줄 올리기
 
 # File
 ### Create
-- editor
+- editor[vi] (filename)
 > - .(filename) : Hidden File
 ### Read
-- editor, cat, ls
+- cat (filename)
+> - 특정 파일내용 확인
 ### Update
-- editor, mv
+- editor[vi] 
+- mv
 ### Delete
-- rm
+- rm (filename)
 
 # Directory
 ### Create
@@ -35,3 +41,13 @@ Unix Linux Mac
 - mv (Current Directory) (Modified Directory)
 ### Delete
 - rm -r (Directory)
+### Link
+- ln -s (Path) (Link Name)
+
+# Apt<sup id="a1">[1](#apt)</sup>
+- apt update : apt 업데이트
+- apt install (package) : 패키지 설치
+
+
+
+<span id="apt">우분투에 내장된 패키지 매니저</span>
