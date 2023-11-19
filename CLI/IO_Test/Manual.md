@@ -9,4 +9,6 @@
 >> - python code.py < input.txt > output.txt
  
 
+> ### Final
+>> -diff output.txt answer.txt
  <!-- 참고 : https://thinking-face.tistory.com/18 -->

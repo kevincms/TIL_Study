@@ -7,7 +7,7 @@ count=1
 count+=1
 
 # 2. 20201415 조민석
-input=sys.stdin.readline # input에 비해 길기 떄문에 변수에 대입해 사용할 수 있음
+# input=sys.stdin.readline # input에 비해 길기 떄문에 변수에 대입해 사용할 수 있음
 # num, name=input().split()
 # print("%d. 학번 : %s 이름 : %s "%(count,num,name))
 count+=1
@@ -15,4 +15,9 @@ count+=1
 # 3. 문자열
 # string=input()
 # print("%d. %s %s"%(count, string.rstrip(), string)) # str_function rstrip()을 이용해 개행문자를 제거할 수 있음
+count+=1
+
+# 4. list
+list=list(map(str,input().split()))
+print("{}. {}".format(count,list)) # str_function rstrip()을 이용해 개행문자를 제거할 수 있음
 count+=1
