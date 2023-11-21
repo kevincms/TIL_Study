@@ -22,7 +22,10 @@ Unix Linux Mac
 # File
 ### Create
 - editor[vi] (filename)
+> - 내용을 작성 후 파일 생성.
 > - .(filename) : Hidden File
+- touch (filename)
+> - 빈 파일생성
 ### Read
 - cat (filename)
 > - 특정 파일내용 확인
