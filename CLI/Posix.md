@@ -46,10 +46,15 @@ Unix Linux Mac
 - rm -r (Directory)
 ### Link
 - ln -s (Path) (Link Name)
+> - s : 링크 옵션. 하드링크가 아닌 심볼릭 링크를 만듦. 윈도우 바로가기와 유사한 개념
 
 # Apt<sup id="a1">[1](#apt)</sup>
-- apt update : apt 업데이트
-- apt install (package) : 패키지 설치
+> - apt update : apt 업데이트
+> - apt install (package) : 패키지 설치
+> - apt upgrade : 전체 패키지 업데이트
+> - apt list : 패키지 목록 리스트
+>> - --installed : 설치된 리스트
+>> - --upgradable : 업그레이드 가능한 리스트 
 
 
 
