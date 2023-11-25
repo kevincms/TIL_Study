@@ -58,4 +58,4 @@ Unix Linux Mac
 
 
 
-<span id="apt">우분투에 내장된 패키지 매니저</span>
+<span id="apt">우분투에 내장된 패키지 매니저. apt는 apt-get의 최신버전이다.</span>

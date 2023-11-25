@@ -12,6 +12,12 @@
 >> wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 
+### GUI
+https://snowdeer.github.io/linux/2017/08/04/install-gui-desktop-on-ubuntu/
+https://guiyomi.tistory.com/113
+> - apt install ubuntu-desktop
+> - apt install ubuntu-desktop
+
 ### 웹검색
 > - chrome
 >> 실행 명령 : google-chrome
