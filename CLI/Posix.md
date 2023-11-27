@@ -29,9 +29,13 @@ Unix Linux Mac
 ### Read
 - cat (filename)
 > - 특정 파일내용 확인
+- find (filename)
+> - 특정 파일 찾기. * 를 이용해 특정 문자열 필터링 가능
 ### Update
 - editor[vi] 
 - mv
+- sed
+> - 
 ### Delete
 - rm (filename)
 

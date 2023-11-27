@@ -13,10 +13,32 @@
 
 
 ### GUI
-https://snowdeer.github.io/linux/2017/08/04/install-gui-desktop-on-ubuntu/
+> - sudo apt-mark hold acpid acpi-support
+> - sudo apt install ubuntu-desktop
+>> - 그냥 ubuntu-desktop 설치 시 오류 발생 [참고 : https://github.com/microsoft/WSL/discussions/9350]
+> - sudo apt install xfce4
+> - sudo apt install xrdp
+
+> - sudo apt install xfce4
+> - sudo apt install xrdp
+> - sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+> - sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
+> - sudo sed -i 's/max_bpp=32/#max_bpp=32nmax_bpp=128/g' /etc/xrdp/xrdp.ini
+> - sudo sed -i 's/xserverbpp=24/#xserverbpp=24nxserverbpp=128/g' /etc/xrdp/xrdp.ini
+
+> - echo xfce4-session > ~/.xsession
+
+> - sudo /etc/init.d/xrdp start
+
 https://guiyomi.tistory.com/113
+
+[실패 참고 : https://x410.dev/cookbook/wsl/enable-systemd-in-wsl2-and-have-the-best-ubuntu-gui-desktop-experience/]
+
 > - apt install ubuntu-desktop
-> - apt install ubuntu-desktop
+
+
+
+
 
 ### 웹검색
 > - chrome
