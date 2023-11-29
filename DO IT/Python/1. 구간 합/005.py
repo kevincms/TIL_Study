@@ -1,3 +1,4 @@
+# https://www.acmicpc.net/problem/10986
 import sys
 
 def Combination_2(n,r=2):
