@@ -2,21 +2,19 @@
 # 입력 :15, 출력 4
 input_num=int(input())
 
-end_list_num=input_num//2 if input_num%2==0 else input_num//2+1
-two_point_list=[i+1 for i in range(end_list_num)]
-
-start_index=0
-end_index=0
+start_index=1
+end_index=1
 temp_sum=0
 
 output_count=0
-while(start_index!=end_list_num-1):
-    temp_sum=sum(two_point_list[start_index:end_index+1])
+while(start_index!=input_num-1):
+    if start_index==end_index: temp_sum=end_index
+    else: temp_sum=(start_index+end_index)*(end_index-start_index+1)//2
     if temp_sum==input_num:
         output_count=output_count+1
         start_index=start_index+1
     elif temp_sum>input_num: start_index=start_index+1
     else:
-        if end_index==end_list_num-1: break
+        if end_index==input_num-1: break
         else: end_index=end_index+1
 print(output_count+1)
