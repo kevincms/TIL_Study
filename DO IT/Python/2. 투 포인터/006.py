@@ -4,17 +4,22 @@ input_num=int(input())
 
 start_index=1
 end_index=1
-temp_sum=0
-
+temp_sum=1
 output_count=0
-while(start_index!=input_num-1):
-    if start_index==end_index: temp_sum=end_index
-    else: temp_sum=(start_index+end_index)*(end_index-start_index+1)//2
+
+end_num=input_num//2 if input_num%2==0 else input_num//2+1
+while(start_index!=end_num or end_index!=end_num):
     if temp_sum==input_num:
         output_count=output_count+1
+
+        temp_sum=temp_sum-start_index
         start_index=start_index+1
-    elif temp_sum>input_num: start_index=start_index+1
+    elif temp_sum>input_num:
+        temp_sum=temp_sum-start_index
+        start_index=start_index+1
     else:
-        if end_index==input_num-1: break
-        else: end_index=end_index+1
+        if end_index>end_num: break
+        else: 
+            end_index=end_index+1
+            temp_sum=temp_sum+end_index
 print(output_count+1)
