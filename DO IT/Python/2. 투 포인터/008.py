@@ -18,6 +18,7 @@ def two_point_search(input_num,input_list,self_index):
 input=sys.stdin.readline
 input_count=int(input())
 input_list=list(map(int,input().split()))
+input_list.sort()
 output_num=0
 
 for i in range(input_count):
