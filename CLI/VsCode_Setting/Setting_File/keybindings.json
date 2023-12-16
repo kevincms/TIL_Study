@@ -42,5 +42,14 @@
     {
         "key": "ctrl+r",
         "command": "-workbench.action.openRecent"
+    },
+    { // https://ycs1m1yk.tistory.com/6
+        "key": "ctrl+up", 
+        "command": "editor.emmet.action.incrementNumberByOne"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "editor.emmet.action.decrementNumberByOne"
     }
+    
 ]
