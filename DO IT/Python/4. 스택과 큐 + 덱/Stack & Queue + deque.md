@@ -15,6 +15,10 @@
 >> - Top : stack[-1]
 >> - push : stack.append(data)
 >> - pop : stack.pop()
+> - deque
+>> - Top : deque[-1]
+>> - push : deque.append(data)
+>> - pop : deque.pop()
 
 ### Queue - 큐
 <img src="https://raw.githubusercontent.com/kevincms/image/main/%EC%9D%B4%EB%A1%A0/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/queue.png" style="float: right" width="40%" height="40%"/>
@@ -34,6 +38,11 @@
 >> - Rear(Back) : queue[-1]
 >> - Enqueue(append) : queue.append(data)
 >> - Dequeue(popleft) : queue.pop(0)
+> - deque
+>> - Front : queue[0]
+>> - Rear(Back) : queue[-1]
+>> - Enqueue(append) : queue.append(data)
+>> - Dequeue(popleft) : queue.popleft()
 
 ### Deque - 덱 or 데크
 <img src="https://raw.githubusercontent.com/kevincms/image/main/%EC%9D%B4%EB%A1%A0/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/deque.png" style="float: right" width="60%" height="60%"/>
