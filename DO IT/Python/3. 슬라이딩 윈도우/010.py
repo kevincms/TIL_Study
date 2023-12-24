@@ -38,9 +38,10 @@ for i in range(num_count-slide_length):
         slide_deque.appendleft(add_num)
         index_deque.appendleft(add_index)
     else:
-        while(slide_deque[-1]>add_num):
-            slide_deque.pop()
-            index_deque.pop()
+        if len(slide_deque)!=0:
+            while(slide_deque[-1]>add_num):
+                slide_deque.pop()
+                index_deque.pop()
         slide_deque.append(add_num)
         index_deque.append(add_index)
     output_list[add_index]=slide_deque[0]
