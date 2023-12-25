@@ -19,9 +19,10 @@ for i in range(slide_length-1):
         slide_deque.appendleft(comp_num)
         index_deque.appendleft(index)
     else:
-        while(slide_deque[-1]>comp_num):
+        while(slide_deque[-1]>=comp_num):
             slide_deque.pop()
             index_deque.pop()
+            if len(slide_deque)==0: break
         slide_deque.append(comp_num)
         index_deque.append(index)
     output_list[index]=slide_deque[0]
@@ -39,9 +40,10 @@ for i in range(num_count-slide_length):
         index_deque.appendleft(add_index)
     else:
         if len(slide_deque)!=0:
-            while(slide_deque[-1]>add_num):
+            while(slide_deque[-1]>=add_num):
                 slide_deque.pop()
                 index_deque.pop()
+                if len(slide_deque)==0: break
         slide_deque.append(add_num)
         index_deque.append(add_index)
     output_list[add_index]=slide_deque[0]
