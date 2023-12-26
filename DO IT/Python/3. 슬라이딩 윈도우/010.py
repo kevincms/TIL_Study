@@ -35,15 +35,18 @@ for i in range(num_count-slide_length):
     while(index_deque[0]<=sub_index):
         slide_deque.popleft()
         index_deque.popleft()
-    if slide_deque[0]>add_num:
+        if len(slide_deque)==0: break
+    if len(slide_deque)==0:
+        slide_deque.append(add_num)
+        index_deque.append(add_index)
+    elif slide_deque[0]>add_num:
         slide_deque.appendleft(add_num)
         index_deque.appendleft(add_index)
     else:
-        if len(slide_deque)!=0:
-            while(slide_deque[-1]>=add_num):
-                slide_deque.pop()
-                index_deque.pop()
-                if len(slide_deque)==0: break
+        while(slide_deque[-1]>=add_num):
+            slide_deque.pop()
+            index_deque.pop()
+            if len(slide_deque)==0: break
         slide_deque.append(add_num)
         index_deque.append(add_index)
     output_list[add_index]=slide_deque[0]
