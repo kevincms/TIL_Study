@@ -5,21 +5,30 @@ from collections import deque
 
 input=sys.stdin.readline
 input_count=int(input())
-stack=deque([1])
-push_count=0
+stack=deque([])
+queue=deque([i+1 for i in range(input_count)])
 sequence_check=True
 output_queue=deque([])
  
 for i in range(input_count):
     input_num=int(input())
-    while(input_num>stack[-1]):
-        stack.append(stack[-1]+1)
-        push_count=push_count+1
+    if len(stack)==0:
+        stack.append(queue[0])
+        queue.popleft()
         output_queue.append("+")
-    if input_num==stack[-1]:
+    while(input_num>stack[-1]):
+        if len(queue)==0:
+            sequence_check=False
+            break
+        else:
+            stack.append(queue[0])
+            queue.popleft()
+            output_queue.append("+")
+    if not(sequence_check): break
+    elif input_num==stack[-1]:
         stack.pop()
         output_queue.append("-")
-    if push_count>input_count:
+    elif input_num<stack[-1]:
         sequence_check=False
         break
 
