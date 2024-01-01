@@ -11,7 +11,9 @@ for i in range(cal_num):
     input_num=int(input())
     if input_num==0:
         if heap_list:
-            heap_list.sort(reverse=True)
-            print(heap_list.pop()[1])
+            if before_sort_check: print(heap_list.pop()[1])
+            else: 
+                heap_list.sort(reverse=True)
+                print(heap_list.pop()[1])
         else: print("0")
     else: heap_list.append([abs(input_num),input_num])
