@@ -58,14 +58,31 @@
 - 큐의 예시 사진에서는 왼쪽에서 삽입되어 오른쪽으로 나와있지만 기존의 list를 사용하는 방식은 그 반대이므로 반대방향으로 생각하는 것이 편하다.
 
 #### Python
-- Deque을 list를 이용해 사용할 수 있는 있지만 collections.deque 모듈이 더 처리가 빠르다
+- Deque을 list를 이용해 구현할 수 있는 있지만 collections.deque 클래스의 더 처리가 빠르다
 > - deque
 >> - 요소 접근 : 리스트와 동일 (ex. deque[0])
->> - append : deque.append(item)
->> - appendleft : deque.appendleft(item)
+>> - append : deque.append(element)
+>> - appendleft : deque.appendleft(element)
 >> - pop : deque.pop()
 >> - popleft : deque.popleft()
 >> - 오른쪽으로 deque 추가 : deque.extend(array)
 >> - 왼쪽으로 deque 추가 : deque.extendleft(array)
 >> - 요소 삭제 : deque.remove(element)
 >> - 요소 회전 : deque.rotate(num) (양수 : 시계(오른쪽), 음수 : 반시계(왼쪽))
+
+### 우선순위 큐
+- 선입선출의 특징을 가진 큐와 다르게 제거될 때 가장 작은 값이 제거되는 특징을 가지고 있는 자료구조이다.
+- queue.PriorityQueue 클래스를 사용한다.
+- 힙과 유사한 자료구조인 것 같은데, 힙은 트리 또는 그래프를 사용하는 개념이라 아직 이해하지 못했다.
+> - prqueue
+>> - 선언 : from queue import PriorityQueue  
+            크기를 지정하지 않으면 무한대이다.  
+            prqueue=PriorityQueue()  
+            우선순위 큐의 크기를 지정하고 싶으면  
+            prqueue=PriorityQueue(maxsize=n)  
+            최대 크기를 초과하여 요소를 추가하면 무한대기에 걸린다.
+>> - 요소 추가 : prqueue.put(element)
+>> - 요소 삭제 : prqueue.get()
+>> - 크기 확인 : prqueue.qsize()
+>> - empty 확인 : prqueue.empty()
+>> - full 확인 : prqueue.full()
