@@ -85,3 +85,20 @@ count=count+1
 queue.popleft() # 19. Dequeue
 print(f"{count}. {queue}")
 count=count+1
+
+from queue import PriorityQueue
+# PriorityQueue
+prqueue=PriorityQueue()
+
+print(f"{count}. {prqueue.empty()}") # 20. prqueue empty 확인
+count=count+1
+
+prqueue.put(5) # prqueue 요소 삽입
+print(f"{count}. {prqueue.get()}") # 21. prqueue 요소 삭제 및 반환
+count=count+1
+
+prqueue=PriorityQueue(maxsize=2) # 만약 maxsize를 초과하여 put을 시도하면 무한대기에 걸린다.
+prqueue.put(1)
+prqueue.put(2)
+print(f"{count}. {prqueue.full()}") # 22. prqueue full 확인
+count=count+1
