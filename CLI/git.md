@@ -6,19 +6,29 @@ https://midnightcow.tistory.com/entry/Git-Command-%EC%82%AC%EC%9A%A9%EB%B2%95-%E
 - git remote add  <u>name</u> <u>path</u> :
 - git remote remove 
 
-## git 설정 확인
-git config --list  
-
-git config --global user.name <u>github ID</u>
-git config —global user.mail <u>github Email</u>
-
-- git status : git의 상태 파악 [현재 commit 된 파일, ]
-- git log : 로그 확인
-
 ## git repository 만들기
 1. git init [새로 만들기] **or** git clone [복사하기]
 2. git add <u>파일 이름</u>
 3. git commit 후 vim 실행 **or** git commit -m "message"
+
+## git 자주 쓰는 명령어
+> - git status
+>> - 현재 git의 상태를 파악
+> - git add
+>> - 변경된 파일을 반영
+>> - -u : 삭제된 파일을 반영하는 옵션
+
+## git 설정 및 상태 확인
+> - 기본 설정 보기
+>> - git config --list  
+> - github 연동
+>> - git config --global user.name <u>github ID</u>
+>> - git config —global user.mail <u>github Email</u>
+> - 설정 초기화
+>> - git config --unset <NAME>
+
+- git status : git의 상태 파악 [현재 commit 된 파일, ]
+- git log : 로그 확인
 
 ## git commit 날짜 수정
 > 1. commit 날짜 지정
@@ -26,7 +36,7 @@ git config —global user.mail <u>github Email</u>
 >> - git commit --date "$(date)" -m "message"
 >> - git commit --date "Thu 30 Mar 2023 10:00:00 KST" -m "message"
 
-> 2. 마지막 commit 날짜 수정
+> 2. 마지막 commit 날짜 수정s
 >> - git commit --amend --no-edit --date "$(date)"
 >> - git commit --amend --no-edit --date "Thu 30 Mar 2023 10:00:00 KST"
 
@@ -40,7 +50,10 @@ git config —global user.mail <u>github Email</u>
 
 ## mac git 설정
 > ### 개행문자 설정
->> git config --global core.autocrlf input 
->> git config --global core.eol lf 
+>> git config --global core.autocrlf input
+>> git config --global core.eol lf
 > ### 한글 설정
 >> git config --global core.quotepath false
+>> git config --global core.precomposeunicode true
+> ### Vscode GUI
+>> git config --global core.filemode true
