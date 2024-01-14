@@ -17,7 +17,7 @@ if [ $file_type == "py" ]; then;
 fi
 
 ### 테스트 - 터미널 붙여넣기용
-P_num="017";file_type="py";IO_Test_Case=4;File_name=${P_num}.${file_type};
+P_num="018";file_type="py";IO_Test_Case=1;File_name=${P_num}.${file_type};
 if [ $file_type == "py" ]; then for ((i=0; i<${IO_Test_Case}; i++));    do
         input_file=${P_num}_input${i}.txt;
         output_file=${P_num}_output${i}.txt;
@@ -28,8 +28,8 @@ if [ $file_type == "py" ]; then for ((i=0; i<${IO_Test_Case}; i++));    do
 fi
 
 ### 파일 생성 (순차)
-P_num="017";
-IO_Test_Case=4;
+P_num="018";
+IO_Test_Case=1;
 for ((i=0; i<${IO_Test_Case}; i++));
 do
     input_file=${P_num}_input${i}.txt;
