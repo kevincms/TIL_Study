@@ -40,7 +40,7 @@ while(1):
         back_count=back_count+pivot_count
         sort_list=front_list
     elif front_pivot_sum>=num_order:
-        output_num=pivot_count
+        output_num=sort_list[0]
         break
     else:
         if back_list_size==1 and num_order==front_pivot_sum+1:
