@@ -1,5 +1,4 @@
 # https://www.acmicpc.net/problem/11004
-    
 
 def pivot_divide(input_list):
     pivot_num=input_list[0]
@@ -51,3 +50,8 @@ while(1):
         sort_list=back_list
 
 print(output_num)
+
+# num_count, num_order=map(int,input().split())
+# num_list=list(map(int,input().split()))
+# num_list.sort()
+# print(num_list[num_order-1])
