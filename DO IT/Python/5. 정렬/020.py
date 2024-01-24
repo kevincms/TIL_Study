@@ -55,14 +55,13 @@ else:
             before_check=True
     sort_list.append([int(input())])
 
-merge_num=0
+output_list=[]
 while(1):
     list_length=len(sort_list)
     if list_length==1: break
-
-    list1_index=merge_num%list_length
-    list2_index=list1_index+1
-    sort_list[list1_index:list2_index+1]=merge(sort_list[list1_index],sort_list[list2_index])
-    merge_num=merge_num+1
+    for i in range(0,list_length-1,2): output_list.append(merge(sort_list[i],sort_list[i+1]))
+    if list_length%2==1: output_list.append(sort_list[list_length-1])
+    sort_list=output_list[:]
+    output_list=[]
     
-print(sort_list)
+for i in range(input_count): print(sort_list[0][i])
