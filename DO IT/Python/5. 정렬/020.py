@@ -1,6 +1,6 @@
 # https://www.acmicpc.net/problem/2751
 
-def merge(list1,list2):
+def merge_list(list1,list2):
     list1_length=len(list1)
     list2_length=len(list2)
     output_list=[0 for _ in range(list1_length+list2_length)]
@@ -24,44 +24,27 @@ def merge(list1,list2):
             if list1_index==list1_length:
                 output_list[output_index:]=list2[list2_index:]
                 return output_list
+            
+def merge_sort(input_list):
+    output_list=[]
+    while(1):
+        list_length=len(input_list)
+        if list_length==1: return input_list
+        for i in range(0,list_length-1,2): output_list.append(merge_list(input_list[i],input_list[i+1]))
+        if list_length%2==1: output_list.append(input_list[list_length-1])
+        input_list=output_list[:]
+        output_list=[]
 
 import sys
 
 input=sys.stdin.readline
 input_count=int(input())
-sort_list=[]
+input_list=[0 for _ in range(input_count)]
 temp_num=0
 before_check=False
 
-if input_count%2==0:
-    for i in range(input_count):
-        input_num=int(input())
-        if before_check:
-            before_check=False
-            if input_num>=temp_num: sort_list.append([temp_num,input_num])
-            else: sort_list.append([input_num,temp_num])
-        else:
-            temp_num=input_num
-            before_check=True
-else:
-    for i in range(input_count-1):
-        input_num=int(input())
-        if before_check:
-            before_check=False
-            if input_num>=temp_num: sort_list.append([temp_num,input_num])
-            else: sort_list.append([input_num,temp_num])
-        else:
-            temp_num=input_num
-            before_check=True
-    sort_list.append([int(input())])
+for i in range(input_count): input_list[i]=[int(input())]
 
-output_list=[]
-while(1):
-    list_length=len(sort_list)
-    if list_length==1: break
-    for i in range(0,list_length-1,2): output_list.append(merge(sort_list[i],sort_list[i+1]))
-    if list_length%2==1: output_list.append(sort_list[list_length-1])
-    sort_list=output_list[:]
-    output_list=[]
+output_list=merge_sort(input_list)
     
-for i in range(input_count): print(sort_list[0][i])
+for i in range(input_count): print(output_list[0][i])
