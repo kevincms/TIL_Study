@@ -2,9 +2,6 @@
 
 import sys
 
-def swap(input_num1,input_num2):
-    return input_num2, input_num1
-
 input=sys.stdin.readline
 num_count=int(input())
 num_list=[0 for _ in range(num_count)]
