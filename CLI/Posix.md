@@ -19,7 +19,7 @@ Unix Linux Mac
 > - e : 한줄 내리기
 > - y : 한줄 올리기
 
-# File
+# File CRUD (Create, read, update and delete)
 ### Create
 - editor[vi] (filename)
 > - 내용을 작성 후 파일 생성.
@@ -39,7 +39,7 @@ Unix Linux Mac
 ### Delete
 - rm (filename)
 
-# Directory
+# Directory CRUD (Create, read, update and delete)
 ### Create
 - mkdir (Directory) 
 ### Read

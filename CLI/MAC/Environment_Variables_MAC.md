@@ -31,3 +31,12 @@
 >> - alias python='python3'
 >> - PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:${PATH}"
 >> - export PATH
+> - source ~/.bash_profile
+>> - source 명령어를 이용해서 변경된 내용 적용하기
+
+### Homebrew
+> - ~/.bash_profile 생성 혹은 편집 후 아래 명령어 입력
+>> - PATH="/opt/homebrew/bin:${PATH}"
+>> - export PATH
+> - source ~/.bash_profile
+>> - source 명령어를 이용해서 변경된 내용 적용하기
