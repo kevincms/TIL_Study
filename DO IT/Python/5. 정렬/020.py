@@ -40,8 +40,6 @@ import sys
 input=sys.stdin.readline
 input_count=int(input())
 input_list=[0 for _ in range(input_count)]
-temp_num=0
-before_check=False
 
 for i in range(input_count): input_list[i]=[int(input())]
 
