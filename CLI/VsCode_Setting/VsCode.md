@@ -13,6 +13,7 @@
 
 ## 단축키
 - 바로가기 키 : ctrl+k -> ctrl+s
+- json 만들기 : ctrl+shift+p -> open keyboard shortcuts
 > ### 단축키 조건설정
 >> - 참고문서 : https://code.visualstudio.com/api/references/when-clause-contexts
 > ### editorFocus
