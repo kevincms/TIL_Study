@@ -19,17 +19,17 @@ def DFS(graph_list, check_list):
     compelte_list=[]
     stack=deque()
     start_index=0
+
+    temp_list=graph_list[start_index]
+    stack.append(temp_list[0])
+    check_list[temp_list[0]-1]=True
+
     while(1):
-        if len(stack)==0:
-            temp_list=graph_list[start_index]
-            if not check_list[start_index-1]:
-                stack.append(temp_list[0])
-                check_list[temp_list[0]-1]=True
-        
+        if len(stack)==0: return compelte_list, check_list
+
         previous_top=stack[-1]
         temp_list=graph_list[previous_top-1]
         compelte_list.append(previous_top)
-        if len(compelte_list)==graph_size: return check_list, compelte_list
         stack.pop()
 
         temp_len=len(temp_list)
