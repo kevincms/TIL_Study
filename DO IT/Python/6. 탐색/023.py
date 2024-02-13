@@ -7,11 +7,9 @@ def DFS(graph_list, check_list, start_index):
     graph_size=len(graph_list)
     compelte_list=[]
     stack=deque()
-    start_index=start_index
 
-    temp_list=graph_list[start_index]
-    stack.append(temp_list[0])
-    check_list[temp_list[0]-1]=True
+    stack.append(graph_list[start_index][0])
+    check_list[graph_list[start_index][0]-1]=True
 
     while(1):
         if len(stack)==0: return compelte_list, check_list
@@ -28,10 +26,6 @@ def DFS(graph_list, check_list, start_index):
                 if check_list[check_node-1]: continue
                 stack.append(check_node)
                 check_list[temp_list[i]-1]=True
-        while(1):
-            if start_index==graph_size-1: break
-            if not(check_list[start_index]): break
-            start_index+=1
 
 input=sys.stdin.readline
 point, link=map(int,input().split())
