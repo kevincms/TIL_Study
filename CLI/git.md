@@ -17,6 +17,8 @@ https://midnightcow.tistory.com/entry/Git-Command-%EC%82%AC%EC%9A%A9%EB%B2%95-%E
 > - git add
 >> - 변경된 파일을 반영
 >> - -u : 삭제된 파일을 반영하는 옵션
+> - git reset (filename - option)
+>> - add 된 파일을 되돌기는 용도
 
 ## git 설정 및 상태 확인
 > - 기본 설정 보기
@@ -47,6 +49,7 @@ https://midnightcow.tistory.com/entry/Git-Command-%EC%82%AC%EC%9A%A9%EB%B2%95-%E
 >> - 형식 : "Thu 30 Mar 2023 10:00:00 KST"
 >> - 월 : Mon, 화 : Tue, 수 : Wed, 목 : Thu, 금 : Fri, 토 : Sat, 일 : Sun
 >> - 1월 : Jan, 2월 : Feb, 3월 : Mar, 4월 : Apr, 5월 : May, 6월 : Jun, 7월 : Jul, 8월 : Aug, 9월 : Sep, 10월 : Oct, 11월 : Nov, 12월 : Dec
+
 
 ## mac git 설정
 > ### 개행문자 설정
