@@ -33,7 +33,7 @@ def BFS(graph_list, check_list, start_index):
     queue=deque()
 
     queue.append(graph_list[start_index][0])
-    check_list[graph_list[0][0]-1]=True
+    check_list[graph_list[start_index][0]-1]=True
 
     while(1):
         if len(queue)==0: return compelte_list, check_list
