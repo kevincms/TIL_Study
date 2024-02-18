@@ -25,7 +25,7 @@ https://midnightcow.tistory.com/entry/Git-Command-%EC%82%AC%EC%9A%A9%EB%B2%95-%E
 >> - git config --list  
 > - github 연동
 >> - git config --global user.name <u>github ID</u>
->> - git config —global user.mail <u>github Email</u>
+>> - git config --global user.mail <u>github Email</u>
 > - 설정 초기화
 >> - git config --unset <NAME>
 
@@ -50,13 +50,20 @@ https://midnightcow.tistory.com/entry/Git-Command-%EC%82%AC%EC%9A%A9%EB%B2%95-%E
 >> - 월 : Mon, 화 : Tue, 수 : Wed, 목 : Thu, 금 : Fri, 토 : Sat, 일 : Sun
 >> - 1월 : Jan, 2월 : Feb, 3월 : Mar, 4월 : Apr, 5월 : May, 6월 : Jun, 7월 : Jul, 8월 : Aug, 9월 : Sep, 10월 : Oct, 11월 : Nov, 12월 : Dec
 
+>> - ex) git commit --date "Sat 23 Jun 2024 12:34:06 KST" -m "message" 
+>> - 요일은 안맞춰도 자동으로 맞추어준다.
 
 ## mac git 설정
 > ### 개행문자 설정
->> git config --global core.autocrlf input
->> git config --global core.eol lf
+>> - git config --global core.autocrlf input
+>> - git config --global core.eol lf
 > ### 한글 설정
->> git config --global core.quotepath false
->> git config --global core.precomposeunicode true
+>> - git config --global core.quotepath false
+>> - git config --global core.precomposeunicode true
 > ### Vscode GUI
->> git config --global core.filemode true
+>> - git config --global core.filemode true
+> ### author
+>> - git config user.useConfigOnly true
+> ### 잔디오류 [ https://it-eldorado.tistory.com/145 ]
+>> - git filter-branch -f --env-filter "GIT_AUTHOR_NAME='kevincms'; GIT_AUTHOR_EMAIL='kevincms314@naver.com'; GIT_COMMITTER_NAME='kevincms'; GIT_COMMITTER_EMAIL='kevincms314@naver.com';" HEAD
+>> - git push --force --set-upstream origin master
