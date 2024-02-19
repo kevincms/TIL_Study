@@ -24,5 +24,7 @@ BASIC="C:\Users\cho_min_seok\Melon_Reeve_Musk\"
 >> C:\Users\cho_min_seok\Melon_Reeve_Musk\Python 3.12.0  
 >> <u>%BASIC%Python 3.12.0</u> 은 anaconda Python, <u>%BASIC%Python 3.12.0\Scripts</u> 는 pip 실행
 >> Scripts를 path 경로 위에 추가해야 함. pip과 python의 명령어가 충돌되는 문제가 일어나는 것 같음
+>> 그냥 installer 설치하면 알아서 경로 설정됨.
+>> cmd에 python 입력시 마이크로소프트 앱이 뜨는 경우 검색에 "앱 실행 별칭"에서 "앱 설치 관리자" 설정 off로 변경
 > ### Nodejs
 >> C:\Users\cho_min_seok\Melon_Reeve_Musk\nodejs 18.18.2

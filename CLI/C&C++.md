@@ -17,7 +17,7 @@
 > - 전처리
 >> - g++ -E "source.cpp" -o "source.i"
 > - 컴파일
->> - g++ -S "source.cpp" -o "source.s"
+>> - g++ -S "source.i" -o "source.s"
 
 <!-- - g++ "source.c"
 - gcc -E "source.c"
