@@ -1,3 +1,5 @@
+# https://www.koreaminecraft.net/dev/1544031
+
 import discord
 
 TOKEN = '<TOKEN>'
@@ -6,6 +8,6 @@ TOKEN = '<TOKEN>'
 intents = discord.Intents.default()
 
 # 봇 객체 생성
-client=discord.Client(intents=intents)
+client = discord.Client(intents=intents)
 
 client.run(TOKEN)

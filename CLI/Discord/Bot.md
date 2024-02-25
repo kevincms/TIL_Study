@@ -1,5 +1,3 @@
-<!-- https://yunwoong.tistory.com/212 -->
-
 ### Bot 생성 절차
 1. 디스코드 개발자 포털[https://discord.com/developers/applications]로 이동
 2. 우측 상단의 New Application 클릭
