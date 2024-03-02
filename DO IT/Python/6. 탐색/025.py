@@ -16,15 +16,28 @@ def DFS(stack,output_list,check_list):
 
     arc_list=graph_list[node]
     arc_len=len(arc_list)
-    if arc_len==1: return DFS(stack,output_list,check_list)
+    if arc_len==1: return DFS(stack.copy(),output_list[:],check_list[:])
     else:
+        max_list=[]
         for i in range(1,arc_len):
             node_index=arc_list[i]
+            max_len=0
+            
             if not check_list[node_index]:
                 stack.append(node_index)
                 check_list[node_index]=True
-                break
-        return DFS(stack,output_list,check_list)
+                temp_list=DFS(stack.copy(),output_list[:],check_list[:])
+                temp_len=len(temp_list)
+
+                if temp_len>max_len:
+                    max_len=temp_len
+                    max_list=temp_list
+                
+                stack.pop()
+                check_list[node_index]=False
+                
+        if len(stack)==0: return output_list
+        return max_list
 
 for i in range(friend_num):
     num_1, num_2=map(int,input().split())
@@ -35,9 +48,9 @@ check_num=0
 for i in range(people_num):
     stack=deque([i])
     check_list[i]=True
-    temp_list=DFS(stack,[],check_list[:])
+    temp_list=DFS(stack.copy(),[],check_list[:])
     check_list[i]=False
-    # print(temp_list)
+    print(temp_list)
     if len(temp_list)>=5:
         check_num=1
         break
