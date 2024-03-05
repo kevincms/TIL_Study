@@ -1,36 +1,31 @@
 from collections import deque
 
 node_num=6
-graph_list=[[i+1] for i in range(node_num)]
+graph_list=[[] for i in range(node_num+1)]
 
-graph_list[0].append(2)
-graph_list[0].append(3)
+graph_list[1].append(2)
+graph_list[1].append(3)
 
-graph_list[1].append(5)
-graph_list[1].append(6)
+graph_list[2].append(5)
+graph_list[2].append(6)
 
-graph_list[2].append(4)
+graph_list[3].append(4)
 
-graph_list[3].append(6)
+graph_list[4].append(6)
 
-check_list=[False for _ in range(6)]
+check_list=[False for _ in range(node_num+1)]
+output_list=[]
 
-def DFS(stack=deque([0]),output_list=[],check_list=check_list):
-    if len(stack)==0: return output_list
-    node=stack[-1]
-    stack.pop()
-    output_list.append(node+1)
-    check_list[node]=True
+def DFS(index=1):
+    temp=graph_list[index]
+    output_list.append(index)
+    check_list[index]=True
+    if temp:    
+        for i in range(len(temp)):
+            temp_index=temp[i]
+            if not check_list[temp_index]: DFS(temp_index)
+                
+    
 
-    arc_list=graph_list[node]
-    arc_len=len(arc_list)
-    if arc_len==1: return DFS(stack,output_list)
-    else:
-        for i in range(1,arc_len):
-            node_index=arc_list[i]-1
-            if not check_list[node_index]: stack.append(node_index)
-        return DFS(stack,output_list)
-
-start_index=0
-stack=deque([start_index])
-print(DFS())
+DFS()
+print(output_list)
