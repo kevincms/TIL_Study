@@ -1,17 +1,28 @@
 '''
 문제
  -다음 소스는 N번째 피보나치 수를 구하는 C++ 함수이다.
-int fibonacci(int n) {
-    if (n == 0) {
-        printf("0");
-        return 0;
-    } else if (n == 1) {
-        printf("1");
-        return 1;
-    } else {
-        return fibonacci(n‐1) + fibonacci(n‐2);
-    }
-}
+int fibonacci(int n) {
+
+    if (n == 0) {
+
+        printf("0");
+
+        return 0;
+
+    } else if (n == 1) {
+
+        printf("1");
+
+        return 1;
+
+    } else {
+
+        return fibonacci(n-1) + fibonacci(n-2);
+
+    }
+
+}
+
 
 fibonacci(3)을 호출하면 다음과 같은 일이 일어난다.
 
@@ -50,4 +61,29 @@ fibonacci(3)은 fibonacci(2)와 fibonacci(1)의 결과를 얻고, 2를 리턴한
 10946 17711
 
 https://www.acmicpc.net//problem/1003
+
+count를 저장 한뒤 차례대로 더하면 됨.
+num 0 1
+0   1 0
+1   0 1
+2   1 1
+3   1 2
+4   2 3
 '''
+
+def count_fi(input_num):
+    global fi_count_list
+    size=len(fi_count_list)
+    if size<=input_num:
+        temp=[fi_count_list[size-1][0]+fi_count_list[size-2][0],fi_count_list[size-1][1]+fi_count_list[size-2][1]]
+        fi_count_list.append(temp)
+        count_fi(input_num)
+    
+
+input_t=int(input())
+fi_count_list=[[1,0],[0,1]]
+for i in range(input_t):
+    num=int(input())
+    if len(fi_count_list)<=num: count_fi(num)
+    print(fi_count_list[num][0],fi_count_list[num][1])
+    
