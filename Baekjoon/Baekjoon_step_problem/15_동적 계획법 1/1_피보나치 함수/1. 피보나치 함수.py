@@ -71,19 +71,18 @@ num 0 1
 4   2 3
 '''
 
-def count_fi(input_num):
-    global fi_count_list
-    size=len(fi_count_list)
-    if size<=input_num:
-        temp=[fi_count_list[size-1][0]+fi_count_list[size-2][0],fi_count_list[size-1][1]+fi_count_list[size-2][1]]
-        fi_count_list.append(temp)
-        count_fi(input_num)
-    
+def Fi(num):
+    size=len(F_list)
+    if size<=num:
+        temp1=Fi(num-1)
+        temp2=Fi(num-2)
+        temp=[temp1[0]+temp2[0],temp1[1]+temp2[1]]
+        F_list.append(temp)
+    return F_list[num]
 
+F_list=[[1,0],[0,1]]
 input_t=int(input())
-fi_count_list=[[1,0],[0,1]]
 for i in range(input_t):
     num=int(input())
-    if len(fi_count_list)<=num: count_fi(num)
-    print(fi_count_list[num][0],fi_count_list[num][1])
-    
+    temp=Fi(num)
+    print(temp[0],temp[1])
