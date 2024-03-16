@@ -19,7 +19,8 @@ https://www.acmicpc.net//problem/1904
 점화시 F(N)=F(N-1)+F(N-2)
 '''
 
-num_list=[0,1,2]
+# 재귀문을 쓸 이유도 없고, 구현하기도 어렵거나 불가능 한 것 같음.
+# 재귀로 만들어도 재귀의 형태를 띄는 반복문이다.
 num=int(input())
 temp_1=1
 temp_2=2

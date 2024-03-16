@@ -8,13 +8,28 @@ N이 주어졌을 때, P(N)을 구하는 프로그램을 작성하시오.
 출력
  -각 테스트 케이스마다 P(N)을 출력한다.
 예제 입력 1
- -2
-6
-12
+ -2
+6
+12
 
 예제 출력 1
- -3
-16
+ -3
+
+16
+
 
 https://www.acmicpc.net//problem/9461
 '''
+
+def Tri(num):
+    size=len(tri_list)
+    if size<=num:
+        temp=Tri(num-1)+Tri(num-5)
+        tri_list.append(temp)
+    return tri_list[num]
+
+tri_list=[0,1,1,1,2,2]
+input_t=int(input())
+for i in range(input_t):
+    num=int(input())
+    print(Tri(num))
