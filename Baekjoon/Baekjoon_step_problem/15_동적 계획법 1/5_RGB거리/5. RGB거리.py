@@ -1,6 +1,6 @@
 '''
 문제
- -RGB거리에는 집이 N개 있다. 거리는 선분으로 나타낼 수 있고, 1번 집부터 N번 집이 순서대로 있다.
+ -RGB거리에는 집이 N개 있다. 거리는 선분으로 나타낼 수 있고, 1번 집부터 N번 집이 순서대로 있다.
 집은 빨강, 초록, 파랑 중 하나의 색으로 칠해야 한다. 각각의 집을 빨강, 초록, 파랑으로 칠하는 비용이 주어졌을 때, 아래 규칙을 만족하면서 모든 집을 칠하는 비용의 최솟값을 구해보자.
 
 1번 집의 색은 2번 집의 색과 같지 않아야 한다.
@@ -64,4 +64,36 @@ i(2 ≤ i ≤ N-1)번 집의 색은 i-1번, i+1번 집의 색과 같지 않아�
  -253
 
 https://www.acmicpc.net//problem/1149
+
+big-o
+0.5=천만번 10^7
+
+n개의 입력이 들어오면
+3*2^(n-1) ~= 2^n 모든 경우의 수는 안됨.
+
 '''
+
+import sys
+
+input=sys.stdin.readline
+input_t=int(input())
+cost_list=[None]*input_t
+sum=[0,0,0]
+for t in range(input_t): cost_list[t]=list(map(int,input().split()))
+
+for i in range(3):
+    sum[i]+=cost_list[0][i]
+    pre_index=i
+    for t in range(1,input_t):
+        temp_min=1001
+        for j in range(3):
+            if j!=pre_index:
+                if temp_min>cost_list[t][j]:
+                    temp_min=cost_list[t][j]
+                    temp_index=j
+        pre_index=temp_index
+        print(temp_min,end=" ")
+        sum[i]+=temp_min
+    print(sum[i])
+max_min=min(min(sum[0],sum[1]),sum[2])
+print(max_min)
