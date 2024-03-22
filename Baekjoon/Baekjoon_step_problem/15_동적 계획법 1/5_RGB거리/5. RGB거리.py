@@ -79,21 +79,14 @@ input=sys.stdin.readline
 input_t=int(input())
 cost_list=[None]*input_t
 sum=[0,0,0]
+c_rgb=[None]*3
 for t in range(input_t): cost_list[t]=list(map(int,input().split()))
 
-for i in range(3):
-    sum[i]+=cost_list[0][i]
-    pre_index=i
-    for t in range(1,input_t):
-        temp_min=1001
-        for j in range(3):
-            if j!=pre_index:
-                if temp_min>cost_list[t][j]:
-                    temp_min=cost_list[t][j]
-                    temp_index=j
-        pre_index=temp_index
-        print(temp_min,end=" ")
-        sum[i]+=temp_min
-    print(sum[i])
-max_min=min(min(sum[0],sum[1]),sum[2])
-print(max_min)
+for t in range(0,input_t):
+    c_rgb[0]=min(sum[1],sum[2])
+    c_rgb[1]=min(sum[0],sum[2])
+    c_rgb[2]=min(sum[0],sum[1])
+    for i in range(3): sum[i]=c_rgb[i]+cost_list[t][i]
+        
+final_min=min(min(sum[0],sum[1]),sum[2])
+print(final_min)
