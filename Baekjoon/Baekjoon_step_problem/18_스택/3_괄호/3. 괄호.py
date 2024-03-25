@@ -36,3 +36,21 @@ NO
 
 https://www.acmicpc.net//problem/9012
 '''
+
+from collections import deque
+import sys
+input=sys.stdin.readline
+input_t=int(input())
+stack=deque()
+for t in range(input_t):
+    p_string=input().strip()
+    for i in p_string:
+        if i=="(": stack.append(i)
+        else: 
+            if len(stack)==0:
+                stack.append(i)
+                break
+            else: stack.pop()
+    if len(stack)==0: print("YES")
+    else: print("NO")
+    stack.clear()
