@@ -38,3 +38,47 @@
 
 https://www.acmicpc.net//problem/10773
 '''
+
+class linklist():
+    def __init__(self,data,next) -> None:
+        self.data=data
+        self.next=next
+
+class stack():
+    def __init__(self) -> None:
+        self.Top=None
+        self.Size=0
+
+    def push(self,data):
+        node=linklist(data,self.Top)
+        self.Top=node
+        self.Size+=1
+
+    def pop(self):
+        if self.empty(): return -1
+        else:
+            e=self.Top
+            self.Top=e.next
+            self.Size-=1
+            return e.data
+    
+    def size(self): return self.Size
+    def empty(self): return int(self.Top==None)
+    def top(self):
+        if self.empty(): return -1
+        else: return self.Top.data
+
+import sys
+input=sys.stdin.readline
+input_t=int(input())
+S=stack()
+for t in range(input_t):
+    num=int(input())
+    if num==0: S.pop()
+    else: S.push(num)
+
+sum=0
+while(1):
+    if S.empty(): break
+    sum+=S.pop()
+print(sum)
