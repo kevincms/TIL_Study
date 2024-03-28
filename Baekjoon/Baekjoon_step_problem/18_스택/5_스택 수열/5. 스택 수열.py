@@ -48,3 +48,29 @@
 
 https://www.acmicpc.net//problem/1874
 '''
+from collections import deque
+import sys
+input=sys.stdin.readline
+stack=deque()
+output_queue=deque()
+input_t=int(input())
+push_num=1
+can_series=True
+for t in range(input_t):
+    input_num=int(input())
+    while(1):
+        if input_num<push_num: break
+        stack.append(push_num)
+        output_queue.append("+")
+        push_num+=1
+    temp=stack.pop()
+    output_queue.append("-")
+    if temp!=input_num:
+        can_series=False
+        break
+
+if can_series:
+    while(1):
+        if len(output_queue)==0: break
+        print(output_queue.popleft())
+else: print("NO")
