@@ -33,3 +33,36 @@
 
 https://www.acmicpc.net//problem/2579
 '''
+
+import sys
+input=sys.stdin.readline
+input_t=int(input())
+sum_1=[]
+sum_2=[]
+temp_sum=[]
+pop_index=[]
+
+num=int(input())
+sum_1=[[num,1],[num,2]]
+
+for t in range(1, input_t):
+    num=int(input())
+    
+    for i in range(len(sum_1)):
+        if sum_1[i][1]==2:
+            temp_sum.append(sum_1[i][0])
+            pop_index.append(i)
+        else:
+            temp_sum.append(sum_1[i][0])
+            sum_1[i][0]+=num
+            sum_1[i][1]+=1
+    
+    while(len(pop_index)!=0): sum_1.pop(pop_index.pop())
+
+    for i in sum_2:
+        sum_1.append([i+num,1])
+    sum_2.clear()
+    sum_2=temp_sum[:]
+    temp_sum.clear()
+
+print(max(sum_1)[0])
