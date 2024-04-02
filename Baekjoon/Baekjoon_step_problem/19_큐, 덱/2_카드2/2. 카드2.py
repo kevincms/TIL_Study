@@ -16,3 +16,13 @@ N이 주어졌을 때, 제일 마지막에 남게 되는 카드를 구하는 프
 
 https://www.acmicpc.net//problem/2164
 '''
+from collections import deque
+num=int(input())
+queue=deque([i+1 for i in range(num)])
+
+for i in range(num-1):
+    queue.popleft()
+    temp=queue.popleft()
+    queue.append(temp)
+    
+print(queue.popleft())
