@@ -4,7 +4,7 @@ import bs4 # beautifulsoup4와 lxml을 모두 설치
 url="https://comic.naver.com/webtoon/weekday"
 response=requests.get(url)
 response.raise_for_status()
-soup=bs4.BeautifulSoup(response.text,"lxml")
+soup=bs4.BeautifulSoup(response.text,"html.parser")
 count=1
 
 print("%d. %s"%(count,soup.title)) # 1. 처음의 html 태그 추출
