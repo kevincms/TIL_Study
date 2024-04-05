@@ -27,9 +27,24 @@ N,K=tuple(map(int,input().split()))
 queue=deque([i+1 for i in range(N)])
 output=[None]*N
 for i in range(N):
+    for _ in range(K-1):
+        temp=queue.popleft()
+        queue.append(temp)
+    output[i]=str(queue.popleft())
+print(f"<{', '.join(output)}>")
+
+'''
+from collections import deque
+N,K=tuple(map(int,input().split()))
+queue=deque([i+1 for i in range(N)])
+output=[None]*N
+
+for i in range(N):
     for j in range(K-1):
         temp=queue.popleft()
         queue.append(temp)
     output[i]=f"{queue.popleft()},"
 print("<",end="")
 print(*output,end="\b>\n")
+
+'''
