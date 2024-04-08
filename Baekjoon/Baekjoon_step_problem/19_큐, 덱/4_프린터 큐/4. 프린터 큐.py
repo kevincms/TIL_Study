@@ -28,3 +28,28 @@
 
 https://www.acmicpc.net//problem/1966
 '''
+
+import sys
+from collections import deque
+input=sys.stdin.readline
+input_t=int(input())
+
+for t in range(input_t):
+    count=0
+    doc_num, doc_index=map(int,input().split())
+    input_list=list(map(int,input().split()))
+    queue=deque(input_list)
+    input_list.sort(reverse=True)
+    temp_len=len(queue)
+    while(temp_len!=0):
+        temp=queue.popleft()
+        doc_index-=1
+        temp_len-=1
+        if input_list[count]==temp:
+            count+=1
+            if doc_index==-1: break
+        else: 
+            temp_len+=1
+            doc_index=(doc_index+temp_len)%temp_len
+            queue.append(temp)
+    print(count)
