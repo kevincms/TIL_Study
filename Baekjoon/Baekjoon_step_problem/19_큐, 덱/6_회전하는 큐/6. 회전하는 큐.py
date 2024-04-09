@@ -41,4 +41,22 @@
  -14
 
 https://www.acmicpc.net//problem/1021
+
+3 9
+
 '''
+from collections import deque
+size, input_t=map(int,input().split())
+cir_queue=deque([i+1 for i in range(size)])
+
+num_list=list(map(int,input().split()))
+sum=0
+for num in num_list:
+    temp=0
+    while(cir_queue[0]!=num):
+        cir_queue.rotate(1)
+        temp+=1
+    cir_queue.popleft()
+    sum+=min(temp,size-temp)
+    size-=1
+print(sum)
