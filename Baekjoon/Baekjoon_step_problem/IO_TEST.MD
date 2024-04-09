@@ -1,4 +1,4 @@
-P_num="test";file_name="1.스택";file_type="py";IO_Test_Case=2;File_name=${file_name}.${file_type};
+P_num="test";file_name="5.덱";file_type="py";IO_Test_Case=2;File_name=${file_name}.${file_type};
 if [ $file_type == "py" ]; then for ((i=0; i<${IO_Test_Case}; i++));    do
         input_file=${P_num}_input${i}.txt;
         output_file=${P_num}_output${i}.txt;
