@@ -13,25 +13,50 @@
 출력
  -각 테스트 케이스에 대해서, 입력으로 주어진 정수 배열에 함수를 수행한 결과를 출력한다. 만약, 에러가 발생한 경우에는 error를 출력한다.
 예제 입력 1
- -4
-RDD
-4
-[1,2,3,4]
-DD
-1
-[42]
-RRD
-6
-[1,1,2,3,5,8]
-D
-0
-[]
+ -4
+RDD
+4
+[1,2,3,4]
+DD
+1
+[42]
+RRD
+6
+[1,1,2,3,5,8]
+D
+0
+[]
 
 예제 출력 1
- -[2,1]
-error
-[1,2,3,5,8]
-error
+ -[2,1]
+error
+[1,2,3,5,8]
+error
+
 
 https://www.acmicpc.net//problem/5430
 '''
+import sys
+from collections import deque
+input=sys.stdin.readline
+input_t=int(input())
+for t in range(input_t):
+    error=False
+    cmd=input().rstrip()
+    num_count=int(input())
+
+    temp=input().rstrip()
+    if temp=="[]": input_list=[]
+    else: input_list=list(map(int,temp[1:-1].split(",")))
+
+    AC=deque(input_list)
+    for i in cmd:
+        if i=="R": AC.reverse()
+        else: 
+            if len(AC)==0:
+                error=True
+                break
+            AC.popleft()
+    if error: print("error")    
+    else:
+        print(f"[{','.join(list(map(str,list(AC))))}]")
