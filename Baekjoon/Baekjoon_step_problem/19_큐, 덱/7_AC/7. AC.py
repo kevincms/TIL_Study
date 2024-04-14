@@ -43,6 +43,16 @@ input_t=int(input())
 for t in range(input_t):
     error=False
     cmd=input().rstrip()
+    p_cmd=""
+    cmd_count=0
+    for i in cmd:
+        if "R"==i: cmd_count+=1
+        else:
+            if cmd_count%2==1: p_cmd+="R"
+            cmd_count=0
+            p_cmd+="D"
+    if cmd_count%2==1: p_cmd+="R"
+
     num_count=int(input())
 
     temp=input().rstrip()
@@ -50,13 +60,16 @@ for t in range(input_t):
     else: input_list=list(map(int,temp[1:-1].split(",")))
 
     AC=deque(input_list)
-    for i in cmd:
+    AC_size=len(AC)
+    for i in p_cmd:
         if i=="R": AC.reverse()
         else: 
-            if len(AC)==0:
+            if AC_size==0:
                 error=True
                 break
             AC.popleft()
+            AC_size-=1
     if error: print("error")    
     else:
         print(f"[{','.join(list(map(str,list(AC))))}]")
+        
