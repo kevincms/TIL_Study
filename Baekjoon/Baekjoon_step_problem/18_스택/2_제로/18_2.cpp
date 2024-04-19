@@ -38,3 +38,26 @@
 
 https://www.acmicpc.net//problem/10773
 */
+
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+    int input_t, num, sum{0}, temp;
+    cin>>input_t;
+    stack<int> S;
+    for (size_t t = 0; t < input_t; t++){
+        cin>>num;
+        if(num==0) S.pop();
+        else S.push(num);
+    }
+    while (!S.empty()){
+        sum+=S.top();
+        S.pop();
+    }
+    cout<<sum<<endl;
+    return 0;
+}
