@@ -36,3 +36,37 @@ NO
 
 https://www.acmicpc.net//problem/9012
 */
+
+#include <iostream>
+#include <stack>
+#include <string>
+
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+    int input_t;
+    string input_str;
+    bool is_pair;
+    stack <char> S;
+    cin>>input_t;
+    for (size_t t = 0; t < input_t; t++){
+        cin>>input_str;
+        is_pair=true;
+        for (size_t i = 0; i < input_str.length(); i++){
+            if(input_str[i]=='(') S.push(input_str[i]);
+            else{
+                if(S.empty()){
+                    is_pair=false;
+                    break;
+                }
+                S.pop();
+            }
+        }
+        if(!is_pair || !S.empty()) cout<<"NO"<<endl;
+        else cout<<"YES"<<endl;
+        while (!S.empty()) S.pop();
+    }
+    
+    return 0;
+}
