@@ -14,7 +14,68 @@
 입력
  -하나 또는 여러줄에 걸쳐서 문자열이 주어진다. 각 문자열은 영문 알파벳, 공백, 소괄호("( )") 대괄호("[ ]")등으로 이루어져 있으며, 길이는 100글자보다 작거나 같다.
 입력의 종료조건으로 맨 마지막에 점 하나(".")가 들어온다.
+
+So when I die (the [first] I will see in (heaven) is a score list).
+[ first in ] ( first out ).
+Half Moon tonight (At least it is better than no Moon at all].
+A rope may form )( a trail in a maze.
+Help( I[m being held prisoner in a fortune cookie factory)].
+([ (([( [ ] ) ( ) (( ))] )) ]).
+ .
+.
+
 출력
  -각 줄마다 해당 문자열이 균형을 이루고 있으면 "yes"를, 아니면 "no"를 출력한다.
+
+yes
+yes
+no
+no
+no
+yes
+yes
 https://www.acmicpc.net//problem/4949
+
+
+
 */
+
+#include <iostream>
+#include <stack>
+#include <string>
+
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+    string input_str;
+    bool is_pair;
+    stack <char> S;
+    char temp;
+    is_pair=true;
+    while (1){
+        getline(cin,input_str);
+        // cin>>input_str;
+        is_pair=true;
+        if(input_str==".") break;
+        for (size_t i = 0; i < input_str.length(); i++){
+            if(input_str[i]=='(' || input_str[i]=='[') S.push(input_str[i]);
+            else if(input_str[i]==')' || input_str[i]==']'){
+                if(S.empty()){
+                    is_pair=false;
+                    break;
+                }
+                temp=S.top();
+                if((temp=='(' && input_str[i]==']') || temp=='[' && input_str[i]==')'){
+                    is_pair=false;
+                    break;
+                }
+                S.pop();
+            }
+        }
+        if(!is_pair || !S.empty()) cout<<"no"<<endl;
+        else cout<<"yes"<<endl;
+        while (!S.empty()) S.pop();
+    }
+    return 0;
+}
