@@ -48,3 +48,43 @@
 
 https://www.acmicpc.net//problem/1874
 */
+
+#include <iostream>
+#include <stack>
+#include <queue>
+
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+    int input_t, num, stack_count{1};
+    bool can_series=true;
+    stack<int> S;
+    queue<char> Q;
+    cin>>input_t;
+    for (size_t t = 0; t < input_t; t++){
+        cin>>num;
+        
+        while (num>=stack_count){
+            S.push(stack_count++);
+            Q.push('+');
+        }
+        if(S.top()!=num){
+            can_series=false;
+            break;
+        }
+        S.pop();
+        Q.push('-');
+
+    }
+    if(!can_series) cout<<"NO"<<endl;
+    else{
+        while (!Q.empty()){
+            cout<<Q.front()<<endl;
+            Q.pop();
+        }
+        
+    }
+    
+    return 0;
+}
