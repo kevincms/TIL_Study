@@ -57,6 +57,9 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
     int input_t, num, stack_count{1};
     bool can_series=true;
     stack<int> S;
@@ -64,7 +67,7 @@ int main(int argc, char const *argv[])
     cin>>input_t;
     for (size_t t = 0; t < input_t; t++){
         cin>>num;
-        
+
         while (num>=stack_count){
             S.push(stack_count++);
             Q.push('+');
@@ -80,11 +83,10 @@ int main(int argc, char const *argv[])
     if(!can_series) cout<<"NO"<<endl;
     else{
         while (!Q.empty()){
-            cout<<Q.front()<<endl;
+            cout<<Q.front()<<"\n";
             Q.pop();
         }
-        
+
     }
-    
     return 0;
 }
