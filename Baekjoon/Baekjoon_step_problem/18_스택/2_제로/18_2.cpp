@@ -46,6 +46,9 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
     int input_t, num, sum{0}, temp;
     cin>>input_t;
     stack<int> S;
@@ -58,6 +61,6 @@ int main(int argc, char const *argv[])
         sum+=S.top();
         S.pop();
     }
-    cout<<sum<<endl;
+    cout<<sum<<"\n";
     return 0;
 }

@@ -48,6 +48,9 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
     string input_str;
     bool is_pair;
     stack <char> S;
@@ -73,8 +76,8 @@ int main(int argc, char const *argv[])
                 S.pop();
             }
         }
-        if(!is_pair || !S.empty()) cout<<"no"<<endl;
-        else cout<<"yes"<<endl;
+        if(!is_pair || !S.empty()) cout<<"no"<<"\n";
+        else cout<<"yes"<<"\n";
         while (!S.empty()) S.pop();
     }
     return 0;

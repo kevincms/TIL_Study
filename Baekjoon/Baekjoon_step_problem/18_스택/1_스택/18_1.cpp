@@ -92,6 +92,9 @@ public:
 
 int main(int argc, char const *argv[])
 {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
     int input_t;
     string input_str;
     Stack stack;
@@ -102,10 +105,10 @@ int main(int argc, char const *argv[])
             cin>>input_str;
             stack.push(new linked_list(stoi(input_str)));
         }
-        else if(input_str=="pop") cout<<stack.pop()<<endl;
-        else if(input_str=="size") cout<<stack.Size()<<endl;
-        else if(input_str=="empty") cout<<stack.empty()<<endl;
-        else cout<<stack.top()<<endl;
+        else if(input_str=="pop") cout<<stack.pop()<<"\n";
+        else if(input_str=="size") cout<<stack.Size()<<"\n";
+        else if(input_str=="empty") cout<<stack.empty()<<"\n";
+        else cout<<stack.top()<<"\n";
     }
     
     return 0;
