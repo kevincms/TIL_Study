@@ -22,3 +22,38 @@
 
 https://www.acmicpc.net//problem/17298
 */
+#include <iostream>
+#include <stack>
+#include <vector>
+
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int input_t, t_top;
+    cin>>input_t;
+    vector<int> num(input_t), output(input_t);
+    stack<int> S;
+    for (size_t t = 0; t < input_t; t++) cin>>num[t];
+    for (int i = input_t-1; i >= 0; i--){
+        while (1){
+            if(S.empty()){
+                output[i]=-1;
+                break;
+            }
+            t_top=S.top();
+            if (num[i]<t_top){
+                output[i]=t_top;
+                break;
+            }
+            S.pop();
+        }
+        S.push(num[i]);
+    }
+    for (size_t t = 0; t < input_t; t++) cout<<output[t]<<" ";
+    
+    return 0;
+}
