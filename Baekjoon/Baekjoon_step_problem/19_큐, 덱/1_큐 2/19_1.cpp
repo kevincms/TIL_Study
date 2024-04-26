@@ -47,3 +47,79 @@ front
 
 https://www.acmicpc.net//problem/18258
 */
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+class Queue{
+private:
+    int size, capacity=2000000;
+    int front, rear;
+    vector<int> queue;
+public:
+    Queue();
+    ~Queue(){while(!empty()) pop();}
+    void push(int data);
+    int pop();
+    int Size(){return size;}
+    bool empty(){return rear==front;}
+    int Front();
+    int back();
+};
+
+int main(int argc, char const *argv[])
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int input_t;
+    string input_str;
+    Queue queue;
+    cin>>input_t;
+    for (size_t t = 0; t < input_t; t++){
+        cin>>input_str;
+        if(input_str=="push"){
+            cin>>input_str;
+            queue.push(stoi(input_str));
+        }
+        else if(input_str=="pop") cout<<queue.pop()<<"\n";
+        else if(input_str=="size") cout<<queue.Size()<<"\n";
+        else if(input_str=="empty") cout<<queue.empty()<<"\n";
+        else if(input_str=="front") cout<<queue.Front()<<"\n";
+        else cout<<queue.back()<<"\n";
+    }
+    
+    return 0;
+}
+
+Queue::Queue(){
+    queue.resize(capacity);
+    front=0;
+    rear=0;
+    size=0;
+}
+
+void Queue::push(int data){
+    queue[rear++]=data;
+    rear=rear%capacity;
+    size++;
+}
+
+int Queue::pop(){
+    if(empty()) return -1;
+    int temp=queue[front++];
+    front=front%capacity;
+    size--;
+    return temp;
+}
+
+int Queue::Front(){
+    if(empty()) return -1;
+    return queue[front];
+}
+
+int Queue::back(){
+    if(empty()) return -1;
+    return queue[(rear-1+capacity)%capacity];
+}
