@@ -16,3 +16,26 @@ N이 주어졌을 때, 제일 마지막에 남게 되는 카드를 구하는 프
 
 https://www.acmicpc.net//problem/2164
 */
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int input_t;
+    queue<int> Q;
+    cin>>input_t;
+    for (size_t i = 0; i < input_t; i++) Q.push(i+1);
+    for (size_t i = 0; i < input_t-1; i++){
+        Q.pop();
+        Q.push(Q.front());
+        Q.pop();   
+    }
+    cout<<Q.front()<<'\n';
+    
+    return 0;
+}
