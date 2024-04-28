@@ -28,3 +28,52 @@
 
 https://www.acmicpc.net//problem/1966
 */
+#include <iostream>
+#include <queue>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int input_t, size, g_index, temp, array_index, output_count;
+    vector<int> num_array;
+    queue<int> Q;
+    cin>>input_t;
+    for (size_t t = 0; t < input_t; t++){
+        cin>>size>>g_index;
+        num_array.resize(size);
+        array_index=0;
+        output_count=0;
+        for (size_t i = 0; i < size; i++){
+            cin>>temp;
+            num_array[i]=temp;
+            Q.push(temp);
+        }
+        sort(num_array.begin(),num_array.end());
+        reverse(num_array.begin(),num_array.end());
+        while (1){
+            if(Q.front()==num_array[array_index]){
+                Q.pop();
+                output_count++;
+                array_index++;
+                if(g_index==0) break;
+                size--;
+            }
+            else{
+                Q.push(Q.front());
+                Q.pop();
+            }
+            g_index=(--g_index+size)%size;
+        }
+        while(!Q.empty()) Q.pop();
+        cout<<output_count<<'\n';
+        
+    }
+    
+    return 0;
+}
