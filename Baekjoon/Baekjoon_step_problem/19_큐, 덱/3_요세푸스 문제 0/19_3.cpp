@@ -15,3 +15,34 @@ N과 K가 주어지면 (N, K)-요세푸스 순열을 구하는 프로그램을 �
 
 https://www.acmicpc.net//problem/11866
 */
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int count, order;
+    queue<int> Q, output;
+    cin>>count>>order;
+    for (size_t i = 0; i < count; i++) Q.push(i+1);
+    for (size_t i = 0; i < count; i++){
+        for (size_t j = 0; j < order-1; j++){
+            Q.push(Q.front());
+            Q.pop();
+        }
+        output.push(Q.front());
+        Q.pop();
+    }
+    cout<<'<';
+    for (size_t i = 0; i < count-1; i++){
+        cout<<output.front()<<", ";
+        output.pop();
+    }
+    cout<<output.front()<<'>'<<'\n';
+
+    return 0;
+}
