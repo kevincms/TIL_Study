@@ -92,3 +92,101 @@ pop_back
 
 https://www.acmicpc.net//problem/10866
 */
+
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+class Deque{
+private:
+    int size, capacity=10000;
+    int front, rear;
+    vector<int> deque;
+public:
+    Deque();
+    ~Deque(){while(!empty()) pop_back();}
+    void push_front(int data);
+    void push_back(int data);
+    int pop_front();
+    int pop_back();
+    int Size(){return size;}
+    bool empty(){return rear==front;}
+    int Front();
+    int back();
+};
+
+int main(int argc, char const *argv[])
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int input_t;
+    string input_str;
+    Deque CD;
+    cin>>input_t;
+    for (size_t t = 0; t < input_t; t++){
+        cin>>input_str;
+        if(input_str=="push_front"){
+            cin>>input_str;
+            CD.push_front(stoi(input_str));
+        }
+        else if(input_str=="push_back"){
+            cin>>input_str;
+            CD.push_back(stoi(input_str));
+        }
+        else if(input_str=="pop_front") cout<<CD.pop_front()<<"\n";
+        else if(input_str=="pop_back") cout<<CD.pop_back()<<"\n";
+        else if(input_str=="size") cout<<CD.Size()<<"\n";
+        else if(input_str=="empty") cout<<CD.empty()<<"\n";
+        else if(input_str=="front") cout<<CD.Front()<<"\n";
+        else cout<<CD.back()<<"\n";
+    }
+    
+    return 0;
+}
+
+Deque::Deque(){
+    deque.resize(capacity);
+    front=0;
+    rear=0;
+    size=0;
+}
+
+void Deque::push_front(int data){
+    front=(--front+capacity)%capacity;
+    deque[front]=data;
+    size++;
+}
+
+void Deque::push_back(int data){
+    deque[rear++]=data;
+    rear=rear%capacity;
+    size++;
+}
+
+int Deque::pop_front(){
+    if(empty()) return -1;
+    int temp=deque[front++];
+    front=front%capacity;
+    size--;
+    return temp;
+}
+
+int Deque::pop_back(){
+    if(empty()) return -1;
+    rear=(--rear+capacity)%capacity;
+    int temp=deque[rear];
+    size--;
+    return temp;
+}
+
+int Deque::Front(){
+    if(empty()) return -1;
+    return deque[front];
+}
+
+int Deque::back(){
+    if(empty()) return -1;
+    return deque[(rear-1+capacity)%capacity];
+}
