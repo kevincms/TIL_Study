@@ -42,3 +42,34 @@
 
 https://www.acmicpc.net//problem/1021
 */
+#include <iostream>
+#include <queue>
+
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int size, input_t, num, sum{0}, count;
+    cin>>size>>input_t;
+    queue<int> Q;
+    for (size_t i = 0; i < size; i++) Q.push(i+1);
+    for (size_t t = 0; t < input_t; t++){
+        cin>>num;
+        count=0;
+        while (Q.front()!=num){
+            Q.push(Q.front());
+            Q.pop();
+            count++;
+        }
+        sum+=min(count,size-count);
+        Q.pop();
+        size--;
+    }
+    cout<<sum<<'\n';
+    
+
+    return 0;
+}
