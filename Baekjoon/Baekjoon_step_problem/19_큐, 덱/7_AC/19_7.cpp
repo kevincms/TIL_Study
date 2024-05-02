@@ -35,3 +35,76 @@ error
 
 https://www.acmicpc.net//problem/5430
 */
+
+#include <iostream>
+#include <deque>
+#include <string>
+
+using namespace std;
+
+void string_to_deque(string &array, deque<int> &Q);
+
+int main(int argc, char const *argv[])
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int input_t, deque_size, temp;
+    bool reverse, error;
+    string cmd, array;
+    deque<int> D;
+    cin>>input_t;
+    for (size_t t = 0; t < input_t; t++){
+        reverse=false;
+        error=false;
+        cin>>cmd;
+        cin>>deque_size;
+        cin>>array;
+        string_to_deque(array,D);
+        for (size_t i = 0; i < cmd.length(); i++){
+            if(cmd[i]=='R') reverse=!reverse;
+            else{
+                if(D.empty()){
+                    error=true;
+                    break;
+                }
+                if(reverse) D.pop_back();
+                else D.pop_front();
+            }
+        }
+        if(error) cout<<"error"<<'\n';
+        else if(D.empty()) cout<<"[]"<<'\n';
+        else{
+            cout<<'[';
+            temp=D.size();
+            for (size_t i = 0; i < temp-1; i++){
+                if(reverse){
+                    cout<<D.back()<<',';
+                    D.pop_back();
+                }
+                else{
+                    cout<<D.front()<<',';
+                    D.pop_front();
+                }            
+            }
+            cout<<D.front()<<"]\n";
+        }
+        while (!D.empty()) D.pop_front();
+        
+    }
+    
+    return 0;
+}
+
+void string_to_deque(string &array, deque<int> &D){
+    string temp="";
+    if(array=="[]") return;
+    for (size_t i = 1; i < array.length()-1; i++){
+        if(array[i]==','){
+            D.push_back(stoi(temp));
+            temp.clear();
+        }
+        else temp.push_back(array[i]);
+    }
+    D.push_back(stoi(temp));
+}
