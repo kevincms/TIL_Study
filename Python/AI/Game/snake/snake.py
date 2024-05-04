@@ -2,6 +2,8 @@ import pygame # 1. pygame 선언
 import random
 from datetime import datetime
 from datetime import timedelta
+import pandas as pd
+import numpy as np
  
 pygame.init() # 2. pygame 초기화
  
@@ -10,9 +12,11 @@ WHITE = (255,255,255)
 RED = (255,0,0)
 GREEN = (0,255,0)
 BLACK= (0,0,0)
+LEARNING_DATA=pd.DataFrame(columns=[f"px{i+1}" for i in range(400)]+["ans"])
+DATA_COUNT=0
 
 unit_size=20
-size_range=50
+size_range=20
 size = [unit_size*size_range,unit_size*size_range]
 screen = pygame.display.set_mode(size)
  
@@ -99,24 +103,46 @@ def find_direction(snake,apple,wall):
     y, x = snake_head_p
     roop_count=0
     while(1):
-        if direction == 'U':
+        if direction == 'U': # 0
             if (y - 1, x) in snake.positions[1:] or (y - 1, x) in wall.positions: direction = 'D'
             else: break
-        elif direction == 'D':
+        elif direction == 'D': # 1
             if (y + 1, x) in snake.positions[1:] or (y + 1, x) in wall.positions: direction = 'L'
             else: break
-        elif direction == 'L':
+        elif direction == 'L': # 2
             if (y, x - 1) in snake.positions[1:] or (y, x - 1) in wall.positions: direction = 'R'
             else: break
-        elif direction == 'R':
+        elif direction == 'R': # 3
             if (y, x + 1) in snake.positions[1:] or (y, x + 1) in wall.positions: direction = 'U'
             else: break
         roop_count+=1
         if roop_count>=3: break
 
-    print(f"{snake_head_p} {apple_p} {direction}")
+    # print(f"{snake_head_p} {apple_p} {direction}")
     return direction
- 
+
+def create_map(snake,apple,wall):
+    map=np.zeros((size_range,size_range),dtype=int)
+    (y, x)=snake.positions[0]
+    map[y,x]=1
+    for (y, x) in snake.positions[1:]: map[y,x]=2
+    for (y, x) in wall.positions: map[y,x]=3
+    (y, x)=apple.position
+    map[y,x]=4
+    map=map.reshape(size_range*size_range)
+    return map
+
+def save_data(map,snake):
+    global DATA_COUNT
+    direction=snake.direction
+    if direction == 'U': Y_DATA=0
+    elif direction == 'D': Y_DATA=1
+    elif direction == 'L': Y_DATA=2
+    elif direction == 'R': Y_DATA=3
+    map=np.append(map,Y_DATA)
+    LEARNING_DATA.loc[DATA_COUNT]=map
+    DATA_COUNT+=1
+
 # 4. pygame 무한루프
 def runGame():
     global done, last_moved_time
@@ -144,6 +170,9 @@ def runGame():
         # 자동조작
         pygame.event.get()
         snake.direction = find_direction(snake,apple,wall)
+
+        map=create_map(snake,apple,wall)
+        save_data(map,snake)
  
         if timedelta(seconds=0.1) <= datetime.now() - last_moved_time:
             snake.move()
@@ -157,7 +186,9 @@ def runGame():
             done = True
  
  
-        
- 
 runGame()
 pygame.quit()
+temp=pd.read_csv("./test.csv")
+LEARNING_DATA=LEARNING_DATA[20:-1]
+output_data=pd.concat([temp,LEARNING_DATA],ignore_index=True)
+output_data.to_csv("./test.csv",index=False)
