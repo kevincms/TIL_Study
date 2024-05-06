@@ -129,11 +129,11 @@ def create_map(snake,apple,wall):
     for (y, x) in wall.positions: map[y,x]=3
     (y, x)=apple.position
     map[y,x]=4
-    map=map.reshape(size_range*size_range)
     return map
 
 def save_data(map,snake):
     global DATA_COUNT
+    map=map.reshape(size_range*size_range)
     direction=snake.direction
     if direction == 'U': Y_DATA=0
     elif direction == 'D': Y_DATA=1
@@ -172,7 +172,7 @@ def runGame():
         snake.direction = find_direction(snake,apple,wall)
 
         map=create_map(snake,apple,wall)
-        save_data(map,snake)
+        
  
         if timedelta(seconds=0.1) <= datetime.now() - last_moved_time:
             snake.move()
@@ -181,6 +181,15 @@ def runGame():
         if snake.positions[0] == apple.position:
             snake.grow()    
             apple.position = (random.randint(1, size_range-2), random.randint(1, size_range-2))
+            (y, x)=apple.position
+            while map[y][x]!=0:
+                x+=1
+                temp=x//size_range
+                x=x%(size_range)
+                y=(y+temp)%(size_range)
+            apple.position=(y, x)
+
+        save_data(map,snake)
         
         if snake.positions[0] in snake.positions[1:] or snake.positions[0] in wall.positions:
             done = True
@@ -189,6 +198,6 @@ def runGame():
 runGame()
 pygame.quit()
 temp=pd.read_csv("./test.csv")
-LEARNING_DATA=LEARNING_DATA[20:-1]
+LEARNING_DATA=LEARNING_DATA[20:-20]
 output_data=pd.concat([temp,LEARNING_DATA],ignore_index=True)
 output_data.to_csv("./test.csv",index=False)
