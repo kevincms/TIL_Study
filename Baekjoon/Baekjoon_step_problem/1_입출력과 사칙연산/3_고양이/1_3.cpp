@@ -8,10 +8,26 @@
 예제 입력 1
  -없음
 예제 출력 1
- -\    /\
- )  ( ')
-(  /  )
- \(__)|
+ -\    /\
+
+ )  ( ')
+
+(  /  )
+
+ \(__)|
+
 
 https://www.acmicpc.net//problem/10171
 */
+
+#include <iostream>
+
+using namespace std;
+int main(int argc, char const *argv[])
+{
+    cout<<"\\    /\\"<<'\n';
+    cout<<" )  ( \')"<<'\n';
+    cout<<"(  /  )"<<'\n';
+    cout<<" \\(__)|"<<'\n';
+    return 0;
+}

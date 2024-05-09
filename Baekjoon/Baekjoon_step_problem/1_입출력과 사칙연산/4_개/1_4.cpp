@@ -8,11 +8,29 @@
 예제 입력 1
  -없음
 예제 출력 1
- -|\_/|
-|q p|   /}
-( 0 )"""\
-|"^"`    |
-||_/=\\__|
+ -|\_/|
+
+|q p|   /}
+
+( 0 )"""\
+
+|"^"`    |
+
+||_/=\\__|
+
 
 https://www.acmicpc.net//problem/10172
 */
+
+#include <iostream>
+
+using namespace std;
+int main(int argc, char const *argv[])
+{
+    cout<<"|\\_/|"<<'\n';
+    cout<<"|q p|   /}"<<'\n';
+    cout<<"( 0 )\"\"\"\\"<<'\n';
+    cout<<"|\"^\"`    |"<<'\n';
+    cout<<"||_/=\\\\__|"<<'\n';
+    return 0;
+}

@@ -6,10 +6,24 @@
 출력
  -첫째 줄에 A+B를 출력한다.
 예제 입력 1
- -1 2
+ -1 2
+
 
 예제 출력 1
- -3
+ -3
+
 
 https://www.acmicpc.net//problem/1000
 */
+
+#include <iostream>
+
+using namespace std;
+int main(int argc, char const *argv[])
+{
+    int num1, num2;
+    cin>>num1>>num2;
+    cout<<num1+num2<<'\n';
+    
+    return 0;
+}

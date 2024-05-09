@@ -9,7 +9,16 @@
 예제 입력 1
  -없음
 예제 출력 1
- -강한친구 대한육군
+ -강한친구 대한육군
 강한친구 대한육군
 https://www.acmicpc.net//problem/10718
 */
+#include <iostream>
+
+using namespace std;
+int main(int argc, char const *argv[])
+{
+    cout<<"강한친구 대한육군"<<'\n';
+    cout<<"강한친구 대한육군"<<'\n';
+    return 0;
+}
