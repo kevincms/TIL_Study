@@ -19,3 +19,16 @@
 
 https://www.acmicpc.net//problem/2588
 */
+
+#include <iostream>
+using namespace std;
+
+int main(int argc, char const *argv[])
+{
+    int num1, num2;
+    cin>>num1>>num2;
+    cout<<num1*(num2%10)<<endl;
+    cout<<num1*(num2/10%10)<<endl;
+    cout<<num1*(num2/100%10)<<endl;
+    cout<<num1*num2<<endl;
+}
