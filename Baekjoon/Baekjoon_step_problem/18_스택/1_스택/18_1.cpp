@@ -83,7 +83,7 @@ private:
 public:
     Stack(){size=0;Top=NULL;}
     ~Stack(){while(!empty()) pop();}
-    void push(linked_list *node);
+    void push(int data);
     int pop();
     int Size(){return size;}
     bool empty(){return Top==NULL;}
@@ -103,7 +103,7 @@ int main(int argc, char const *argv[])
         cin>>input_str;
         if(input_str=="push"){
             cin>>input_str;
-            stack.push(new linked_list(stoi(input_str)));
+            stack.push(stoi(input_str));
         }
         else if(input_str=="pop") cout<<stack.pop()<<"\n";
         else if(input_str=="size") cout<<stack.Size()<<"\n";
@@ -114,7 +114,8 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
-void Stack::push(linked_list *node){
+void Stack::push(int data){
+    linked_list *node=new linked_list(data);
     node->next=Top;
     Top=node;
     size++;
@@ -123,7 +124,9 @@ void Stack::push(linked_list *node){
 int Stack::pop(){
     if(empty()) return -1;
     int temp=Top->data;
-    Top=Top->next;
+    linked_list *temp_top=Top->next;
+    delete Top;
+    Top=temp_top;
     size--;
     return temp;
 }
