@@ -22,7 +22,26 @@
 > 7. reflex login
 >> - github or google 로그인
 > 8. reflex deploy
----
-- https://reflex.dev/docs/hosting/hosting-cli-commands/#reflex-deployments-status-
 > 9. reflex deployments list
 >> - url 확인
+
+## delpoy(배포)
+- https://reflex.dev/docs/hosting/hosting-cli-commands/#reflex-deployments-status-
+> - reflex login
+>> - 기본적으로 google or github 로그인을 해야 배포를 할 수 있음.
+>> - 2024.8.11 기준으로 서버비는 reflex에서 대주는 느낌. [대신 url에 reflex 붙음]
+---
+> - reflex deployments --helpㅔ
+> - reflex deployments list
+>> - 배포된 목록 확인
+> - reflex deployments status (app_name)
+> - reflex deployments log (app_name)
+> - reflex deployments delte (app_name)
+>> - 배포한 web app 삭제
+---
+### reflex deploy
+- 만든 web app을 배포할 때 사용
+> - option
+>> - 
+> - update : 명령어는 동일. reflex에서 자동으로 이름이 같은 프로젝트를 찾아서 업데이트 함.
+>> - Overwrite deployment [app-name] 과 같은 log가 표시되어야 함.
