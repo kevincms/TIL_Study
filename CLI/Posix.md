@@ -60,6 +60,24 @@ Unix Linux Mac
 >> - --installed : 설치된 리스트
 >> - --upgradable : 업그레이드 가능한 리스트 
 
-
+# SSH
+> - ssh user@ip
+>> - 외부 ip에서 접속하기 위해서는 포트피워드 설정 필요
+## SSH KEY
+- client 컴퓨터에서 명령어 입력
+> 1. ssh-keygen -t rsa -C "message"
+>> - -t : 키 타입 (RSA, DSA)
+>> - -C : comment
+> 2. scp (id_rsa.pub path) (user@ip):id_rsa.pub
+> - Mac id_rsa.pub path : ~/.ssh/
+---
+- server 컴퓨터에서 실행
+> 1. ~에 id_rsa.pub 전달됨
+> 2. .ssh 권한 700 확인
+>> - chmod 700 .ssh
+> 3. cat id_rsa.pub >> .ssh/authorized_keys
+---
+- ssh 접속
+- ssh -i ~/.ssh/id_rsa user@ip
 
 <span id="apt">우분투에 내장된 패키지 매니저. apt는 apt-get의 최신버전이다.</span>
