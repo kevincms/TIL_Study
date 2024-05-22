@@ -35,3 +35,23 @@
 - --list = -l
 - --verbose = -v
 - --distribution = -d
+
+### Window file 접근
+> - /mnt
+>> - mnt 아래 경로에 각 드라이브에 있는 파일에 접근할 수 있다.
+>> - 심볼릭 링크를 이용하면 파일을 공유해서 사용 가능하다.
+
+### wsl ssh 설정
+> 1. sudo apt update -y && apt upgrade -y
+> 2. sudo apt install openssh-server
+>> - 오류 발생 시 삭제 후 설치(sudo apt remove openssh-server)
+> 3. service ssh start
+>> - 작동 확인 : service ssh status
+>> - 정지 : service ssh stop
+>> - 재시작 : service ssh restart
+
+4. netsh interface portproxy add v4tov4 listenport=22 listenaddress=0.0.0.0 connectport=22 connectaddress=172.24.163.9
+
+ssh kevincms@116.127.178.135
+
+https://wikidocs.net/219898
