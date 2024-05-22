@@ -9,3 +9,12 @@
 > 4. webui-user.bat 수정
 >> 상단 git pull 추가, COMMANDLINE_ARGS==--precision full --no-half --no-half-vae --xformers --autolaunch 옵션 추가
 > 5. 그 후 webui-user.bat 를 실행하거나 바로가기 만들기
+
+# Stable-Diffusion-Webui 모델 추천
+
+# Stable-Diffusion-Webui 원격접속
+- https://cantips.com/3783
+> - 원격접속 option
+>> - set COMMANDLINE_ARGS=--listen 추가
+> - 아이디 패스워드 추가 option
+>> - set COMMANDLINE_ARGS=--gradio-auth "user:pass" 추가
