@@ -9,12 +9,13 @@
 >> - cuda 설치 CLI로 해야 오류없이 잘 됨.
 
 - gpu 사용여부 체크
-'''
+
+```python
 import tensorflow as tf
 tf.test.is_built_with_cuda()
 from tensorflow.python.client import device_lib
 print(device_lib.list_local_devices())
-'''
+```
 
 ### opencv
 pip install opencv-python=4.6.0.66
