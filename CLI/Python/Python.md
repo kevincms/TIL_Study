@@ -17,6 +17,7 @@
 ### package 설치/제거/업데이트/다운그래이드
 #### 설치
 - pip install (package)
+- pip install (package)==version
 #### 제거
 - pip uninstall (package)
 #### 모든 package 제거

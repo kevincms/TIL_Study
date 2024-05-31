@@ -2,7 +2,7 @@
 
 ### conda 버전 확인
 - conda --version
-- conda -v
+- conda -V
 ### conda 업데이트
 - conda update conda
 ### conda 캐시 삭제
@@ -23,6 +23,8 @@
 - conda env remove -n (name)
 ### 가상환경 활성화
 - conda activate (name)
+### 가상환경 복사
+- conda create --name (new env) --clone (clone env)
 
 ### 가상환경 Python
 ### Python 버전 확인
