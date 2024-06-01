@@ -5,7 +5,7 @@ class TextAreaControlled(rx.State):
     text: str = ""
 
     # 입력된 text를 클래스 변수로 바꾸는 함수
-    def set_text(self,text): # on_chage의 경우 인자로 input을 반환한다.
+    def set_text(self,text): # on_change에 함수를 지정하면 input값을 해당 함수의 인자로 반환한다. input은 값이 변화할 때(text에 글을 쓰거나 지울 때)마다 반환된다.
         self.text=text
 
 
