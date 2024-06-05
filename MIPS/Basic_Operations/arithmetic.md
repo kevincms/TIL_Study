@@ -33,7 +33,7 @@
 # subi : 없음. addi로 대체 가능
 - 음수를 더하면 subu 연산을 할 수 있기 때문에 따로 명령어가 없다
 
-# unsigned
+# unsigned 1
 - 아래의 연산들은 unsigned 지만 음수인 상수 혹은 레지스터로 연산이 가능하다.
 - 이유는 레지스터의 값을 부호가 없는 unsigned로 해석하여 사용하기 때문인 것으로 추정.
 ## addu : overflow를 무시하는 add 연산
@@ -48,7 +48,19 @@
 >> - HI : 연산결과의 최상단 32bit를 저장하는 레지스터
 >> - LO : 연산결과의 최하단 32bit를 저장하는 레지스터
 
-# mfhi, mflo : mult 연산 결과를 가져오는 명령어
+# div : 레지스터끼리 나누는 명령어
+> - div (1), (2)
+>> - (1), (2) : sorce operands
+>> - destination operands가 mult와 동일하다
+>> - HI : (1)%(2)의 값을 저장하는 레지스터
+>> - LO : (1)/(2)의 값을 저장하는 레지스터
+
+# mfhi, mflo : mult와 div 연산 결과를 가져오는 명령어
 - move from hi(lo)
-> - mfhi (1)
+> - mfhi (1) or mflo (1)
 >> - (1) : destination operands
+>> - (1) = 레지스터
+
+# unsigned 2
+# multu : overflow를 무시하는 mult 연산
+# divu : overflow를 무시하는 div 연산
