@@ -13,9 +13,12 @@
 >> - 기본적으로 source register로도 사용가능.
 > 4. constant or address
 >> - 상수 혹은 주소값
+>> - 문제 발생 : 16비트 상수값으로 32비트 레지스터와 연산을 해야됨. ([3.extensio.md 참조](../Basic_Operations/3.%20extension.md))
 
 
-## L-format instructions
+
+
+## I-format instructions
 > - addi, addiu, subi, subiu
 > - ori, andi
 >> - cmd $1, $2, 100
