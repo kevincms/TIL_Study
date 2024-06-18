@@ -15,16 +15,21 @@
 >> - 상수 혹은 주소값
 >> - 문제 발생 : 16비트 상수값으로 32비트 레지스터와 연산을 해야됨. ([3.extensio.md 참조](../Basic_Operations/3.%20extension.md))
 
-
-
-
 ## I-format instructions
 > - addi, addiu, subi, subiu
 > - ori, andi
 >> - cmd $1, $2, 100
+
 |op|rs|rt|constant or address|
 |---|--:|--:|--:|
 |cmd|$2|$1|100|
+
+> - lui
+>> - cmd $1, 0x007D
+
+|op|rs|rt|constant or address|
+|---|--:|--:|--:|
+|cmd|0|$1|100|
 
 ## Example
 ### 어셈블리어 -> 기계어
