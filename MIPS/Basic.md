@@ -49,3 +49,46 @@ int w1[4] = {1,-1, 0xabcdef12, 0xffff};
     .word 0xabcdef12
     .word 0xffff
 ```
+
+위의 예시에서 word는 4byte기 아래와 같이 저장된다.
+
+|주소|값|
+|---|---|
+|0x10020000~0x10020003|0x00000001|
+|0x10020004~0x10020007|0xffffffff|
+|0x10020008~0x1002000b|0xabcdef12|
+|0x1002000c~0x1002000f|0x0000ffff|
+
+여기서 한 줄을 골라 더 자세히 분석을 할 수 있다.
+
+|주소|값|
+|---|---|
+|0x10020008~0x1002000b|0xabcdef12|
+
+
+- data 저장 방식
+> - Big endian byte order
+>> - SPARC, Motorola
+
+|주소|값|
+|---|---|
+|0x10020008|0xab|
+|0x10020009|0xcd|
+|0x1002000a|0xef|
+|0x1002000b|0x12|
+
+
+> - Little endian byte order
+>> - intel, SPIM
+
+|주소|값|
+|---|---|
+|0x10020008|0x12|
+|0x10020009|0xef|
+|0x1002000a|0xcd|
+|0x1002000b|0xab|
+
+- MIPS는 2개의 방식 모두 이용할 수 있고 SPIM에서는 Little endian byte order를 사용.
+- 또한 word가 아닌 byte로 저장하더라도 SPIM에서는 word 단위로 끊어서 보여준다.
+
+## .global
