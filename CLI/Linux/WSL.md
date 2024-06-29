@@ -42,6 +42,7 @@
 >> - 심볼릭 링크를 이용하면 파일을 공유해서 사용 가능하다.
 
 ### wsl ssh 설정
+- 링크 참조 [https://wikidocs.net/219898]
 > 1. sudo apt update -y && apt upgrade -y
 > 2. sudo apt install openssh-server
 >> - 오류 발생 시 삭제 후 설치(sudo apt remove openssh-server)
@@ -49,9 +50,19 @@
 >> - 작동 확인 : service ssh status
 >> - 정지 : service ssh stop
 >> - 재시작 : service ssh restart
-
 4. netsh interface portproxy add v4tov4 listenport=22 listenaddress=0.0.0.0 connectport=22 connectaddress=172.24.163.9
-
-ssh kevincms@116.127.178.135
-
-https://wikidocs.net/219898
+> - 윈도우 pc의 ip와 wsl의 ip가 다르기 때문에 포트포워드로 연결해주어야 함
+>> - listenaddress는 0.0.0.0 알 때 자신의 ip를 가르키는 것 같음
+> - netsh interface portproxy show all
+>> - 위에서 설정한 portproxy 설정 보기
+> - netsh interface portproxy delete v4tov4 listenport=22 listenaddress=(IP)
+>> - 설정한 portproxy 삭제
+5. ssh kevincms@(IP)로 ssh 연결 확인
+> - 연결이 되지 않으면 wsl 컴퓨터에서 ssh kevincms@localhost로 test
+>> - 연결이 된다면 portproxy 설정 및 공유기 포드포워드 확인
+>> - 연결이 되지 않느다면 wsl linux ssh 확인
+---
+#### 오류 발생
+1. WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
+> - 링크 참조 [https://visu4l.tistory.com/entry/ssh-%EC%9B%90%EA%B2%A9-%EC%A0%91%EC%86%8D-%EC%97%90%EB%9F%ACWARNING-REMOTE-HOST-IDENTIFICATION-HAS-CHANGED]
+> - ssh-keygen -R (IP)
