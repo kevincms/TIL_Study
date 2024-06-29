@@ -61,6 +61,7 @@
 > - 연결이 되지 않으면 wsl 컴퓨터에서 ssh kevincms@localhost로 test
 >> - 연결이 된다면 portproxy 설정 및 공유기 포드포워드 확인
 >> - 연결이 되지 않느다면 wsl linux ssh 확인
+6. ssh 비밀번호 입력 대신 key를 이용해 자동접속 가능 [key](./../Posix.md)
 ---
 #### 오류 발생
 1. WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!

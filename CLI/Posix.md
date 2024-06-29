@@ -68,8 +68,10 @@ Unix Linux Mac
 > 1. ssh-keygen -t rsa -C "message"
 >> - -t : 키 타입 (RSA, DSA)
 >> - -C : comment
+>> - id_rsa와 id_rsa.pub 키가 생성된다
 > 2. scp (id_rsa.pub path) (user@ip):id_rsa.pub
 > - Mac id_rsa.pub path : ~/.ssh/
+> - 만들어진 키를 복사하여 전달
 ---
 - server 컴퓨터에서 실행
 > 1. ~에 id_rsa.pub 전달됨
