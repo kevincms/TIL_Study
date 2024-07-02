@@ -1,41 +1,30 @@
 # https://www.acmicpc.net/problem/11724
 
 import sys
-from collections import deque
 
+sys.setrecursionlimit(1001)
 input=sys.stdin.readline
-point, arc=map(int,input().split())
-check_list=[False for _ in range(point+1)]
-check_list[0]=True
-graph_list=[[] for i in range(point+1)]
-output_list=[]
-Con_Cpm_count=0
+node, edge=map(int,input().split())
+check_list=[False for _ in range(node+1)]
+graph_list=[[] for i in range(node+1)]
+count=0
 
-def DFS(index=1):
-    if index in output_list: return
-    temp=graph_list[index]
-    output_list.append(index)
+def DFS(index):
+    if check_list[index]: return
     check_list[index]=True
-    if temp:    
-        for i in range(len(temp)):
-            temp_index=temp[i]
-            if not check_list[temp_index]: DFS(temp_index)
-    return 
+    for i in graph_list[index]:
+        if not check_list[i]: DFS(i)        
 
-for i in range(arc):
-    point_1, point_2=map(int,input().split())
-    graph_list[point_1].append(point_2)
-    graph_list[point_2].append(point_1)
+for i in range(edge):
+    node1, node2=map(int,input().split())
+    graph_list[node1].append(node2)
+    graph_list[node2].append(node1)
+for i in range(node):
+    if not check_list[i+1]:
+        DFS(i+1)
+        count+=1
 
-start_index=1
-while(1):
-    output_list=[]
-    DFS(start_index)
-    Con_Cpm_count+=1
-    if not(False in check_list): break
-    start_index=check_list.index(False)
-
-print(Con_Cpm_count)
+print(count)
 
 """
 6 5
