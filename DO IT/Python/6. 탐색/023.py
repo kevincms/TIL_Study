@@ -1,6 +1,39 @@
 # https://www.acmicpc.net/problem/11724
 
 import sys
+from collections import deque
+
+input=sys.stdin.readline
+node, edge=map(int,input().split())
+check_list=[False for _ in range(node+1)]
+graph_list=[[] for i in range(node+1)]
+stack=deque([])
+count=0
+
+def DFS(start):
+    check_list[start]=True
+    stack.append(start)
+    while(1):
+        if len(stack)==0: return
+        index=stack.pop()
+        for i in graph_list[index]:
+            if not check_list[i]:
+                check_list[i]=True
+                stack.append(i)
+
+for i in range(edge):
+    node1, node2=map(int,input().split())
+    graph_list[node1].append(node2)
+    graph_list[node2].append(node1)
+for i in range(node):
+    if not check_list[i+1]:
+        DFS(i+1)
+        count+=1
+
+print(count)
+
+''' ver - 재귀
+import sys
 
 sys.setrecursionlimit(1001)
 input=sys.stdin.readline
@@ -25,6 +58,7 @@ for i in range(node):
         count+=1
 
 print(count)
+'''
 
 """
 6 5
