@@ -1,3 +1,5 @@
+# https://www.acmicpc.net/problem/11723
+
 class SET():
     def __init__(self): self.data=[False]*21
     def add(self,x): self.data[x]=True
