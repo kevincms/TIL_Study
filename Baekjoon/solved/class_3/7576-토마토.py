@@ -1,6 +1,45 @@
 import sys
 from collections import deque
 
+input = sys.stdin.readline
+M, N = map(int, input().split())
+box = [[] for _ in range(N+1)]
+box[0] = [-2]*(M+1)
+for i in range(N): box[i+1] = [-2]+list(map(int, input().split()))
+blank=0
+start_tomato=deque([])
+
+for i in range(N):
+    for j in range(M):
+        if box[i+1][j+1]==-1: blank+=1
+        elif box[i+1][j+1]==1: start_tomato.append((i+1,j+1))
+
+directions = [(0,1),(0,-1),(1,0),(-1,0)]
+date=0
+prev=len(start_tomato)
+max=N*M-blank
+while prev!=max:
+    count=0
+    temp=len(start_tomato)
+    for _ in range(temp):
+        i,j=start_tomato.popleft()
+        for dx, dy in directions:
+            ni, nj=i+dx, j+dy
+            if 1<=ni<=N and 1<=nj<=M and box[ni][nj]==0:
+                count+=1
+                box[ni][nj]=1
+                start_tomato.append((ni,nj))
+    if not count: break
+    prev+=count
+    date+=1
+
+if prev==max: print(date)
+else: print(-1)
+
+''' graph 리스트 따로 만들어 구현함.
+import sys
+from collections import deque
+
 def num_to_index(num,M): return (num-1)//M+1,((num-1)%M)+1
 def index_to_num(i,j,M): return ((i-1)*M)+j
 
@@ -47,3 +86,4 @@ while prev!=max:
     date+=1
 if prev==max: print(date)
 else: print(-1)
+'''
